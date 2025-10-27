@@ -3,12 +3,14 @@ import { Navigate, Routes, Route } from "react-router-dom";
 import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
 import Chatbot from "./pages/Chatbot";
+import DarkVeil from "./components/DarkVeil";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={
           <Layout>
+          
             <HomePage />
           </Layout>
         }/>

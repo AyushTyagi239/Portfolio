@@ -27,7 +27,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   border-radius: 10px;
 }
 
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
   width: 45px;
   height: 45px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 .company-name {
   font-size: 50px;
   font-weight: 800;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -123,19 +123,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* ===== HERO SECTION ===== */
 .hero {
-  background: linear-gradient(135deg, 
-    #2563eb 0%, 
-    #1d4ed8 25%, 
-    #3730a3 50%, 
-    #1e1b4b 100%);
+
   background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
+  /* animation: gradientShift 8s ease infinite; */
   color: white;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
 }
 
-.hero::before {
+/* .hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -146,15 +142,15 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   animation: float 6s ease-in-out infinite;
-}
+} */
 
-.hero-content {
+/* .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-}
+} */
 
-.hero-title {
+/* .hero-title {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 800;
   margin-bottom: 1rem;
@@ -163,21 +159,26 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);
-}
+} */
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(2.1rem, 2vw, 2.5rem);
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
-  font-weight: 300;
+  margin-top: -10px;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
+
 /* ===== USE CASES SECTION ===== */
-.use-cases {
+/* .use-cases {
   background: white;
   position: relative;
-}
+} */
 
 .use-cases::before {
   content: '';
@@ -186,14 +187,14 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+  background: linear-gradient(90deg, transparent, #0f172a, transparent);
 }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #ffffff, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -208,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  background: linear-gradient(90deg, #0f172a, #1d4ed8);
   border-radius: 2px;
 }
 
@@ -225,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== HORIZONTAL USE CASES SECTION ===== */
 /* ===== HORIZONTAL USE CASES SECTION ===== */
 .use-cases {
-  background: white;
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -237,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+  background: linear-gradient(90deg, transparent, #0f172a, transparent);
 }
 
 .use-cases-container {
@@ -247,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #2563eb #f1f5f9;
+  scrollbar-color: #6e90df #f1f5f9;
   cursor: grab;
 }
 
@@ -266,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .use-cases-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   border-radius: 10px;
 }
 
@@ -295,11 +296,11 @@ h1, h2, h3, h4, h5, h6 {
 .use-case-item:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
-  border-color: #2563eb;
+  border-color: #0f172a;
 }
 
 .use-case-header {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   padding: 1.5rem;
   border: none;
   width: 100%;
@@ -371,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -409,12 +410,12 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: #2563eb;
+  color: #0f172a;
   transition: all 0.3s ease;
 }
 
 .scroll-indicator:hover {
-  background: #2563eb;
+  background: #0f172a;
   color: white;
   transform: translateY(-50%) scale(1.1);
 }
@@ -533,7 +534,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   color: white;
   padding: 12px 28px;
   border-radius: 12px;
@@ -565,7 +566,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #2563eb #f1f5f9;
+  scrollbar-color: #0f172a #f1f5f9;
   cursor: grab;
 }
 
@@ -584,7 +585,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .services-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   border-radius: 10px;
 }
 
@@ -619,7 +620,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  background: linear-gradient(90deg, #0f172a, #1d4ed8);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -627,7 +628,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
-  border-color: #2563eb;
+  border-color: #0f172a;
 }
 
 .service-card:hover::before {
@@ -638,7 +639,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 70px;
   height: 70px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -678,12 +679,12 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: #2563eb;
+  color: #0f172a;
   transition: all 0.3s ease;
 }
 
 .services-scroll-indicator:hover {
-  background: #2563eb;
+  background: #0f172a;
   color: white;
   transform: translateY(-50%) scale(1.1);
 }
@@ -735,7 +736,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+  background: linear-gradient(90deg, transparent, #0f172a, transparent);
 }
 
 .footer-content {
@@ -783,7 +784,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .section-padding {
-    padding: 60px 0;
+    padding: 0px 0;
   }
   
   .services-grid {
@@ -823,7 +824,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border: 4px solid #e2e8f0;
-  border-top: 4px solid #2563eb;
+  border-top: 4px solid #0f172a;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 2rem auto;
@@ -845,7 +846,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== TEXT GRADIENT ===== */
 .text-gradient {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -874,19 +875,19 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 6px;
   background: transparent;
-  color: #2563eb;
+  color: #0f172a;
   padding: 10px 16px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid #2563eb;
+  border: 2px solid #0f172a;
   cursor: pointer;
   font-size: 0.9rem;
 }
 
 .read-more-button:hover {
-  background: #2563eb;
+  background: #0f172a;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);

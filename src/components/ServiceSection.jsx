@@ -42,7 +42,7 @@ const ServicesSection = () => {
   return (
     <section className="services section-padding">
       <div className="container">
-        <h2 className="section-title">Our Services at Intensity</h2>
+        <h2 className="section-title">I</h2>
         
         <div style={{ position: 'relative' }}>
           {/* Scroll buttons */}

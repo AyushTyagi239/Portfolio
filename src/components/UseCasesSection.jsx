@@ -65,7 +65,7 @@ const UseCasesSection = () => {
   return (
     <section className="use-cases section-padding">
       <div className="container">
-        <h2 className="section-title">Our AI Use Cases</h2>
+        <h2 className="section-title">Innovate. Automate. Accelerate. Intensely</h2>
         
         <div style={{ position: 'relative' }}>
           {/* Scroll buttons */}
