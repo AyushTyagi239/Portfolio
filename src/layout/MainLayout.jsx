@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import DarkVeil from "../components/DarkVeil";
 import React from "react";
 import ServicesSection from "../components/ServiceSection";
+import AboutUs from "../components/AboutUs";
 
 const MainLayout = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
 
       {/* Foreground content */}
       <Header />
+      
       <div className>
         {children}
       </div>

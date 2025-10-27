@@ -1,0 +1,131 @@
+.footer {
+  background: linear-gradient(135deg, rgba(20, 0, 40, 0.95), rgba(10, 0, 30, 0.95));
+  backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 70px 0 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 320px;
+  max-width: 520px;
+  text-align: left; /* Force left alignment */
+}
+
+.footer-logo {
+  width: 180px;
+  margin-bottom: 8px;
+  display: block; /* Ensure it's block level for proper alignment */
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  color: #a8a8a8;
+  text-align: left; /* Force left alignment */
+}
+
+.footer-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  text-align: left; /* Changed from justify to left */
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  text-align: left; /* Force left alignment */
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #66b2ff;
+  letter-spacing: 0.5px;
+  text-align: left; /* Force left alignment */
+}
+
+.footer-address,
+.footer-email,
+.footer-phone {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 14px 0;
+  font-size: 0.95rem;
+  color: #d9d9d9;
+  line-height: 1.5;
+  text-align: left; /* Force left alignment */
+  justify-content: flex-start; /* Ensure content starts from left */
+}
+
+.footer-icon {
+  color: #66b2ff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start; /* Align social icons to left */
+}
+
+.footer-socials a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #66b2ff;
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #c0c0c0;
+  line-height: 1.6;
+}
+
+/* Additional alignment fixes for mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 20px;
+    gap: 40px;
+  }
+  
+  .footer-left,
+  .footer-right {
+    text-align: left; /* Ensure left alignment on mobile */
+    min-width: 100%;
+  }
+  
+  .footer-socials {
+    justify-content: flex-start; /* Keep left aligned on mobile */
+  }
+}
