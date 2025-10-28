@@ -3,6 +3,7 @@ import { Navigate, Routes, Route } from "react-router-dom";
 import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
 import Chatbot from "./pages/Chatbot";
+import ReadMorePage from "./pages/ReadMorePage";
 
 const AppRoutes = () => {
   return (
@@ -14,8 +15,9 @@ const AppRoutes = () => {
         }/>
       <Route path="/usecase/chatbot" element={
           <Layout>
-            <Chatbot />
+            {/* <Chatbot /> */}
             {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+            <ReadMorePage />
           </Layout>
         }/>
 
