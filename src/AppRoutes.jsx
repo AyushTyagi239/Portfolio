@@ -8,26 +8,28 @@ import DarkVeil from "./components/DarkVeil";
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      <Route path="/" element={
-          <Layout>
-          
-            <HomePage />
-          </Layout>
-        }/>
-      <Route path="/usecase/chatbot" element={
-          <Layout>
-            {/* <Chatbot /> */}
-            {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
-            <ReadMorePage />
-          </Layout>
-        }/>
+    <>
+      <Routes>
+        <Route path="/" element={
+            <Layout>
+            
+              <HomePage />
+            </Layout>
+          }/>
+        <Route path="/usecase/chatbot" element={
+            <Layout>
+              {/* <Chatbot /> */}
+              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+              <ReadMorePage />
+            </Layout>
+          }/>
 
 
-      {/* Add more routes as needed */}
+        {/* Add more routes as needed */}
 
-       {/* <Route path="*" element={<Navigate to="/" />} /> */}
-    </Routes>
+        {/* <Route path="*" element={<Navigate to="/" />} /> */}
+      </Routes>
+    </>
   );
 };
 

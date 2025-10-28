@@ -1,3 +1,6 @@
+import NeuraEdgeDemo from "../assets/NeuraEdgeDemo.mp4";
+// import NeuraEdgeDemoThumbnail from "../assets/images/NeuraEdgeDemoThumbnail.png";
+
 export const readMoreData = {
   title: "Transforming Workflows with AI-Powered Chatbots",
   intro:
@@ -6,7 +9,7 @@ export const readMoreData = {
   video: {
     title: "Chatbot Demo",
     thumbnail: "https://via.placeholder.com/800x450.png?text=Chatbot+Demo",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: NeuraEdgeDemo,
   },
 
   advantages: [
