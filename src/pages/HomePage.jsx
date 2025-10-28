@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/HeroSection";
 import UseCasesSection from "../components/UseCasesSection";
 import AboutUs from "../components/AboutUs";
+import GetInTouch from "../components/GetInTouch";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <HeroSection />
       <AboutUs/>
       <UseCasesSection />
+      <GetInTouch/>
     </div>
   );
 };
