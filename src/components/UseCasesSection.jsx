@@ -1,48 +1,34 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
-import { useNavigate } from 'react-router-dom'; // 👈 Import navigation hook
+import { useNavigate } from 'react-router-dom';
+import './UseCasesSection.css'; // ✅ Correct CSS import
 
 const UseCasesSection = () => {
-  const [expandedCase, setExpandedCase] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef(null);
-  const navigate = useNavigate(); // 👈 Initialize navigate
+  const navigate = useNavigate();
 
-  // Auto-scroll functionality
-  useEffect(() => {
-    if (isPaused) return;
+  // ✅ Filter out "Super AI Edu Bot"
+  const filteredUseCases = websiteContent.useCases.filter(
+    (useCase) => useCase.title.toLowerCase() !== 'super ai edu bot'
+  );
 
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
-
-    const autoScroll = setInterval(() => {
-      if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
-        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
-      }
-    }, 3000);
-
-    return () => clearInterval(autoScroll);
-  }, [isPaused]);
-
+  // ✅ Scroll Handlers
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
     }
   };
 
-  // 👇 Navigate to use case detail page based on id
+  // ✅ Navigation for "Read More"
   const handleReadMore = (useCaseId) => {
-    // navigate(`/usecase/${useCaseId}`);
-    switch(useCaseId) {
+    switch (useCaseId) {
       case 1:
         navigate('/usecase/chatbot');
         break;
@@ -52,13 +38,9 @@ const UseCasesSection = () => {
       case 3:
         navigate('/usecase/neuraedge-slm');
         break;
-      case 4:
-        navigate('/usecase/edubot');
-        break;
-
       default:
         navigate('/');
-        break
+        break;
     }
   };
 
@@ -66,9 +48,9 @@ const UseCasesSection = () => {
     <section className="use-cases section-padding">
       <div className="container">
         <h2 className="section-title">Innovate. Automate. Accelerate. Intensely</h2>
-        
+
         <div style={{ position: 'relative' }}>
-          {/* Scroll buttons */}
+          {/* Scroll Buttons */}
           <button className="scroll-indicator scroll-left" onClick={scrollLeft}>
             ‹
           </button>
@@ -76,29 +58,27 @@ const UseCasesSection = () => {
             ›
           </button>
 
-          {/* Horizontal scroll container */}
-          <div 
-            className="use-cases-container"
-            ref={scrollContainerRef}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {websiteContent.useCases.map((useCase, index) => (
+          {/* Horizontal Scroll Container */}
+          <div className="use-cases-container" ref={scrollContainerRef}>
+            {filteredUseCases.map((useCase, index) => (
               <motion.div
                 key={useCase.id}
-                className={`use-case-item ${expandedCase === index ? 'expanded' : ''}`}
+                className="use-case-item"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
+                {/* ===== CARD HEADER ===== */}
                 <div className="use-case-header">
                   <h3 className="use-case-title">{useCase.title}</h3>
                 </div>
-                
+
+                {/* ===== CARD CONTENT ===== */}
                 <div className="use-case-content">
                   <p className="use-case-description">{useCase.description}</p>
-                  
+
+                  {/* ===== BUTTONS ===== */}
                   <div className="use-case-buttons">
                     {useCase.demoLink && (
                       <a
@@ -108,13 +88,13 @@ const UseCasesSection = () => {
                         className="demo-button"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Live Demo →
+                        Live Now →
                       </a>
                     )}
-                    
+
                     <button
                       className="read-more-button"
-                      onClick={() => handleReadMore(useCase.id)} // 👈 Redirect here
+                      onClick={() => handleReadMore(useCase.id)}
                     >
                       Read More →
                     </button>

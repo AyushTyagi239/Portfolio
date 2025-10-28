@@ -30,7 +30,7 @@ const AboutUs = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              AI Use Cases by Intensity
+              
               <BlurText text={"AI Use Cases by Intensity"}/>
             </motion.h1>
             

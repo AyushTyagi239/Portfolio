@@ -9,7 +9,9 @@ const HeroSection = () => {
   <section className="hero section-padding" style={{ marginTop: '73px' }}>
     <div className="container">
       <div className="curved-loop-wrapper" style={{ marginTop: '60px' }}>
-        <CurvedLoop />
+        <CurvedLoop marqueeText={"    AI. Accelerated.       Smart. Scalable."
+        } 
+        speed={1.1}/>
       </div>
 
       <motion.p 

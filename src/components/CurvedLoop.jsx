@@ -2,7 +2,7 @@ import { useRef, useEffect, useState, useMemo, useId } from 'react';
 import './CurvedLoop.css';
 import React from 'react';
 const CurvedLoop = ({
-  marqueeText = '     AI USECASES       BY INTESITY',
+  marqueeText = ' ',
   speed = 1,
   className,
   curveAmount = 1,
