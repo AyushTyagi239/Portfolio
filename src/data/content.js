@@ -5,7 +5,7 @@ export const websiteContent = {
   },
   
   hero: {
-    title: "AI USECASES BY INTENSITY",
+    title: "AI AND INTENSITY",
     subtitle: "Exploring the Power of Artificial Intelligence"
   },
   

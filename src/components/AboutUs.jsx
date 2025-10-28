@@ -3,8 +3,12 @@ import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
 import './AboutUs.css'
 import BlurText from './BlurText';
+import AboutUsImage from '../assets/AboutUs.png';
 
 const AboutUs = () => {
+  // Single image path for the big bubble
+  const bubbleImage = AboutUsImage; // Image path is now set
+
   return (
     <section className="about-us-section">
       <div className="container">
@@ -30,8 +34,7 @@ const AboutUs = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              
-              <BlurText text={"AI Use Cases by Intensity"}/>
+              <BlurText text={"AI & INTENSITY"}/>
             </motion.h1>
             
             <motion.div
@@ -58,19 +61,13 @@ const AboutUs = () => {
               </p>
             </motion.div>
 
-         
-
             <motion.div
               className="cta-section"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
               viewport={{ once: true }}
-            >
-              
-              
-             
-            </motion.div>
+            />
           </motion.div>
 
           {/* Image Section */}
@@ -82,20 +79,16 @@ const AboutUs = () => {
             viewport={{ once: true }}
           >
             <div className="image-container">
+              {/* Single big floating bubble */}
               <motion.div
-                className="floating-element element-1"
+                className="floating-element"
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <motion.div
-                className="floating-element element-2"
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              />
-              <motion.div
-                className="floating-element element-3"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                style={{
+                  backgroundImage: `url(${bubbleImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               />
               <div className="ai-network-pattern"></div>
             </div>

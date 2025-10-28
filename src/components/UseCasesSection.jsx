@@ -2,11 +2,25 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
 import { useNavigate } from 'react-router-dom';
-import './UseCasesSection.css'; // ✅ Correct CSS import
+import './UseCasesSection.css';
+
+// Import background images
+import chatbotBg from '../assets/chatbot.png';
+import tenderBg from '../assets/Tender.png';
+import neuraedgeBg from '../assets/slm.png';
+// Remove defaultBg since it's not imported, or uncomment and import it
 
 const UseCasesSection = () => {
   const scrollContainerRef = useRef(null);
   const navigate = useNavigate();
+
+  // Background images mapping - FIXED: Remove defaultBg or import it
+  const backgroundImages = {
+    1: chatbotBg,
+    2: tenderBg,
+    3: neuraedgeBg,
+    // default: defaultBg // Remove this line or import defaultBg
+  };
 
   // ✅ Filter out "Super AI Edu Bot"
   const filteredUseCases = websiteContent.useCases.filter(
@@ -69,9 +83,20 @@ const UseCasesSection = () => {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                {/* ===== CARD HEADER ===== */}
-                <div className="use-case-header">
-                  <h3 className="use-case-title">{useCase.title}</h3>
+                {/* ===== CARD HEADER WITH BACKGROUND IMAGE ===== */}
+                <div 
+                  className="use-case-header"
+                  style={{
+                    backgroundImage: `url(${backgroundImages[useCase.id]})` // FIXED: Remove default fallback
+                  }}
+                >
+                  {/* Glass Blur Overlay */}
+                  <div className="glass-overlay"></div>
+                  
+                  {/* Title Container with Glass Effect */}
+                  <div className="title-glass-container">
+                    <h3 className="use-case-title">{useCase.title}</h3>
+                  </div>
                 </div>
 
                 {/* ===== CARD CONTENT ===== */}

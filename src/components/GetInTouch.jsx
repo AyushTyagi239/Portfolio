@@ -3,8 +3,12 @@ import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
 import './GetInTouch.css';
 import BlurText from './BlurText';
+import GetInTouchImage from '../assets/GetInTouch.png'; // Import your image
 
 const GetInTouch = () => {
+  // Single image path for the big bubble
+  const bubbleImage = GetInTouchImage;
+
   return (
     <section className="get-in-touch-section">
       <div className="container">
@@ -69,47 +73,6 @@ const GetInTouch = () => {
                 </div>
               </div>
             </motion.div>
-
-            {/* Contact Form */}
-            {/* <motion.div
-              className="contact-form-section"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              viewport={{ once: true }}
-            >
-              <form className="contact-form">
-                <div className="form-group">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name"
-                    className="form-input"
-                  />
-                </div>
-                <div className="form-group">
-                  <input 
-                    type="email" 
-                    placeholder="Your Email"
-                    className="form-input"
-                  />
-                </div>
-                <div className="form-group">
-                  <textarea 
-                    placeholder="Your Message"
-                    rows="5"
-                    className="form-textarea"
-                  ></textarea>
-                </div>
-                <motion.button
-                  type="submit"
-                  className="submit-button"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Send Message
-                </motion.button>
-              </form>
-            </motion.div> */}
           </motion.div>
 
           {/* Visual Section */}
@@ -121,20 +84,16 @@ const GetInTouch = () => {
             viewport={{ once: true }}
           >
             <div className="visual-container">
+              {/* Single big floating bubble */}
               <motion.div
-                className="floating-element element-1"
+                className="floating-element"
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <motion.div
-                className="floating-element element-2"
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              />
-              <motion.div
-                className="floating-element element-3"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                style={{
+                  backgroundImage: `url(${bubbleImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               />
               <div className="ai-network-pattern"></div>
             </div>
