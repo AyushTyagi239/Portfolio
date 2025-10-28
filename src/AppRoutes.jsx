@@ -4,12 +4,14 @@ import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
 import Chatbot from "./pages/Chatbot";
 import ReadMorePage from "./pages/ReadMorePage";
+import DarkVeil from "./components/DarkVeil";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={
           <Layout>
+          
             <HomePage />
           </Layout>
         }/>

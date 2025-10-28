@@ -17,7 +17,7 @@ import ServicesSection from "../components/ServiceSection";
 
 const Chatbot = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <ServicesSection />
     </div>
   );
