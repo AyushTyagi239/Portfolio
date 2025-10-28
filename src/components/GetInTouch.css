@@ -1,11 +1,11 @@
-.about-us-section {
-  padding: 5px 0;
+.get-in-touch-section {
+  padding: 80px 0;
   background: transparent;
   position: relative;
   overflow: hidden;
 }
 
-.about-us-content {
+.get-in-touch-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -15,7 +15,7 @@
 }
 
 /* Text Section Styles */
-.about-text-section {
+.get-in-touch-text-section {
   background: rgba(12, 5, 83, 0.822);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -28,7 +28,7 @@
   transform: scale(1);
 }
 
-.about-text-section:hover {
+.get-in-touch-text-section:hover {
   transform: scale(1.03);
   background: rgb(9, 1, 25);
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3),
@@ -36,7 +36,7 @@
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.about-title {
+.get-in-touch-title {
   font-size: 2.5rem;
   font-weight: 800;
   color: #ffffff;
@@ -49,7 +49,7 @@
   position: relative;
 }
 
-.about-title::after {
+.get-in-touch-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -60,89 +60,125 @@
   border-radius: 2px;
 }
 
-.about-description {
+.get-in-touch-description {
   color: #e2e8f0;
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 40px;
 }
 
-.about-description p {
+.get-in-touch-description p {
   margin-bottom: 20px;
   text-shadow: 
     0 1px 2px rgba(0, 0, 0, 0.4),
     0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.use-cases-highlights {
+/* Contact Information */
+.contact-info-section {
   margin: 40px 0;
 }
 
-.use-cases-highlights h3 {
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.contact-details h3 {
   color: #60a5fa;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
   font-weight: 600;
   text-shadow: 
     0 1px 3px rgba(0, 0, 0, 0.4),
     0 0 15px rgba(96, 165, 250, 0.3);
 }
 
-.use-cases-highlights ul {
-  list-style: none;
-  padding: 0;
-}
-
-.use-cases-highlights li {
-  color: #cbd5e1;
-  margin-bottom: 15px;
-  padding-left: 20px;
-  position: relative;
-  line-height: 1.6;
+.contact-email {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.use-cases-highlights li::before {
-  content: '▸';
+.contact-email:hover {
   color: #60a5fa;
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
-}
-
-.use-cases-highlights strong {
-  color: #ffffff;
-  font-weight: 600;
-  text-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.5),
-    0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-/* CTA Section */
-.cta-section {
-  margin-top: 50px;
-}
-
-.divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-  margin: 30px 0;
-  box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
-}
-
-.cta-title {
-  color: #60a5fa;
-  font-size: 1.4rem;
-  margin-bottom: 25px;
-  text-align: center;
-  font-weight: 600;
   text-shadow: 
     0 1px 3px rgba(0, 0, 0, 0.4),
-    0 0 15px rgba(96, 165, 250, 0.4);
+    0 0 15px rgba(96, 165, 250, 0.5);
 }
 
-.cta-button {
+/* Contact Form */
+.contact-form-section {
+  margin-top: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #cbd5e1;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   color: white;
   border: none;
@@ -152,17 +188,16 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: block;
-  margin: 0 auto;
   box-shadow: 
     0 8px 25px rgba(59, 130, 246, 0.4),
     0 0 20px rgba(59, 130, 246, 0.3);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  align-self: flex-start;
 }
 
-.cta-button::before {
+.submit-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -173,25 +208,18 @@
   transition: left 0.5s ease;
 }
 
-.cta-button:hover {
-  box-shadow: 
-    0 12px 35px rgba(59, 130, 246, 0.6),
-    0 0 30px rgba(59, 130, 246, 0.4);
-  transform: translateY(-2px);
-}
-
-.cta-button:hover::before {
+.submit-button:hover::before {
   left: 100%;
 }
 
-/* Image Section Styles */
-.about-image-section {
+/* Visual Section Styles */
+.get-in-touch-visual-section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.image-container {
+.visual-container {
   width: 100%;
   height: 500px;
   background: transparent;
@@ -239,7 +267,7 @@
 }
 
 /* Text Readability Enhancements */
-.about-text-section * {
+.get-in-touch-text-section * {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -247,15 +275,15 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .about-us-content {
+  .get-in-touch-content {
     gap: 50px;
   }
   
-  .about-text-section {
+  .get-in-touch-text-section {
     padding: 40px 30px;
   }
   
-  .about-title {
+  .get-in-touch-title {
     font-size: 2.2rem;
   }
   
@@ -266,16 +294,16 @@
 }
 
 @media (max-width: 768px) {
-  .about-us-content {
+  .get-in-touch-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  .about-text-section {
+  .get-in-touch-text-section {
     padding: 30px 25px;
   }
   
-  .about-title {
+  .get-in-touch-title {
     font-size: 2rem;
     text-shadow: 
       0 1px 3px rgba(0, 0, 0, 0.5),
@@ -283,11 +311,11 @@
       0 0 15px rgba(59, 130, 246, 0.3);
   }
   
-  .image-container {
+  .visual-container {
     height: 400px;
   }
   
-  .about-us-section {
+  .get-in-touch-section {
     padding: 60px 0;
   }
   
@@ -298,19 +326,26 @@
 }
 
 @media (max-width: 480px) {
-  .about-text-section {
+  .get-in-touch-text-section {
     padding: 25px 20px;
   }
   
-  .about-title {
+  .get-in-touch-title {
     font-size: 1.8rem;
   }
   
-  .about-description {
+  .get-in-touch-description {
     font-size: 1rem;
   }
   
-  .cta-button {
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .submit-button {
+    width: 100%;
     padding: 12px 30px;
     font-size: 1rem;
   }
@@ -320,7 +355,7 @@
     height: 200px;
   }
   
-  .image-container {
+  .visual-container {
     height: 350px;
   }
 }

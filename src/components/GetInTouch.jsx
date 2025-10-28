@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
-import './AboutUs.css'
+import './GetInTouch.css';
 import BlurText from './BlurText';
-import AboutUsImage from '../assets/AboutUs.png';
+import GetInTouchImage from '../assets/GetInTouch.png'; // Import your image
 
-const AboutUs = () => {
+const GetInTouch = () => {
   // Single image path for the big bubble
-  const bubbleImage = AboutUsImage; // Image path is now set
+  const bubbleImage = GetInTouchImage;
 
   return (
-    <section className="about-us-section">
+    <section className="get-in-touch-section">
       <div className="container">
         <motion.div
-          className="about-us-content"
+          className="get-in-touch-content"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -21,64 +21,69 @@ const AboutUs = () => {
         >
           {/* Text Content Section */}
           <motion.div
-            className="about-text-section"
+            className="get-in-touch-text-section"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <motion.h1
-              className="about-title"
+              className="get-in-touch-title"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <BlurText text={"AI & INTENSITY"}/>
+              <BlurText text={"Get in Touch Today!"}/>
             </motion.h1>
             
             <motion.div
-              className="about-description"
+              className="get-in-touch-description"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
               <p>
-                At Intensity Global Technologies, our expertise in AI is built on innovation, 
-                trust, and an unwavering commitment to excellence. We are proud to showcase 
-                our journey in developing cutting-edge AI solutions that have transformed 
-                businesses across various industries.
-              </p>
-              
-              <p>
-                Since beginning our AI journey, we have continued to deepen our expertise 
-                and deliver transformative AI solutions that empower businesses across 
-                manufacturing, healthcare, BFSI, retail, and education. Our commitment to 
-                AI innovation ensures that our clients gain access to cutting-edge services, 
-                industry best practices, and a partner who understands how to leverage 
-                artificial intelligence to accelerate digital transformation with confidence.
+                Have a question, project idea, or looking for more information about our services? 
+                Our team is ready to assist you. Fill out the form below, and we'll get back to you promptly.
               </p>
             </motion.div>
 
+            {/* Contact Information */}
             <motion.div
-              className="cta-section"
+              className="contact-info-section"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
-            />
+            >
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M22 6L12 13L2 6" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div className="contact-details">
+                  <h3>Customer Support:</h3>
+                  <a href="mailto:info@igtpl.co.in" className="contact-email">
+                    info@igtpl.co.in
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
 
-          {/* Image Section */}
+          {/* Visual Section */}
           <motion.div
-            className="about-image-section"
+            className="get-in-touch-visual-section"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <div className="image-container">
+            <div className="visual-container">
               {/* Single big floating bubble */}
               <motion.div
                 className="floating-element"
@@ -99,4 +104,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default GetInTouch;

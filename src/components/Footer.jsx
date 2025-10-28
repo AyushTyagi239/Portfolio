@@ -33,20 +33,45 @@ const Footer = () => {
             <FaMapMarkerAlt className="footer-icon" />
             A-21, FIEE Complex, Okhla Phase 2, New Delhi - 110020
           </p>
-          <p className="footer-email">
+          <a 
+            href="mailto:info@igtpl.co.in" 
+            className="footer-email"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <FaEnvelope className="footer-icon" /> info@igtpl.co.in
-          </p>
-          <p className="footer-phone">
+          </a>
+          <a 
+            href="tel:+919717010199" 
+            className="footer-phone"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <FaPhone className="footer-icon" /> +91-9717010199
-          </p>
+          </a>
           <div className="footer-socials">
-            <a href="#" aria-label="Facebook">
+            <a 
+              href="https://www.facebook.com/igtpl/" 
+              aria-label="Facebook"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <FaFacebook />
             </a>
-            <a href="#" aria-label="Twitter">
+            <a 
+              href="https://x.com/igtpl?lang=en" 
+              aria-label="Twitter"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <FaTwitter />
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a 
+              href="https://www.linkedin.com/company/intensityglobal" 
+              aria-label="LinkedIn"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <FaLinkedin />
             </a>
           </div>
