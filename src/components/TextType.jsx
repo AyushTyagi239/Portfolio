@@ -6,7 +6,7 @@ import React from 'react';
 import './TextType.css';
 
 const TextType = ({
-  text = ["Smart Tech,", "Lead with AI.", "Powering Your Business."],
+  text = ["Smart Tech", "Lead with AI", "Powering Your Business"],
   as: Component = 'div',
   typingSpeed = 40,
   initialDelay = 0,

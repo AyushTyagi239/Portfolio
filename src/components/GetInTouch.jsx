@@ -3,10 +3,9 @@ import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
 import './GetInTouch.css';
 import BlurText from './BlurText';
-import GetInTouchImage from '../assets/GetInTouch.png'; // Import your image
+import GetInTouchImage from '../assets/GetInTouch.png';
 
 const GetInTouch = () => {
-  // Single image path for the big bubble
   const bubbleImage = GetInTouchImage;
 
   return (
@@ -19,10 +18,33 @@ const GetInTouch = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Text Content Section */}
+          {/* Visual Section - MOVED TO TOP */}
+          <motion.div
+            className="get-in-touch-visual-section"
+            initial={{ opacity: 0, x: -50 }} // Changed from x: 50 to x: -50
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="visual-container">
+              <motion.div
+                className="floating-element"
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                style={{
+                  backgroundImage: `url(${bubbleImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              <div className="ai-network-pattern"></div>
+            </div>
+          </motion.div>
+
+          {/* Text Content Section - MOVED TO BOTTOM */}
           <motion.div
             className="get-in-touch-text-section"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }} // Changed from x: -50 to x: 50
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
@@ -58,7 +80,7 @@ const GetInTouch = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="contact-item">
+              {/* <div className="contact-item">
                 <div className="contact-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -71,32 +93,49 @@ const GetInTouch = () => {
                     info@igtpl.co.in
                   </a>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
-          </motion.div>
 
-          {/* Visual Section */}
-          <motion.div
-            className="get-in-touch-visual-section"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="visual-container">
-              {/* Single big floating bubble */}
-              <motion.div
-                className="floating-element"
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                style={{
-                  backgroundImage: `url(${bubbleImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              />
-              <div className="ai-network-pattern"></div>
-            </div>
+            {/* Contact Form */}
+            <motion.div
+              className="contact-form-section"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              viewport={{ once: true }}
+            >
+              <form className="contact-form">
+                <div className="form-group">
+                  <input 
+                    type="text" 
+                    placeholder="Your Name"
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input 
+                    type="email" 
+                    placeholder="Your Email"
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea 
+                    placeholder="Your Message"
+                    rows="5"
+                    className="form-textarea"
+                  ></textarea>
+                </div>
+                <motion.button
+                  type="submit"
+                  className="submit-button"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Send Message
+                </motion.button>
+              </form>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
