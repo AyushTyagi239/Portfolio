@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import NeuraEdgeChatbotThumbnail from "../assets/NeuraEdgeChatbotThumbnail.png"
 
-const VideoPlayer = ({ title, videoUrl }) => {
+const VideoPlayer = ({ title, videoUrl, thumbnail }) => {
   return (
     <section className="w-full px-4 py-12 bg-transparent border-t border-gray-800">
       <div className="max-w-2xl mx-auto text-center">
@@ -39,6 +40,7 @@ const VideoPlayer = ({ title, videoUrl }) => {
             <video
                 className="w-full h-full"
                 src={videoUrl}
+                poster={thumbnail}
                 controls
                 // autoPlay
                 muted

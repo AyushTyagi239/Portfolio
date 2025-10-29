@@ -43,9 +43,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import chatbotImage from "../assets/chatbot_stock_image.jpg"; // ✅ Update path if needed
 
-const SectionIntro = ({ title, content }) => {
+const SectionIntro = ({ title, content, image }) => {
   return (
-    <section className="w-full px-6 md:px-12 pt-20 pb-12 bg-transparent border-b border-gray-700">
+    <section className="w-full px-6 md:px-12 pt-25 pb-12 bg-transparent border-b border-gray-700">
       <div className="max-w-6xl mx-auto">
         {/* 1. TOP SECTION — Centered Title and Accent Line */}
         <div className="mb-12 text-center">
@@ -69,10 +69,7 @@ const SectionIntro = ({ title, content }) => {
           ></motion.div>
         </div>
 
-        {/* 2. MAIN CONTENT — Two-Column Structure (Text & Image) */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* LEFT SIDE — Text content */}
-          {/* Removed justify-center which conflicted with the desired text-left on desktop */}
           <div className="flex flex-col text-center md:text-left">
             {/* Content */}
             <motion.p
@@ -95,7 +92,7 @@ const SectionIntro = ({ title, content }) => {
             className="flex justify-center items-center"
           >
             <img
-              src={chatbotImage}
+              src={image}
               alt="Chatbot illustration"
               className="w-full max-w-md rounded-2xl shadow-lg border border-gray-700 object-cover"
             />

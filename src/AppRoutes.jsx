@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage";
 import Chatbot from "./pages/Chatbot";
 import ReadMorePage from "./pages/ReadMorePage";
 import DarkVeil from "./components/DarkVeil";
+import { NeuraEdgeChatbotData } from "./data/NeuraEdgeChatbotData";
+import { TenderAnalysisData } from "./data/TenderAnalysisData";
 
 const AppRoutes = () => {
   return (
@@ -20,7 +22,15 @@ const AppRoutes = () => {
             <Layout>
               {/* <Chatbot /> */}
               {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
-              <ReadMorePage />
+              <ReadMorePage data={NeuraEdgeChatbotData} />
+            </Layout>
+          }/>
+
+          <Route path="/usecase/tender-analysis" element={
+            <Layout>
+              {/* <Chatbot /> */}
+              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+              <ReadMorePage data={TenderAnalysisData} />
             </Layout>
           }/>
 
