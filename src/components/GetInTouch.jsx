@@ -1,16 +1,102 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { websiteContent } from '../data/content';
-import './GetInTouch.css';
-import BlurText from './BlurText';
-import GetInTouchImage from '../assets/GetInTouch.png'; // Import your image
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import BlurText from "./BlurText";
+import GetInTouchImage from "../assets/GetInTouch.png";
+import Notification from "./Notification";
+import "./GetInTouch.css";
 
 const GetInTouch = () => {
-  // Single image path for the big bubble
   const bubbleImage = GetInTouchImage;
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // Stored submissions (for local state display only)
+  const [submissions, setSubmissions] = useState([]);
+
+  // Notification state
+  const [notification, setNotification] = useState({ message: "", type: "" });
+
+  // Handle input
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Form validation
+  const validateForm = () => {
+    const { name, email, message } = formData;
+
+    if (!name || !email || !message) {
+      setNotification({ message: "All fields are required!", type: "error" });
+      return false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setNotification({ message: "Invalid email address!", type: "error" });
+      return false;
+    }
+
+    return true;
+  };
+
+  // Submit form → send to backend
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    try {
+      // Send data to backend
+      const response = await fetch("http://localhost:5000/save-data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "Server error");
+      }
+
+      // Add to local submissions list for display/debug
+      const newEntry = { ...formData, id: Date.now() };
+      setSubmissions((prev) => [...prev, newEntry]);
+
+      // Reset form
+      setFormData({ name: "", email: "", message: "" });
+
+      // Success notification
+      setNotification({
+        message: "Message sent and saved successfully!",
+        type: "success",
+      });
+
+      console.log("✅ Saved on server:", result.saved);
+    } catch (error) {
+      console.error("❌ Error sending form data:", error);
+      setNotification({
+        message: "Something went wrong. Try again!",
+        type: "error",
+      });
+    }
+  };
 
   return (
     <section className="get-in-touch-section">
+      {/* Popup notification */}
+      <Notification
+        message={notification.message}
+        type={notification.type}
+        onClose={() => setNotification({ message: "", type: "" })}
+      />
+
       <div className="container">
         <motion.div
           className="get-in-touch-content"
@@ -19,83 +105,89 @@ const GetInTouch = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Text Content Section */}
-          <motion.div
-            className="get-in-touch-text-section"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <motion.h1
-              className="get-in-touch-title"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <BlurText text={"Get in Touch Today!"}/>
-            </motion.h1>
-            
-            <motion.div
-              className="get-in-touch-description"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <p>
-                Have a question, project idea, or looking for more information about our services? 
-                Our team is ready to assist you. Fill out the form below, and we'll get back to you promptly.
-              </p>
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              className="contact-info-section"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M22 6L12 13L2 6" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div className="contact-details">
-                  <h3>Customer Support:</h3>
-                  <a href="mailto:info@igtpl.co.in" className="contact-email">
-                    info@igtpl.co.in
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-
           {/* Visual Section */}
           <motion.div
             className="get-in-touch-visual-section"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
             <div className="visual-container">
-              {/* Single big floating bubble */}
               <motion.div
                 className="floating-element"
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 style={{
                   backgroundImage: `url(${bubbleImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
               />
               <div className="ai-network-pattern"></div>
+            </div>
+          </motion.div>
+
+          {/* Text Section */}
+          <motion.div
+            className="get-in-touch-text-section"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h1 className="get-in-touch-title">
+              <BlurText text={"Get in Touch Today!"} />
+            </h1>
+
+            <div className="get-in-touch-description">
+              <p>
+                Have a question, project idea, or looking for more information about our services?
+                Fill out the form below, and we'll get back to you promptly.
+              </p>
+            </div>
+
+            <div className="contact-form-section">
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="form-textarea"
+                  ></textarea>
+                </div>
+                <motion.button
+                  type="submit"
+                  className="submit-button"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Send Message
+                </motion.button>
+              </form>
             </div>
           </motion.div>
         </motion.div>
