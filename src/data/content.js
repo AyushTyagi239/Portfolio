@@ -14,7 +14,7 @@ export const websiteContent = {
       id: 1,
       title: "Chatbot",
       description: "Intelligent conversational AI assistants that provide 24/7 customer support and engagement.",
-      demoLink: "https://demo-chatbot.intensity.com"
+      demoLink: "https://neuradesk.superaip.com/  "
     },
     {
       id: 2,
