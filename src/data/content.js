@@ -12,9 +12,9 @@ export const websiteContent = {
   useCases: [
     {
       id: 1,
-      title: "Chatbot",
-      description: "Intelligent conversational AI assistants that provide 24/7 customer support and engagement.",
-      demoLink: "https://neuradesk.superaip.com/  "
+      title: "Neuraedge SLM Solution / Document Intelligence",
+      description: "Advanced document processing and intelligence using state-of-the-art language models.",
+      demoLink: "https://neuradesk.superaip.com/"
     },
     {
       id: 2,
@@ -24,9 +24,9 @@ export const websiteContent = {
     },
     {
       id: 3,
-      title: "Neuraedge SLM Solution / Document Intelligence",
-      description: "Advanced document processing and intelligence using state-of-the-art language models.",
-      demoLink: "https://neuradesk.superaip.com/"
+      title: "Chatbot",
+      description: "Intelligent conversational AI assistants that provide 24/7 customer support and engagement.",
+      demoLink: "https://neuradesk.superaip.com/  "
     },
     
   ],
