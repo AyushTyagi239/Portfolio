@@ -5,33 +5,115 @@
   width: 100%;
   height: 90px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.25);
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  padding: 0 40px;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Header when scrolled
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(18px);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(15px);
+  background: rgba(30, 0, 60, 0.25); /* More transparent glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-} */
-
-/* Center container */
-.header-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
 }
 
-/* Logo styling */
+/* When scrolled down - solid dark purple-blue */
+.header.scrolled {
+  background: linear-gradient(90deg, #1d0941 0%, #14053b 100%); /* Solid dark purple-blue */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Layout */
+.header-left,
+.header-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+/* Logo */
 .header-logo {
-  height: 70px;
+  height: 65px;
   width: auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.header-logo:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* Title text */
+.header-title {
+  font-size: 1.6rem;
+  font-weight: 900; /* Bolder weight */
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #a36bff, #ff6b6b, #a36bff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+  text-shadow: 0 2px 8px rgba(163, 107, 255, 0.4);
+  margin: 0;
+  padding: 0;
+}
+
+/* Shimmer animation for title */
+@keyframes shimmer {
+  0%, 100% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+}
+
+/* Enhanced glow effect on hover */
+.header-title:hover {
+  text-shadow: 0 0 20px rgba(163, 107, 255, 0.8),
+               0 0 30px rgba(255, 107, 107, 0.6);
+  animation-duration: 2s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .header-logo {
+    height: 50px;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .header-logo {
+    height: 40px;
+  }
+
+  .header-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
 }

@@ -12,7 +12,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Header/>
       <DarkVeil/>
-      <HeroSection />
+      
       <UseCaseSection />
       <Footer />
     </div>

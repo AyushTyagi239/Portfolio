@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import logo from '../assets/logo_intensity.png';
-import logoScrolled from '../assets/IntensityLogoMonowhite.png'; // optional: different logo when scrolled
+import leftLogo from '../assets/Super_Ai.png';
+import rightLogo from '../assets/IntensityLogoMonowhite.png';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,18 +14,18 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="header-center">
-        <a
-          href="https://www.igtpl.co.in/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={scrolled ? logo : logo}
-            alt="Intensity Global Technologies Logo"
-            className="header-logo"
-          />
+      <div className="header-left">
+        <a href="https://www.igtpl.co.in/" target="_blank" rel="noopener noreferrer">
+          <img src={rightLogo} alt="Left Logo" className="header-logo" />
         </a>
+      </div>
+
+      <div className="header-center">
+        <h1 className="header-title">INTENSITY X SUPER AI</h1>
+      </div>
+
+      <div className="header-right">
+        <img src={leftLogo} alt="Right Logo" className="header-logo" />
       </div>
     </header>
   );
