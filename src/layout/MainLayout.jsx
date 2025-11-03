@@ -17,7 +17,7 @@ const MainLayout = ({ children }) => {
       {/* Foreground content */}
       <Header />
       
-      <div className>
+      <div>
         {children}
       </div>
       

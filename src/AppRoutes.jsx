@@ -7,6 +7,12 @@ import ReadMorePage from "./pages/ReadMorePage";
 import DarkVeil from "./components/DarkVeil";
 import { NeuraEdgeChatbotData } from "./data/NeuraEdgeChatbotData";
 import { TenderAnalysisData } from "./data/TenderAnalysisData";
+import manufacturingData from "./data/manufacturingData";
+import IndustryPage from "./components/IndustryPage";
+import healthcareData from "./data/healthcareData";
+import bfsiData from "./data/bfsiData";
+import educationData from "./data/educationData";
+import hospitalityData from "./data/hospitalityData";
 
 const AppRoutes = () => {
   return (
@@ -35,10 +41,57 @@ const AppRoutes = () => {
           }/>
 
 
-        {/* Add more routes as needed */}
+          <Route path="/industry/manufacturing" element={
+            <Layout>
+              {/* <Chatbot /> */}
+              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+              {/* <ReadMorePage data={TenderAnalysisData} /> */}
+              {console.log(manufacturingData)}
+              <IndustryPage data={manufacturingData} />
+            </Layout>
+          }/>
+          <Route path="/industry/healthcare" element={
+            <Layout>
+              {/* <Chatbot /> */}
+              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+              {/* <ReadMorePage data={TenderAnalysisData} /> */}
+             
+              <IndustryPage data={healthcareData} />
+            </Layout>
+          }/>
+          <Route path="/industry/bfsi" element={
+            <Layout>
+              {/* <Chatbot /> */}
+              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+              {/* <ReadMorePage data={TenderAnalysisData} /> */}
+             
+              <IndustryPage data={bfsiData} />
+            </Layout>
+          }/>
+           <Route path="/industry/education" element={
+            <Layout>
+              {/* <Chatbot /> */}
+              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
+              {/* <ReadMorePage data={TenderAnalysisData} /> */}
+             
+              <IndustryPage data={educationData} />
+            </Layout>
+          }/>
 
-        {/* <Route path="*" element={<Navigate to="/" />} /> */}
+            <Route path="/industry/hospitality" element={
+            <Layout>
+             
+             
+              <IndustryPage data={hospitalityData} />
+            </Layout>
+          }/>
+
+
       </Routes>
+      
+      
+
+      
     </>
   );
 };

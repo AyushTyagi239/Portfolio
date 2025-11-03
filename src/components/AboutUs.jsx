@@ -4,10 +4,11 @@ import { websiteContent } from '../data/content';
 import './AboutUs.css'
 import BlurText from './BlurText';
 import AboutUsImage from '../assets/AboutUs.png';
+import GetInTouchImage from '../assets/GetInTouch.png';
 
 const AboutUs = () => {
   // Single image path for the big bubble
-  const bubbleImage = AboutUsImage; // Image path is now set
+  const bubbleImage = GetInTouchImage; // Image path is now set
 
   return (
     <section className="about-us-section">

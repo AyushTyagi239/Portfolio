@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useCaseData } from '../data/useCaseData';
+import { useNavigate } from 'react-router-dom';
 import './IndustryUseCases.css';
 
 const IndustryUseCases = () => {
   const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
   // Initial 4 items
   const initialItems = useCaseData.slice(0, 4);
@@ -11,6 +14,30 @@ const IndustryUseCases = () => {
 
   const handleViewMore = () => {
     setShowAll(!showAll);
+  };
+
+  // Navigation handler for industry click
+  const handleIndustryClick = (industryId) => {
+    switch (industryId) {
+      case 1:
+        navigate('/industry/manufacturing');
+        break;
+      case 2:
+        navigate('/industry/healthcare');
+        break;
+      case 3:
+        navigate('/industry/bfsi');
+        break;
+      case 4:
+        navigate('/industry/education');
+        break;
+      case 5:
+        navigate('/industry/hospitality');
+        break;
+      default:
+        navigate('/');
+        break;
+    }
   };
 
   return (
@@ -21,32 +48,40 @@ const IndustryUseCases = () => {
       <div className="use-cases-grid">
         {/* First row */}
         <div className="grid-row">
-          {displayedItems.slice(0, 2).map((item) => (
-            <UseCaseCard key={item.id} item={item} />
+          {displayedItems.slice(0, 2).map((item, index) => (
+            <UseCaseCard 
+              key={item.id} 
+              item={item} 
+              index={index}
+              onIndustryClick={handleIndustryClick}
+            />
           ))}
         </div>
         
         {/* Second row */}
         <div className="grid-row">
-          {displayedItems.slice(2, 4).map((item) => (
-            <UseCaseCard key={item.id} item={item} />
+          {displayedItems.slice(2, 4).map((item, index) => (
+            <UseCaseCard 
+              key={item.id} 
+              item={item} 
+              index={index + 2}
+              onIndustryClick={handleIndustryClick}
+            />
           ))}
         </div>
 
         {/* Additional rows only when showAll is true */}
         {showAll && displayedItems.length > 4 && (
-          <>
-            <div className="grid-row">
-              {displayedItems.slice(4, 6).map((item) => (
-                <UseCaseCard key={item.id} item={item} />
-              ))}
-            </div>
-            <div className="grid-row">
-              {displayedItems.slice(6, 8).map((item) => (
-                <UseCaseCard key={item.id} item={item} />
-              ))}
-            </div>
-          </>
+          <div className="grid-row">
+            {displayedItems.slice(4, 5).map((item, index) => (
+              <UseCaseCard 
+                key={item.id} 
+                item={item} 
+                index={index + 4}
+                onIndustryClick={handleIndustryClick}
+              />
+            ))}
+          </div>
         )}
       </div>
 
@@ -78,9 +113,21 @@ const IndustryUseCases = () => {
 };
 
 // Individual Use Case Card Component
-const UseCaseCard = ({ item }) => {
+const UseCaseCard = ({ item, index, onIndustryClick }) => {
+  const handleClick = () => {
+    onIndustryClick(item.id);
+  };
+
   return (
-    <div className="use-case-item">
+    <motion.div
+      className="use-case-item"
+      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.05, y: -5 }}
+      onClick={handleClick}
+    >
       <div 
         className="use-case-header"
         style={{ backgroundImage: `url(${item.image})` }}
@@ -89,7 +136,7 @@ const UseCaseCard = ({ item }) => {
           <h3 className="use-case-title">{item.title}</h3>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

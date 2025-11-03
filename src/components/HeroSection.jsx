@@ -21,7 +21,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {/* <TextType text = {["Smart Tech", "Lead with AI", "Powering Your Business"]}/> */}
+        {/* <TextType textColors={"white"} text = {["Smart Tech", "Lead with AI", "Powering Your Business"]}/> */}
       </motion.p>
     </div>
   </section>
