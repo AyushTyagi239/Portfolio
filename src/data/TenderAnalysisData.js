@@ -8,6 +8,8 @@ export const TenderAnalysisData = {
   intro:
     "Tender Analyzer is an advanced AI-driven procurement intelligence platform that leverages OCR, NLP, and machine learning to automatically analyze, classify, and summarize complex government and corporate tender documents. It helps organizations identify the most relevant opportunities faster by transforming unstructured tender data into actionable insights. Built with a focus on efficiency and compliance, Tender Analyzer empowers procurement teams, consulting agencies, and enterprises to streamline bid evaluation, improve success rates, and make informed strategic decisions.",
 
+  demoLink: "https://uplc.superaip.com/",
+  
   video: {
     title: "Tender Analysis Demo",
     thumbnail: "https://via.placeholder.com/800x450.png?text=Tender+Analyzer+Demo",

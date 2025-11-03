@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
 import CurvedLoop from './CurvedLoop'
 import TextType from './TextType'
+import StaggeredMenu from './StaggeredMenu';
 
 
 const HeroSection = () => {
@@ -23,7 +24,15 @@ const HeroSection = () => {
       >
         {/* <TextType textColors={"white"} text = {["Smart Tech", "Lead with AI", "Powering Your Business"]}/> */}
       </motion.p>
+
     </div>
+     <StaggeredMenu  items={[
+          { label: "Home", link: "/" },
+          { label: "Tender Analyst", link: "/usecase/tender-analysis" },
+          { label: "SLM", link: "/usecase/chatbot" },
+          
+        ]}
+        colors={["#5227FF", "#B19EEF", "#311B92"]}/>
   </section>
 );
 

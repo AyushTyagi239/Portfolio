@@ -8,7 +8,7 @@ import IndustryUseCases from "../components/IndustryUseCases";
 const HomePage = () => {
   return (
     <div className="min-h-screen ">
-      <HeroSection />
+     
       <AboutUs/>
       <IndustryUseCases/>
       {/* <UseCasesSection /> */}

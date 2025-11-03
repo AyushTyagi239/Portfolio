@@ -4,6 +4,9 @@ import DarkVeil from "../components/DarkVeil";
 import React from "react";
 import ServicesSection from "../components/ServiceSection";
 import AboutUs from "../components/AboutUs";
+import StaggeredMenu from "../components/StaggeredMenu";
+import HeroSection from "../components/HeroSection";
+
 
 const MainLayout = ({ children }) => {
   return (
@@ -16,8 +19,10 @@ const MainLayout = ({ children }) => {
 
       {/* Foreground content */}
       <Header />
+      <HeroSection/>
       
-      <div>
+      
+      <div className>
         {children}
       </div>
       

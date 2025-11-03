@@ -13,6 +13,7 @@ import healthcareData from "./data/healthcareData";
 import bfsiData from "./data/bfsiData";
 import educationData from "./data/educationData";
 import hospitalityData from "./data/hospitalityData";
+import StaggeredMenu from "./components/StaggeredMenu";
 
 const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AppRoutes = () => {
             <Layout>
             
               <HomePage />
+             
             </Layout>
           }/>
         <Route path="/usecase/chatbot" element={

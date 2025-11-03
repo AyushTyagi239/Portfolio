@@ -7,6 +7,8 @@ export const NeuraEdgeChatbotData = {
   intro:
    "NeuraEdge is an advanced Small Language Model (SLM) designed to deliver intelligent, context-aware document understanding and knowledge-based reasoning while ensuring data privacy and deployment flexibility.Built on an open-source foundation, NeuraEdge empowers organizations to extract insights from internal documents, proprietary databases, and structured or unstructured content—without compromising data security.It operates seamlessly across cloud, private, and hybrid environments, enabling enterprises to harness AI capabilities tailored to their specific teams, workflows, and compliance requirements.",
 
+  demoLink: "https://neuradesk.superaip.com/",
+
   video: {
     title: "Chatbot Demo",
     thumbnail: NeuraEdgeChatbotThumbnail,

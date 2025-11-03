@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import leftLogo from '../assets/Super_Ai.png';
 import rightLogo from '../assets/IntensityLogoMonowhite.png';
+import StaggeredMenu from './StaggeredMenu';
+
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,6 +29,13 @@ const Header = () => {
       <div className="header-right">
         <img src={leftLogo} alt="Right Logo" className="header-logo" />
       </div>
+       {/* <StaggeredMenu  items={[
+                { label: "Home", link: "/" },
+                { label: "Tender Analyst", link: "/usecase/tender-analysis" },
+                { label: "SLM", link: "/usecase/neuraedge-slm" },
+                
+              ]}/> */}
+      
     </header>
   );
 };
