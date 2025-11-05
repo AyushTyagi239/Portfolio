@@ -7,6 +7,8 @@ import IndustryUseCases from "../components/IndustryUseCases";
 import ImageCarousel from "../components/ImageCarousel";
 import BFSI_TRANS from "../assets/transition/BFSI_TRANS.png"
 import MANU_TRANS from "../assets/transition/MANU_TRANS.png"
+import FAQSection from "../components/FAQSection";
+import FAQs from "../data/FAQs";
 
 const HomePage = () => {
   return (
@@ -15,7 +17,7 @@ const HomePage = () => {
       <AboutUs/>
       {/* <ImageCarousel images={[BFSI_TRANS,MANU_TRANS]}/> */}
       <IndustryUseCases/>
-      
+      <FAQSection faqs={FAQs}/>
      
       {/* <UseCasesSection /> */}
       {/* <GetInTouch/> */}
