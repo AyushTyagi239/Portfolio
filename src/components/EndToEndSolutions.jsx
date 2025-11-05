@@ -63,9 +63,10 @@ const EndToEndSolutions = () => {
 
   return (
     <section className="endtoend-wrapper">
-      <h2 className="endtoend-title">
-        END-TO-END <span>Solutions</span>
-      </h2>
+     <h2 className="endtoend-title">
+  END-TO-END <span>Solutions</span>
+</h2>
+
 
       <div className="endtoend-grid">
         {/* Row 1 */}

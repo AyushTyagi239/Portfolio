@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .header {
   position: fixed;
   top: 0;
@@ -33,6 +35,8 @@
   min-width: auto; /* Allow it to take only needed space */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .header-center {
   flex: 1;
   display: flex;
@@ -41,8 +45,28 @@
   position: absolute;
   left: 0;
   right: 0;
-  pointer-events: none; /* Allow clicks to pass through to elements below */
+  pointer-events: none;
 }
+
+.header-title {
+  font-family: "Calendas Plus", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.1;
+  background: transparent;
+}
+
+.header-title span {
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
 
 .header-right {
   flex: 0 0 auto;
@@ -65,61 +89,7 @@
 }
 
 /* Title text */
-.header-title {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #a36bff, #eeeaf9, #1a0142);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* animation: shimmer 3s ease-in-out infinite; */
-  text-shadow: 0 2px 8px rgba(163, 107, 255, 0.4);
-  margin: 0;
-  padding: 0;
-  pointer-events: auto; /* Re-enable pointer events for the title */
-}
-
-/* Shimmer animation for title */
-@keyframes shimmer {
-  0%, 100% {
-    background-position: -200% 0;
-  }
-  50% {
-    background-position: 200% 0;
-  }
-}
-
-/* Enhanced glow effect on hover */
-.header-title:hover {
-  text-shadow: 0 0 20px rgba(163, 107, 255, 0.8),
-               0 0 30px rgba(255, 107, 107, 0.6);
-  animation-duration: 2s;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .header {
-    height: 70px;
-    padding: 0 20px;
-  }
-
-  .header-left {
-    gap: 10px; /* Reduced gap for mobile */
-  }
-
-  .header-logo {
-    height: 45px; /* Reduced logo size for mobile */
-  }
-
-  .header-title {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-  }
-}
+/*  */
 
 @media (max-width: 480px) {
   .header {

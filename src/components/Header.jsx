@@ -23,8 +23,9 @@ const Header = () => {
       </div>
 
       <div className="header-center">
-        <h1 className="header-title">INTENSITY X SUPER AI</h1>
-      </div>
+  <h1 className="header-title">INTENSITY X <span>SUPER AI</span></h1>
+</div>
+
 
       <div className="header-right">
         <StaggeredMenu items={[
