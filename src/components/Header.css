@@ -11,35 +11,49 @@
   z-index: 1000;
   transition: all 0.4s ease;
   backdrop-filter: blur(15px);
-  background: rgba(30, 0, 60, 0.25); /* More transparent glass effect */
+  background: rgba(30, 0, 60, 0.25);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* When scrolled down - solid dark purple-blue */
 .header.scrolled {
-  background: linear-gradient(90deg, #1d0941 0%, #14053b 100%); /* Solid dark purple-blue */
+  background: linear-gradient(90deg, #1d0941 0%, #14053b 100%);
   backdrop-filter: blur(20px);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Layout */
-.header-left,
-.header-right {
+.header-left {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  gap: 12px; /* Reduced gap */
+  min-width: auto; /* Allow it to take only needed space */
 }
 
 .header-center {
   flex: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none; /* Allow clicks to pass through to elements below */
+}
+
+.header-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  min-width: auto; /* Allow it to take only needed space */
 }
 
 /* Logo */
 .header-logo {
-  height: 65px;
+  height: 55px; /* Reduced logo size */
   width: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -52,20 +66,21 @@
 
 /* Title text */
 .header-title {
-  font-size: 1.6rem;
-  font-weight: 900; /* Bolder weight */
+  font-size: 2rem;
+  font-weight: 900;
   color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #a36bff, #ff6b6b, #a36bff);
+  background: linear-gradient(90deg, #a36bff, #eeeaf9, #1a0142);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 3s ease-in-out infinite;
+  /* animation: shimmer 3s ease-in-out infinite; */
   text-shadow: 0 2px 8px rgba(163, 107, 255, 0.4);
   margin: 0;
   padding: 0;
+  pointer-events: auto; /* Re-enable pointer events for the title */
 }
 
 /* Shimmer animation for title */
@@ -92,8 +107,12 @@
     padding: 0 20px;
   }
 
+  .header-left {
+    gap: 10px; /* Reduced gap for mobile */
+  }
+
   .header-logo {
-    height: 50px;
+    height: 45px; /* Reduced logo size for mobile */
   }
 
   .header-title {
@@ -108,8 +127,12 @@
     padding: 0 15px;
   }
 
+  .header-left {
+    gap: 8px; /* Further reduced gap for small mobile */
+  }
+
   .header-logo {
-    height: 40px;
+    height: 35px; /* Further reduced logo size for small mobile */
   }
 
   .header-title {

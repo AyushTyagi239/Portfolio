@@ -19,7 +19,7 @@ const MainLayout = ({ children }) => {
 
       {/* Foreground content */}
       <Header />
-      <HeroSection/>
+      {/* <HeroSection/> */}
       
       
       <div className>

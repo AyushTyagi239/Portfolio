@@ -45,9 +45,7 @@ const AppRoutes = () => {
 
           <Route path="/industry/manufacturing" element={
             <Layout>
-              {/* <Chatbot /> */}
-              {/* <div className="text-xl text-center bg-green-300"> is this visible </div> */}
-              {/* <ReadMorePage data={TenderAnalysisData} /> */}
+             
               {console.log(manufacturingData)}
               <IndustryPage data={manufacturingData} />
             </Layout>

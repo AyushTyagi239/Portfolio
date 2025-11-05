@@ -4,7 +4,6 @@ import leftLogo from '../assets/Super_Ai.png';
 import rightLogo from '../assets/IntensityLogoMonowhite.png';
 import StaggeredMenu from './StaggeredMenu';
 
-
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -18,8 +17,9 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-left">
         <a href="https://www.igtpl.co.in/" target="_blank" rel="noopener noreferrer">
-          <img src={rightLogo} alt="Left Logo" className="header-logo" />
+          <img src={rightLogo} alt="Intensity Logo" className="header-logo" />
         </a>
+        <img src={leftLogo} alt="Super AI Logo" className="header-logo" />
       </div>
 
       <div className="header-center">
@@ -27,15 +27,12 @@ const Header = () => {
       </div>
 
       <div className="header-right">
-        <img src={leftLogo} alt="Right Logo" className="header-logo" />
+        <StaggeredMenu items={[
+          { label: "Home", link: "/" },
+          { label: "Tender Analyst", link: "/usecase/tender-analysis" },
+          { label: "SLM", link: "/usecase/neuraedge-slm" },
+        ]}/>
       </div>
-       {/* <StaggeredMenu  items={[
-                { label: "Home", link: "/" },
-                { label: "Tender Analyst", link: "/usecase/tender-analysis" },
-                { label: "SLM", link: "/usecase/neuraedge-slm" },
-                
-              ]}/> */}
-      
     </header>
   );
 };

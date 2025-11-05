@@ -4,13 +4,19 @@ import UseCasesSection from "../components/UseCasesSection";
 import AboutUs from "../components/AboutUs";
 import GetInTouch from "../components/GetInTouch";
 import IndustryUseCases from "../components/IndustryUseCases";
+import ImageCarousel from "../components/ImageCarousel";
+import BFSI_TRANS from "../assets/transition/BFSI_TRANS.png"
+import MANU_TRANS from "../assets/transition/MANU_TRANS.png"
 
 const HomePage = () => {
   return (
     <div className="min-h-screen ">
-     
+      <HeroSection/>
       <AboutUs/>
+      {/* <ImageCarousel images={[BFSI_TRANS,MANU_TRANS]}/> */}
       <IndustryUseCases/>
+      
+     
       {/* <UseCasesSection /> */}
       {/* <GetInTouch/> */}
     </div>
