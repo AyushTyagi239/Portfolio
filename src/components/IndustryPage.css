@@ -1,163 +1,226 @@
 /* ------------------------------
-   INDUSTRY PAGE GLOBAL STYLES
+   NEW LAYOUT STYLES
 --------------------------------*/
 
-.industry-page {
-  position: relative;
+/* Layout Container */
+.layout-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Content Side */
+.content-side {
+  flex: 1;
+  min-width: 0; /* Prevent overflow */
+}
+
+/* Carousel Side */
+.carousel-side {
+  width: 45%;
+  flex-shrink: 0;
+}
+
+/* Sticky Carousel */
+.sticky-carousel {
+  position: sticky;
+  top: 100px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  gap: 1.5rem;
+}
+
+/* Carousel Wrapper with Hover Effects */
+.carousel-wrapper {
+  position: relative;
+  border-radius: 1.25rem;
   overflow: hidden;
-  color: #e2e2e2;
-  background: radial-gradient(circle at top, rgba(30, 30, 47, 0.7), #0b0b14);
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-/* Smooth fade-in animation */
-.industry-page main {
-  animation: fadeIn 0.8s ease-in-out;
+.carousel-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(163, 107, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1.25rem;
 }
 
-/* ------------------------------
-   TITLE AND SUBTITLE STYLING
---------------------------------*/
-.industry-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
+.carousel-wrapper:hover::before {
+  opacity: 1;
 }
 
-.industry-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #c6b5ff;
-  letter-spacing: 0.5px;
-  background: linear-gradient(90deg, #a48bff, #8cf7ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.carousel-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(163, 107, 255, 0.15),
+    0 0 0 1px rgba(163, 107, 255, 0.1);
 }
 
-.industry-header p {
-  color: #bfbfbf;
-  font-size: 1.1rem;
-  max-width: 650px;
-  margin: 0.5rem auto 0 auto;
-  line-height: 1.6;
+/* Carousel Info Box */
+.carousel-info {
+  background: rgba(248, 248, 255, 0.65);
+  border: 1px solid rgba(215, 215, 252, 0.703);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(130, 90, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 
-/* ------------------------------
-   SECTION CARDS
---------------------------------*/
-.industry-section {
+.carousel-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #dcd7ff;
+  margin-bottom: 0.8rem;
+}
+
+/* Additional Content */
+.additional-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.additional-content .industry-section {
   background: rgba(25, 25, 35, 0.65);
   border: 1px solid rgba(180, 180, 255, 0.1);
   border-radius: 1.25rem;
   padding: 1.5rem;
   box-shadow: 0 0 15px rgba(130, 90, 255, 0.15);
   backdrop-filter: blur(10px);
-  transition: transform 0.25s ease, box-shadow 0.3s ease;
 }
 
-.industry-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(160, 100, 255, 0.3);
-}
-
-.industry-section h2 {
-  font-size: 1.25rem;
+.additional-content h3 {
+  font-size: 1.1rem;
   font-weight: 600;
   color: #dcd7ff;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 }
 
-.industry-section p {
-  color: #d1d1d1;
-  line-height: 1.6;
-}
-
-/* ------------------------------
-   DETAILS (LIST ITEMS)
---------------------------------*/
-.industry-section ul {
+.additional-content ul {
   margin-top: 0.8rem;
   margin-left: 1.25rem;
   list-style: disc;
   color: #a5a5ff;
 }
 
-.industry-section li {
+.additional-content li {
   margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+/* Sections Container */
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* No Sections Text */
+.no-sections {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem;
+  font-size: 1rem;
 }
 
 /* ------------------------------
-   ANIMATIONS
+   RESPONSIVE DESIGN
 --------------------------------*/
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .carousel-side {
+    width: 40%;
   }
 }
-/* IndustryPage.css */
 
-/* Overall Layout */
-.industry-page {
-  background: linear-gradient(135deg, #0f0f1b, #1b1b2f);
-  font-family: "Poppins", sans-serif;
-  color: #f5f5f5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+/* Tablet */
+@media (max-width: 1024px) {
+  .industry-content {
+    padding-top: 6rem;
+  }
+  
+  .sticky-carousel {
+    top: 90px;
+  }
+  
+  .content-wrapper {
+    gap: 1.5rem;
+  }
+  
+  .carousel-side {
+    width: 48%;
+  }
 }
 
-/* Add top padding to main content to clear header */
-.industry-content {
-  padding-top: 7rem; /* 👈 space below header */
-  padding-bottom: 4rem;
+/* Mobile */
+@media (max-width: 768px) {
+  .industry-content {
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .carousel-side {
+    width: 100%;
+    order: -1; /* Carousel first on mobile */
+    margin-bottom: 2rem;
+  }
+  
+  .sticky-carousel {
+    position: relative;
+    top: 0;
+  }
+  
+  .industry-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .industry-header p {
+    font-size: 1rem;
+  }
+  
+  .carousel-wrapper {
+    height: 300px; /* Further reduced for mobile */
+  }
 }
 
-/* Section Styling */
-.industry-section {
-  background: rgba(30, 30, 47, 0.6);
-  padding: 1.8rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Small Mobile */
+@media (max-width: 480px) {
+  .industry-content {
+    padding-top: 4.5rem;
+  }
+  
+  .industry-section {
+    padding: 1.2rem;
+  }
+  
+  .industry-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-wrapper {
+    height: 250px;
+  }
 }
-
-.industry-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(90, 90, 255, 0.25);
-}
-
-/* Text Styles */
-.industry-page h1 {
-  color: #ffffff;
-}
-
-.industry-page p {
-  color: #c0c0c0;
-}
-
-/* List Styling */
-.industry-section ul {
-  margin-top: 1rem;
-  padding-left: 1.2rem;
-  list-style-type: disc;
-  color: #d1d1d1;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Fallback Text */
-.no-data {
-  text-align: center;
-  color: #aaa;
-  padding: 8rem 0;
-  font-size: 1.2rem;
-}
-
