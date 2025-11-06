@@ -9,6 +9,9 @@ import BFSI_TRANS from "../assets/transition/BFSI_TRANS.png"
 import MANU_TRANS from "../assets/transition/MANU_TRANS.png"
 import EndToEndSolutions from "../components/EndToEndSolutions";
 import WhyChooseUs from "../components/WhyChooseUs";
+import FAQs from "../data/FAQs";
+import FAQSection from "../components/FAQSection";
+import GetStartedSection from "../components/GetStartedSection";
 
 const HomePage = () => {
   return (
@@ -19,8 +22,8 @@ const HomePage = () => {
       <EndToEndSolutions/>
       {/* <ImageCarousel images={[BFSI_TRANS,MANU_TRANS]}/> */}
       <IndustryUseCases/>
-      <WhyChooseUs/>
-      
+      <GetStartedSection />
+      <FAQSection faqs={FAQs} />
      
       {/* <UseCasesSection /> */}
       {/* <GetInTouch/> */}
