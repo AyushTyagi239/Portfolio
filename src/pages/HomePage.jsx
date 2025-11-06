@@ -7,19 +7,20 @@ import IndustryUseCases from "../components/IndustryUseCases";
 import ImageCarousel from "../components/ImageCarousel";
 import BFSI_TRANS from "../assets/transition/BFSI_TRANS.png"
 import MANU_TRANS from "../assets/transition/MANU_TRANS.png"
-import FAQSection from "../components/FAQSection";
-import FAQs from "../data/FAQs";
-import GetStartedSection from "../components/GetStartedSection";
+import EndToEndSolutions from "../components/EndToEndSolutions";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen ">
-      <HeroSection/>
+      {/* <HeroSection/> */}
+      
       <AboutUs/>
+      <EndToEndSolutions/>
       {/* <ImageCarousel images={[BFSI_TRANS,MANU_TRANS]}/> */}
       <IndustryUseCases/>
-      <GetStartedSection />
-      <FAQSection faqs={FAQs}/>
+      <WhyChooseUs/>
+      
      
       {/* <UseCasesSection /> */}
       {/* <GetInTouch/> */}

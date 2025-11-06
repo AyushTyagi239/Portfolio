@@ -1,129 +1,226 @@
-/* ===== USE CASE CARD (Brightened full-image style) ===== */
-.use-case-item {
-  background: transparent;
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  width: 100%;
-  height: 220px;
+/* ------------------------------
+   NEW LAYOUT STYLES
+--------------------------------*/
+
+/* Layout Container */
+.layout-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Content Side */
+.content-side {
+  flex: 1;
+  min-width: 0; /* Prevent overflow */
+}
+
+/* Carousel Side */
+.carousel-side {
+  width: 45%;
+  flex-shrink: 0;
+}
+
+/* Sticky Carousel */
+.sticky-carousel {
+  position: sticky;
+  top: 100px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  position: relative;
+  gap: 1.5rem;
 }
 
-/* Bright, vivid image styling */
-.use-case-header {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
+/* Carousel Wrapper with Hover Effects */
+.carousel-wrapper {
   position: relative;
+  border-radius: 1.25rem;
   overflow: hidden;
-  filter: brightness(1.15) contrast(1.1); /* brightens + adds pop */
-  transition: filter 0.3s ease;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-/* Gradient overlay: transparent top → dark bottom for text contrast */
-.use-case-header::after {
+.carousel-wrapper::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-  transition: background 0.3s ease;
-  border-radius: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(163, 107, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1.25rem;
 }
 
-/* Hover: slightly more contrast, subtle dark accent */
-.use-case-item:hover .use-case-header {
-  filter: brightness(1.25) contrast(1.15);
+.carousel-wrapper:hover::before {
+  opacity: 1;
 }
 
-.use-case-item:hover .use-case-header::after {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
+.carousel-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(163, 107, 255, 0.15),
+    0 0 0 1px rgba(163, 107, 255, 0.1);
 }
 
-/* ===== Hover Effect (matches Get Started cards) ===== */
-.use-case-item:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+/* Carousel Info Box */
+.carousel-info {
+  background: rgba(248, 248, 255, 0.65);
+  border: 1px solid rgba(215, 215, 252, 0.703);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(130, 90, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 
-/* Glass title overlay */
-.title-glass-container {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  padding: 0.9rem 1.6rem;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.use-case-item:hover .title-glass-container {
-  transform: scale(1.05);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-/* Title */
-.use-case-title {
-  font-size: 1.2rem;
+.carousel-info h3 {
+  font-size: 1.25rem;
   font-weight: 600;
-  color: white;
+  color: #dcd7ff;
+  margin-bottom: 0.8rem;
 }
 
-/* Layout */
-.use-cases-grid {
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-}
-
-.grid-row {
+/* Additional Content */
+.additional-content {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
-/* View More Button */
-.view-more-container {
+.additional-content .industry-section {
+  background: rgba(25, 25, 35, 0.65);
+  border: 1px solid rgba(180, 180, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(130, 90, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.additional-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #dcd7ff;
+  margin-bottom: 0.8rem;
+}
+
+.additional-content ul {
+  margin-top: 0.8rem;
+  margin-left: 1.25rem;
+  list-style: disc;
+  color: #a5a5ff;
+}
+
+.additional-content li {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+/* Sections Container */
+.sections-container {
   display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.view-more-button {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, #0f172a, #1d4ed8);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.3);
-  animation: pulse 2s infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+/* No Sections Text */
+.no-sections {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem;
+  font-size: 1rem;
 }
 
-.view-more-button:hover {
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+/* ------------------------------
+   RESPONSIVE DESIGN
+--------------------------------*/
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .carousel-side {
+    width: 40%;
+  }
 }
 
-.arrow-icon svg {
-  width: 20px;
-  height: 20px;
+/* Tablet */
+@media (max-width: 1024px) {
+  .industry-content {
+    padding-top: 6rem;
+  }
+  
+  .sticky-carousel {
+    top: 90px;
+  }
+  
+  .content-wrapper {
+    gap: 1.5rem;
+  }
+  
+  .carousel-side {
+    width: 48%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .industry-content {
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .carousel-side {
+    width: 100%;
+    order: -1; /* Carousel first on mobile */
+    margin-bottom: 2rem;
+  }
+  
+  .sticky-carousel {
+    position: relative;
+    top: 0;
+  }
+  
+  .industry-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .industry-header p {
+    font-size: 1rem;
+  }
+  
+  .carousel-wrapper {
+    height: 300px; /* Further reduced for mobile */
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .industry-content {
+    padding-top: 4.5rem;
+  }
+  
+  .industry-section {
+    padding: 1.2rem;
+  }
+  
+  .industry-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-wrapper {
+    height: 250px;
+  }
 }
