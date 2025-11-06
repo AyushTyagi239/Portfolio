@@ -20,7 +20,7 @@
 .about-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 100px;
+  margin: 0 auto 20px;
 }
 
 .about-title {
@@ -30,7 +30,7 @@
   background: linear-gradient(45deg, #ffffff 40%, #a5b4fc 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .intensity {
@@ -45,7 +45,7 @@
   font-weight: 700;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   font-family: "Poppins", sans-serif;
   letter-spacing: -0.02em;
 }
@@ -58,6 +58,7 @@
   -webkit-text-fill-color: transparent;
   font-weight: 600;
   display: inline-block;
+  margin-top: 0px;
 }
 
 /* Optional smooth fade-in animation */
@@ -96,7 +97,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
-  margin-bottom: 120px;
+  margin-bottom: 20px;
 }
 
 .card-professional {
@@ -176,7 +177,7 @@
 /* Stats Section */
 .stats-section {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 80px;
+  padding-top: 30px;
   text-align: center;
 }
 

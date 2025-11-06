@@ -22,10 +22,10 @@ const AboutUs = () => {
           variants={fadeInUp}
           viewport={{ once: true }}
         >
-         <h1 className="fancy-heading">
-  Transforming Enterprise. 
-  <span className="italic-part"> Powered by AI</span>
-</h1>
+          <h1 className="fancy-heading">
+            Transforming Enterprise. 
+            <span className="italic-part"> Powered by AI</span>
+          </h1>
           <p className="about-description">
             We are architects of transformation, combining cutting-edge AI with human ingenuity
             to revolutionize how enterprises operate, innovate, and thrive in the digital age.
@@ -44,24 +44,20 @@ const AboutUs = () => {
           >
             <div className="card-header">
               <div className="card-icon">
-                {/* Target icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v6l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 6V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 16V18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7.05078 7.05078L8.46078 8.46078" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15.5391 15.5391L16.9491 16.9491" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6 12H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 12H18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7.05078 16.9492L8.46078 15.5392" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15.5391 8.46094L16.9491 7.05094" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="card-title">
-                OUR <span className="intensity">MISSION</span>
-              </h3>
+              <h3 className="card-title">OUR MISSION</h3>
             </div>
             <p className="card-content">
               To democratize AI and automation, making transformative technology accessible to
@@ -80,29 +76,12 @@ const AboutUs = () => {
           >
             <div className="card-header">
               <div className="card-icon">
-                {/* Globe / Eye icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4.5c4.97 0 9 3.806 9 7.5s-4.03 7.5-9 7.5-9-3.806-9-7.5 4.03-7.5 9-7.5z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 9a3 3 0 100 6 3 3 0 000-6z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                  <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="card-title">
-                OUR <span className="intensity">VISION</span>
-              </h3>
+              <h3 className="card-title">OUR VISION</h3>
             </div>
             <p className="card-content">
               To be the catalyst for global digital evolution, where every business harnesses
@@ -121,24 +100,11 @@ const AboutUs = () => {
           >
             <div className="card-header">
               <div className="card-icon">
-                {/* Spark / Innovation icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 3v3m0 12v3m9-9h-3M6 12H3m12.364 5.364l2.121 2.121M6.515 6.515L4.394 4.394m0 15.212l2.121-2.121M17.485 6.515l2.121-2.121"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="card-title">
-                OUR <span className="intensity">VALUES</span>
-              </h3>
+              <h3 className="card-title">OUR VALUES</h3>
             </div>
             <p className="card-content">
               Innovation with purpose, partnerships built on trust, and an unwavering commitment

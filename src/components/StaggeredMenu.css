@@ -275,7 +275,7 @@
   position: relative;
   color: #e6e6a2;
   font-weight: 400;
-  font-size: 3.5rem;
+  font-size: 2rem;
   cursor: pointer;
   line-height: 1;
   letter-spacing: -2px;
@@ -313,7 +313,7 @@
 }
 
 .sm-panel-item:hover {
-  color: var(--sm-accent, #5227ff);
+  color: var(--sm-accent, #27ff2b);
 }
 
 .sm-panel-list[data-numbering] {
@@ -325,7 +325,7 @@
   content: counter(smItem, decimal-leading-zero);
   position: absolute;
   top: 0.1em;
-  right: 2.8em;
+  right: 0.5em;
   font-size: 18px;
   font-weight: 400;
   color: var(--sm-accent, #5227ff);
@@ -380,7 +380,72 @@
     margin: -15px;
   }
 }
+/* Add this to your existing StaggeredMenu.css */
 
+/* Nested Menu Styles */
+.sm-panel-itemWrap[data-level="0"] {
+  position: relative;
+}
+
+.sm-panel-item.has-children {
+  position: relative;
+  cursor: pointer;
+}
+
+.submenu-indicator {
+  margin-left: 8px;
+  font-weight: 300;
+  font-size: 1.2em;
+  opacity: 0.7;
+}
+
+.sm-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.sm-submenu .sm-panel-itemWrap {
+  margin: 4px 0;
+}
+
+.sm-submenu .sm-panel-itemLabel {
+  font-size: 0.9em;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.sm-submenu .sm-panel-item:hover .sm-panel-itemLabel {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Animation for submenu */
+.sm-submenu {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+/* Adjust numbering for nested items */
+.sm-panel-list[data-numbering] .sm-submenu .sm-panel-item::before {
+  display: none;
+}
 /* Emergency fix: If still not working, try this nuclear option */
 .staggered-menu-header {
   transform: translateZ(0); /* Force hardware acceleration */

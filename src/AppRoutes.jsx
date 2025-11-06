@@ -19,13 +19,14 @@ const AppRoutes = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={
-            <Layout>
-            
-              <HomePage />
-             
-            </Layout>
-          }/>
+      <Route
+  path="/"
+  element={
+    <Layout>
+      <HomePage />
+    </Layout>
+  }
+/>
         <Route path="/usecase/chatbot" element={
             <Layout>
               {/* <Chatbot /> */}

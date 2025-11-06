@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .header {
   position: fixed;
@@ -35,7 +36,6 @@
   min-width: auto; /* Allow it to take only needed space */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .header-center {
   flex: 1;
@@ -55,7 +55,7 @@
   color: #fff;
   letter-spacing: 2px;
   text-align: center;
-  font-style: italic;
+  font-style: bold;
   line-height: 1.1;
   background: transparent;
 }
@@ -64,7 +64,7 @@
   background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-style: italic;
+  font-style: bold;
 }
 
 

@@ -8,7 +8,7 @@ export const StaggeredMenu = ({
   items = [],
   socialItems = [],
   displaySocials = true,
-  displayItemNumbering = true,
+  displayItemNumbering = false,
   className,
   logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
   menuButtonColor = '#fff',
@@ -17,9 +17,11 @@ export const StaggeredMenu = ({
   changeMenuColorOnOpen = true,
   isFixed = false,
   onMenuOpen,
-  onMenuClose
+  onMenuClose,
+  onItemClick
 }) => {
   const [open, setOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
   const openRef = useRef(false);
   const panelRef = useRef(null);
   const preLayersRef = useRef(null);
@@ -39,6 +41,27 @@ export const StaggeredMenu = ({
   const toggleBtnRef = useRef(null);
   const busyRef = useRef(false);
   const itemEntranceTweenRef = useRef(null);
+
+  // Handle menu item clicks
+  const handleItemClick = useCallback((item, event) => {
+    if (item.children) {
+      // If item has children, toggle submenu
+      event.preventDefault();
+      setActiveSubmenu(activeSubmenu === item.label ? null : item.label);
+    } else {
+      // If it's a leaf node, handle the click
+      onItemClick?.(item);
+      setOpen(false);
+      setActiveSubmenu(null);
+    }
+  }, [activeSubmenu, onItemClick]);
+
+  // Close submenus when menu closes
+  React.useEffect(() => {
+    if (!open) {
+      setActiveSubmenu(null);
+    }
+  }, [open]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -313,6 +336,35 @@ export const StaggeredMenu = ({
     animateText(target);
   }, [playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen, onMenuClose]);
 
+  // Render nested menu items
+  const renderMenuItems = (items, level = 0) => {
+    return items.map((item, idx) => (
+      <li className="sm-panel-itemWrap" key={item.label + idx} data-level={level}>
+        <a 
+          className={`sm-panel-item ${item.children ? 'has-children' : ''} ${activeSubmenu === item.label ? 'submenu-active' : ''}`}
+          href={item.link || '#'}
+          aria-label={item.ariaLabel}
+          data-index={idx + 1}
+          onClick={(e) => handleItemClick(item, e)}
+        >
+          <span className="sm-panel-itemLabel">
+            {item.label}
+            {item.children && (
+              <span className="submenu-indicator">
+                {activeSubmenu === item.label ? '−' : '+'}
+              </span>
+            )}
+          </span>
+        </a>
+        {item.children && activeSubmenu === item.label && (
+          <ul className="sm-submenu" role="list">
+            {renderMenuItems(item.children, level + 1)}
+          </ul>
+        )}
+      </li>
+    ));
+  };
+
   return (
     <div
       className={(className ? className + ' ' : '') + 'staggered-menu-wrapper' + (isFixed ? ' fixed-wrapper' : '')}
@@ -371,13 +423,7 @@ export const StaggeredMenu = ({
         <div className="sm-panel-inner">
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
             {items && items.length ? (
-              items.map((it, idx) => (
-                <li className="sm-panel-itemWrap" key={it.label + idx}>
-                  <a className="sm-panel-item" href={it.link} aria-label={it.ariaLabel} data-index={idx + 1}>
-                    <span className="sm-panel-itemLabel">{it.label}</span>
-                  </a>
-                </li>
-              ))
+              renderMenuItems(items)
             ) : (
               <li className="sm-panel-itemWrap" aria-hidden="true">
                 <span className="sm-panel-item">
