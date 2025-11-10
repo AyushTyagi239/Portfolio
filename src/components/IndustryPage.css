@@ -391,3 +391,26 @@
   font-size: 1rem;
 }
 
+/* Add to your IndustryPage.css */
+.solution-card.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.solution-card.clickable:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+.solution-click-hint {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.solution-card.clickable:hover .solution-click-hint {
+  opacity: 1;
+}

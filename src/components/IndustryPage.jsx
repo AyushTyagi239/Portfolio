@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./IndustryPage.css";
 import MANU_TRANS from "../assets/transition/MANU_TRANS.png";
 
 const IndustryPage = ({ data }) => {
+  const navigate = useNavigate();
+
   if (!data) {
     return (
       <div className="text-center text-white py-20">
@@ -12,6 +15,21 @@ const IndustryPage = ({ data }) => {
   }
 
   const { title, subtitle, overview, problems, solutionsSection } = data;
+
+  const handleSolutionClick = (solution) => {
+    // Create a URL-friendly slug from the solution title
+    const solutionSlug = solution.title.toLowerCase().replace(/\s+/g, '-');
+    const industrySlug = title.toLowerCase();
+    
+    // Navigate to the solution page
+    navigate(`/solution/${industrySlug}/${solutionSlug}`, {
+      state: {
+        solution,
+        industry: title,
+        industryData: data
+      }
+    });
+  };
 
   return (
     <div className="industry-page">
@@ -86,28 +104,26 @@ const IndustryPage = ({ data }) => {
             {solutionsSection.solutions &&
             solutionsSection.solutions.length > 0 ? (
               <div className="solutions-grid">
-               {solutionsSection.solutions.slice(0, 2).map((solution) => (
-  <div key={solution.id} className="solution-card">
-    <img
-      src={solution.image}
-      alt={solution.title}
-      className="solution-img"
-    />
-    <div className="solution-content">
-      <h3 className="text-white">{solution.title}</h3>
-      <p className="text-white">{solution.description}</p>
-    </div>
-  </div>
-))}
-
-{/* Third Box - Coming Soon */}
-<div className="solution-card coming-soon-box">
-  <div className="coming-soon-content">
-    <h3>🚀 Coming Soon</h3>
-    <p>New AI-powered product is on the way — stay tuned!</p>
-  </div>
-</div>
-
+                {solutionsSection.solutions.map((solution) => (
+                  <div 
+                    key={solution.id} 
+                    className="solution-card clickable"
+                    onClick={() => handleSolutionClick(solution)}
+                  >
+                    <img
+                      src={solution.image}
+                      alt={solution.title}
+                      className="solution-img"
+                    />
+                    <div className="solution-content">
+                      <h3 className="text-white">{solution.title}</h3>
+                      <p className="text-white">{solution.description}</p>
+                      <div className="solution-click-hint">
+                        <span className="text-blue-400">Click to learn more →</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             ) : (
               <div className="coming-soon">

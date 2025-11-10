@@ -7,6 +7,8 @@ import AboutUs from "../components/AboutUs";
 import StaggeredMenu from "../components/StaggeredMenu";
 import HeroSection from "../components/HeroSection";
 import IndustryNavbar from "../components/IndustryNavbar";
+import Preloader from "../components/Preloader";
+
 
 
 const MainLayout = ({ children }) => {
@@ -19,6 +21,7 @@ const MainLayout = ({ children }) => {
       </div>
 
       {/* Foreground content */}
+      <Preloader/>
       <Header />
       <div style={{ paddingTop: "6rem" }}>
   

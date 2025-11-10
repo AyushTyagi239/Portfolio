@@ -27,23 +27,30 @@ const manufacturingData = {
     solutions: [
       {
         id: 1,
-        title: "Predictive Maintenance",
-        description: "AI algorithms predict equipment failures before they happen, reducing downtime by up to 50%.",
-        icon: "fas fa-brain",
-        image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=350&fit=crop&auto=format"
+        title: "ANPR System",
+        description: "Number plate based entry and exit monitoring of shipments for tracking and matching while shipping, to track number of objects in trucks.",
+        icon: "fas fa-car",
+        image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 2,
-        title: "Quality Inspection",
-        description: "Computer vision systems detect defects with 99.9% accuracy, improving product quality.",
-        icon: "fas fa-eye",
-        image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=350&fit=crop&auto=format"
+        title: "Object Counting",
+        description: "Counting objects over conveyor belts and during loading in trucks to track count of manufactured and shipped goods, including defective items detection.",
+        icon: "fas fa-cubes",
+        image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 3,
-        title: "Smart Analytics",
-        description: "Real-time production optimization and demand forecasting for maximum efficiency.",
-        icon: "fas fa-chart-line",
+        title: "PPE Detection",
+        description: "Detection of safety equipment while working with machines to ensure safety compliance is properly adhered to.",
+        icon: "fas fa-hard-hat",
+        image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 4,
+        title: "Cross Camera Tracking",
+        description: "Tracking of objects and people across the factory vicinity for optimizing factory floors and operations.",
+        icon: "fas fa-video",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop&auto=format"
       }
     ]
