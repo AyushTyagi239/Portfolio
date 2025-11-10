@@ -1,42 +1,53 @@
 // src/data/hospitalityData.js
 const hospitalityData = {
   title: "Hospitality",
-  subtitle: "How AI enhances guest experiences, optimizes operations, and drives revenue in hotels and tourism.",
-  sections: [
-    {
-      heading: "1. How is AI being used in Hospitality?",
-      content: `AI is revolutionizing hospitality through personalized guest experiences, dynamic pricing, operational efficiency, and predictive maintenance. Hotels and resorts leverage machine learning to anticipate guest needs and optimize every aspect of their stay.`,
-      details: [
-        "Chatbots and virtual concierges handle guest inquiries 24/7",
-        "Predictive analytics forecast occupancy and optimize staffing",
-        "Computer vision monitors pool and facility safety in real-time",
-        "Natural language processing analyzes guest reviews for sentiment"
-      ],
-    },
-    {
-      heading: "2. AI in Hospitality — Use Cases",
-      content: `Key use cases:\n1) Personalized guest recommendations and experiences\n2) Dynamic pricing and revenue management\n3) Smart room automation and energy management\n4) Predictive maintenance for facilities\n5) Chatbots for customer service and bookings`,
-      details: [
-        "Dynamic pricing example: adjust room rates based on demand, events, and competitor pricing",
-        "Smart room example: AI adjusts temperature, lighting, and amenities based on guest preferences"
-      ],
-    },
-    {
-      heading: "3. Benefits of Using AI in Hospitality",
-      content: `- 30% increase in guest satisfaction scores\n- 25% higher revenue through optimized pricing\n- 40% reduction in operational costs\n- 50% faster response times to guest requests`,
-      details: [],
-    },
-    {
-      heading: "4. Challenges and Implementation Notes",
-      content: `- Integration with legacy property management systems\n- Data privacy concerns with guest information\n- Staff training and change management\n- Balancing automation with human touch`,
-      details: ["Start with CRM integration", "Focus on high-impact guest touchpoints first"],
-    },
-    {
-      heading: "5. Example Project — Smart Hotel Implementation",
-      content: `1) Implement AI-powered chatbot for booking and FAQs\n2) Deploy dynamic pricing algorithm for room rates\n3) Install smart room controls in premium suites\n4) Add predictive maintenance for critical equipment\n5) Integrate personalized recommendation engine`,
-      details: ["Phase 1: 4-6 weeks for chatbot", "Full rollout: 12-16 weeks", "ROI: 3-6 months"],
-    },
-  ],
+  subtitle: "How AI transforms guest experiences, operations, and revenue management in hospitality.",
+
+  overview: {
+    heading: "How AI is used in Hospitality",
+    content: `AI is redefining the hospitality industry by personalizing guest experiences, optimizing operations, and maximizing revenue. From smart room automation to dynamic pricing, AI helps hotels and resorts deliver exceptional service while improving efficiency.`,
+    icon: "fas fa-hotel"
+  },
+
+  problems: {
+    heading: "How AI Solves Major Hospitality Problems",
+    points: [
+      "AI-powered chatbots handle guest inquiries and bookings 24/7, improving response times.",
+      "Dynamic pricing algorithms optimize room rates based on demand, competition, and market conditions.",
+      "Predictive maintenance systems reduce equipment downtime and enhance guest comfort.",
+      "Personalized recommendation engines increase guest satisfaction and ancillary revenue.",
+    ],
+    icon: "fas fa-concierge-bell"
+  },
+
+  solutionsSection: {
+    heading: "Our AI-Powered Solutions",
+    description: "Explore our hospitality solutions designed to enhance guest experiences, streamline operations, and drive revenue growth.",
+    icon: "fas fa-lightbulb",
+    solutions: [
+      {
+        id: 1,
+        title: "Intelligent Revenue Management",
+        description: "AI-driven pricing and inventory optimization that maximizes occupancy and revenue.",
+        icon: "fas fa-chart-bar",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 2,
+        title: "Smart Guest Experience",
+        description: "Personalized guest services, room automation, and AI-powered concierge services.",
+        icon: "fas fa-smile",
+        image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 3,
+        title: "Operational Efficiency Suite",
+        description: "AI tools for staff scheduling, inventory management, and predictive maintenance.",
+        icon: "fas fa-cogs",
+        image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=350&fit=crop&auto=format"
+      }
+    ]
+  },
 };
 
 export default hospitalityData;

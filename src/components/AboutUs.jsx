@@ -26,10 +26,10 @@ const AboutUs = () => {
             Transforming Enterprise. 
             <span className="italic-part"> Powered by AI</span>
           </h1>
-          <p className="about-description">
+          {/* <p className="about-description">
             We are architects of transformation, combining cutting-edge AI with human ingenuity
             to revolutionize how enterprises operate, innovate, and thrive in the digital age.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Mission, Vision, Values Cards */}

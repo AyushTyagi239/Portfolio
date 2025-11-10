@@ -12,18 +12,20 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import FAQs from "../data/FAQs";
 import FAQSection from "../components/FAQSection";
 import GetStartedSection from "../components/GetStartedSection";
+import IndustryNavbar from "../components/IndustryNavbar";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen ">
       {/* <HeroSection/> */}
       
-      <AboutUs/>
-      <EndToEndSolutions/>
+      {/* <AboutUs/> */}
+      {/* <EndToEndSolutions/> */}
       {/* <ImageCarousel images={[BFSI_TRANS,MANU_TRANS]}/> */}
+      <IndustryNavbar/>
       <IndustryUseCases/>
-      <GetStartedSection />
-      <FAQSection faqs={FAQs} />
+      {/* <GetStartedSection /> */}
+      {/* aa */}
      
       {/* <UseCasesSection /> */}
       {/* <GetInTouch/> */}

@@ -6,6 +6,7 @@ import ServicesSection from "../components/ServiceSection";
 import AboutUs from "../components/AboutUs";
 import StaggeredMenu from "../components/StaggeredMenu";
 import HeroSection from "../components/HeroSection";
+import IndustryNavbar from "../components/IndustryNavbar";
 
 
 const MainLayout = ({ children }) => {
@@ -19,6 +20,9 @@ const MainLayout = ({ children }) => {
 
       {/* Foreground content */}
       <Header />
+      <div style={{ paddingTop: "6rem" }}>
+  
+</div>
       {/* <HeroSection/> */}
       
       

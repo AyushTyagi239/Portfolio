@@ -1,156 +1,125 @@
 import React from "react";
-import SectionBlock from "../components/SectionBlock";
-import ImageCarousel from "../components/ImageCarousel";
 import "./IndustryPage.css";
-import Header from "./Header";
-
-// Sample images for the carousel - replace with your actual images
-import BFSI_Img from "../assets/transition/BFSI_TRANS.png";
-import manufacturingImg from "../assets/transition/MANU_TRANS.png";
+import MANU_TRANS from "../assets/transition/MANU_TRANS.png";
 
 const IndustryPage = ({ data }) => {
   if (!data) {
     return (
-      <div className="text-center text-gray-300 py-20">
+      <div className="text-center text-white py-20">
         No data available for this industry.
       </div>
     );
   }
 
-  const { title, subtitle, sections } = data;
-
-  // Define carousel images based on industry or use default
-  const carouselImages = [
-    {
-      src: manufacturingImg,
-      title: "AI in Manufacturing",
-      description: "Revolutionizing production lines with intelligent automation"
-    },
-    {
-      src: BFSI_Img,
-      title: "AI in BFSI",
-      description: "Transforming banking and financial services with AI"
-    },
-    {
-      src: manufacturingImg,
-      title: "AI in Healthcare",
-      description: "Enhancing patient care through personalized services"
-    },
-    {
-      src: BFSI_Img,
-      title: "AI in Education",
-      description: "Personalizing learning experiences for all students"
-    }
-  ];
+  const { title, subtitle, overview, problems, solutionsSection } = data;
 
   return (
     <div className="industry-page">
-      {/* Header */}
-      <Header />
-
-      {/* Main Content */}
       <main className="industry-content max-w-7xl mx-auto px-6 py-8">
         <div className="layout-container">
-          {/* Title and Subtitle - Full Width */}
+          {/* Page Header */}
           <div className="industry-header">
-            <h1>AI in {title}</h1>
-            <p>{subtitle}</p>
+            <h1 className="text-white">AI in {title}</h1>
+            <p className="text-white">{subtitle}</p>
           </div>
 
           <div className="content-wrapper">
-            {/* Left Side - Content Sections */}
+            {/* Left Side - Content */}
             <div className="content-side">
               <div className="sections-container">
-                {Array.isArray(sections) && sections.length > 0 ? (
-                  sections.map((section, index) => (
-                    <div
-                      key={index}
-                      className="industry-section"
-                    >
-                      <SectionBlock
-                        heading={section.heading}
-                        content={section.content}
-                      />
-                      {section.details?.length > 0 && (
-                        <ul>
-                          {section.details.map((detail, i) => (
-                            <li key={i}>{detail}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))
-                ) : (
-                  <p className="no-sections">No sections found.</p>
+                {/* Overview */}
+                {overview && (
+                  <div className="industry-section">
+                    <h2 className="text-white">{overview.heading}</h2>
+                    <p className="text-white">{overview.content}</p>
+                  </div>
+                )}
+
+                {/* Problems */}
+                {problems && (
+                  <div className="industry-section">
+                    <h2 className="text-white">{problems.heading}</h2>
+                    <ul className="text-white">
+                      {problems.points.map((point, index) => (
+                        <li key={index}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
             </div>
 
-            {/* Right Side - Image Carousel and Additional Content */}
-            <div className="carousel-side">
-              <div className="sticky-carousel">
-                {/* Smaller Image Carousel */}
-                <div className="carousel-wrapper">
-                  <ImageCarousel
-                    images={carouselImages}
-                    interval={2000}
-                    animationDuration={800}
-                    height="350px" // Reduced height
-                    width="100%"
-                    showDots={true}
-                    showTimer={true}
+            {/* Right Side - Image */}
+            <div className="image-side">
+              <div className="sticky-image">
+                <div className="image-wrapper">
+                  <img
+                    src={MANU_TRANS}
+                    alt="AI in Manufacturing"
+                    className="manufacturing-image"
                   />
+                  <div className="image-overlay">
+                    <h3>Smart Factory Transformation</h3>
+                    <p>AI-driven automation and optimization</p>
+                  </div>
                 </div>
-                
-                {/* AI Transformation Section */}
-                <div className="carousel-info industry-section">
-                  <h3>AI Transformation</h3>
+
+                <div className="image-info">
+                  <h3>Revolutionizing Manufacturing</h3>
                   <p>
-                    Discover how artificial intelligence is revolutionizing various industries 
-                    through automation, predictive analytics, and enhanced decision-making capabilities.
+                    Our AI solutions transform traditional factories into
+                    intelligent, data-driven production environments with
+                    real-time optimization and predictive capabilities.
                   </p>
-                </div>
-
-                {/* Additional Content Sections to Fill Space */}
-                <div className="additional-content">
-                  <div className="industry-section">
-                    <h3>Key Benefits</h3>
-                    <ul>
-                      <li>Increased Efficiency & Productivity</li>
-                      <li>Enhanced Decision Making</li>
-                      <li>Cost Reduction & Optimization</li>
-                      <li>Improved Customer Experience</li>
-                      <li>Predictive Analytics & Insights</li>
-                    </ul>
-                  </div>
-
-                  <div className="industry-section">
-                    <h3>Technology Stack</h3>
-                    <p>Our AI solutions leverage cutting-edge technologies including:</p>
-                    <ul>
-                      <li>Machine Learning & Deep Learning</li>
-                      <li>Natural Language Processing</li>
-                      <li>Computer Vision</li>
-                      <li>Predictive Analytics</li>
-                      <li>Automated Decision Systems</li>
-                    </ul>
-                  </div>
-
-                  <div className="industry-section">
-                    <h3>Implementation Process</h3>
-                    <ul>
-                      <li>Needs Assessment & Analysis</li>
-                      <li>Custom Solution Design</li>
-                      <li>Data Integration & Processing</li>
-                      <li>Model Training & Validation</li>
-                      <li>Deployment & Maintenance</li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Full-width Our Powered AI Solutions Section */}
+        {solutionsSection && (
+          <div className="solutions-fullwidth">
+            <h2 className="text-white">{solutionsSection.heading}</h2>
+            <p className="text-white">{solutionsSection.description}</p>
+
+            {solutionsSection.solutions &&
+            solutionsSection.solutions.length > 0 ? (
+              <div className="solutions-grid">
+               {solutionsSection.solutions.slice(0, 2).map((solution) => (
+  <div key={solution.id} className="solution-card">
+    <img
+      src={solution.image}
+      alt={solution.title}
+      className="solution-img"
+    />
+    <div className="solution-content">
+      <h3 className="text-white">{solution.title}</h3>
+      <p className="text-white">{solution.description}</p>
+    </div>
+  </div>
+))}
+
+{/* Third Box - Coming Soon */}
+<div className="solution-card coming-soon-box">
+  <div className="coming-soon-content">
+    <h3>🚀 Coming Soon</h3>
+    <p>New AI-powered product is on the way — stay tuned!</p>
+  </div>
+</div>
+
+              </div>
+            ) : (
+              <div className="coming-soon">
+                <h3>🚀 Coming Soon</h3>
+                <p>
+                  Our Powered AI Solutions are being crafted with precision and
+                  innovation.
+                </p>
+              </div>
+            )}
+          </div>
+        )}
       </main>
     </div>
   );

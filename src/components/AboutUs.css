@@ -13,7 +13,7 @@
   z-index: 5;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 24px 30px;
+  padding: 120px 24px 0px;
 }
 
 /* Header Section */
@@ -53,11 +53,11 @@
 .fancy-heading .italic-part {
   font-style: italic;
   font-family: "Playfair Display", serif;
-  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+  background: linear-gradient(135deg, #e5e3ec 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
-  display: inline-block;
+  font-weight: 900;
+  display: block;
   margin-top: 0px;
 }
 

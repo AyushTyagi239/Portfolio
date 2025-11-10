@@ -1,42 +1,53 @@
 // src/data/healthcareData.js
 const healthcareData = {
   title: "Healthcare",
-  subtitle: "How AI improves patient care, accelerates diagnostics, and optimizes healthcare delivery.",
-  sections: [
-    {
-      heading: "1. How is AI being used in Healthcare?",
-      content: `AI is transforming healthcare through advanced diagnostics, personalized treatment plans, operational efficiency, and drug discovery. Medical institutions use machine learning to enhance patient outcomes while reducing costs.`,
-      details: [
-        "Computer vision analyzes medical images (X-rays, MRIs, CT scans)",
-        "Natural language processing extracts insights from clinical notes",
-        "Predictive models identify at-risk patients for early intervention",
-        "Robotic process automation handles administrative tasks"
-      ],
-    },
-    {
-      heading: "2. AI in Healthcare — Use Cases",
-      content: `Key use cases:\n1) Medical imaging analysis and diagnostics\n2) Personalized treatment recommendations\n3) Drug discovery and development\n4) Patient risk prediction and prevention\n5) Administrative automation and workflow optimization`,
-      details: [
-        "Medical imaging example: AI detects tumors in mammograms with 95%+ accuracy",
-        "Patient risk example: predict readmission likelihood and intervene proactively"
-      ],
-    },
-    {
-      heading: "3. Benefits of Using AI in Healthcare",
-      content: `- 40% faster diagnosis and treatment planning\n- 30% reduction in diagnostic errors\n- 50% acceleration in drug discovery processes\n- 25% improvement in operational efficiency`,
-      details: [],
-    },
-    {
-      heading: "4. Challenges and Implementation Notes",
-      content: `- Regulatory compliance (HIPAA, FDA approvals)\n- Data quality and interoperability between systems\n- Physician adoption and trust in AI recommendations\n- Ethical considerations in life-critical applications`,
-      details: ["Start with non-critical diagnostic support", "Focus on workflow augmentation not replacement"],
-    },
-    {
-      heading: "5. Example Project — Diagnostic Support System",
-      content: `1) Select high-volume imaging modality (chest X-rays, retinal scans)\n2) Collect and annotate historical image data\n3) Train CNN model for abnormality detection\n4) Integrate with existing PACS/RIS systems\n5) Deploy as second-reader system for radiologists`,
-      details: ["Data collection: 8-12 weeks", "Model training: 4-6 weeks", "Clinical validation: 12-16 weeks"],
-    },
-  ],
+  subtitle: "How AI enhances patient care, medical diagnosis, and healthcare operations.",
+
+  overview: {
+    heading: "How AI is used in Healthcare",
+    content: `AI is revolutionizing healthcare by improving diagnostic accuracy, personalizing treatment plans, and optimizing hospital operations. From medical imaging analysis to drug discovery, AI helps healthcare providers deliver better patient outcomes more efficiently.`,
+    icon: "fas fa-heartbeat"
+  },
+
+  problems: {
+    heading: "How AI Solves Major Healthcare Problems",
+    points: [
+      "AI-powered diagnostic tools detect diseases earlier and with higher accuracy.",
+      "Predictive analytics help prevent hospital readmissions and optimize resource allocation.",
+      "Natural language processing automates medical documentation and reduces administrative burden.",
+      "Machine learning accelerates drug discovery and clinical trial optimization.",
+    ],
+    icon: "fas fa-stethoscope"
+  },
+
+  solutionsSection: {
+    heading: "Our AI-Powered Solutions",
+    description: "Discover our healthcare solutions designed to improve patient care, enhance diagnostics, and streamline medical operations.",
+    icon: "fas fa-lightbulb",
+    solutions: [
+      {
+        id: 1,
+        title: "Medical Imaging Analysis",
+        description: "AI systems that analyze X-rays, MRIs, and CT scans with radiologist-level accuracy.",
+        icon: "fas fa-x-ray",
+        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 2,
+        title: "Predictive Patient Monitoring",
+        description: "Real-time monitoring systems that predict health deterioration and alert medical staff proactively.",
+        icon: "fas fa-heart",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 3,
+        title: "Intelligent Electronic Health Records",
+        description: "AI-powered EHR systems that automate documentation and provide clinical decision support.",
+        icon: "fas fa-file-medical",
+        image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=500&h=350&fit=crop&auto=format"
+      }
+    ]
+  },
 };
 
 export default healthcareData;

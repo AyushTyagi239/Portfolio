@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:wght@400;700&display=swap');
 
 .header {
   position: fixed;
@@ -19,7 +18,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* When scrolled down - solid dark purple-blue */
 .header.scrolled {
   background: linear-gradient(90deg, #1d0941 0%, #14053b 100%);
   backdrop-filter: blur(20px);
@@ -27,57 +25,57 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Layout */
+/* Left - Home Button */
 .header-left {
   flex: 0 0 auto;
+}
+
+.home-button {
   display: flex;
   align-items: center;
-  gap: 12px; /* Reduced gap */
-  min-width: auto; /* Allow it to take only needed space */
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  border-color: transparent;
+  transform: scale(1.1);
+}
+
+.home-icon {
+  width: 24px;
+  height: 24px;
+  color: inherit;
 }
 
 
+/* Center - Logos */
 .header-center {
-  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 0;
-  right: 0;
   pointer-events: none;
 }
 
-.header-title {
-  font-family: "Calendas Plus", serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 2px;
-  text-align: center;
-  font-style: bold;
-  line-height: 1.1;
-  background: transparent;
-}
-
-.header-title span {
-  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: bold;
-}
-
-
-.header-right {
-  flex: 0 0 auto;
+.center-logos {
   display: flex;
   align-items: center;
-  min-width: auto; /* Allow it to take only needed space */
+  gap: 20px;
+  pointer-events: auto;
 }
 
-/* Logo */
 .header-logo {
-  height: 55px; /* Reduced logo size */
+  height: 55px;
   width: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -88,8 +86,12 @@
   opacity: 0.9;
 }
 
-/* Title text */
-/*  */
+/* Right - Menu */
+.header-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
 
 @media (max-width: 480px) {
   .header {
@@ -97,16 +99,12 @@
     padding: 0 15px;
   }
 
-  .header-left {
-    gap: 8px; /* Further reduced gap for small mobile */
+  .home-button {
+    padding: 6px 12px;
+    font-size: 1rem;
   }
 
   .header-logo {
-    height: 35px; /* Further reduced logo size for small mobile */
-  }
-
-  .header-title {
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    height: 35px;
   }
 }

@@ -1,156 +1,23 @@
-// import React, { useState } from 'react';
-// import { motion } from 'framer-motion';
-// import { useCaseData } from '../data/useCaseData';
-// import { useNavigate } from 'react-router-dom';
-// import './IndustryUseCases.css';
-
-// const IndustryUseCases = () => {
-//   const [showAll, setShowAll] = useState(false);
-//   const navigate = useNavigate();
-
-//   // Initial 4 items
-//   const initialItems = useCaseData.slice(0, 4);
-//   const displayedItems = showAll ? useCaseData : initialItems;
-
-//   const handleViewMore = () => {
-//     setShowAll(!showAll);
-//   };
-
-//   // Navigation handler for industry click
-//   const handleIndustryClick = (industryId) => {
-//     switch (industryId) {
-//       case 1:
-//         navigate('/industry/manufacturing');
-//         break;
-//       case 2:
-//         navigate('/industry/healthcare');
-//         break;
-//       case 3:
-//         navigate('/industry/bfsi');
-//         break;
-//       case 4:
-//         navigate('/industry/education');
-//         break;
-//       case 5:
-//         navigate('/industry/hospitality');
-//         break;
-//       default:
-//         navigate('/');
-//         break;
-//     }
-//   };
-
-//   return (
-//     <section className="use-cases">
-//       <h2 className="section-title">Industry Wise Use Cases</h2>
-      
-//       {/* Grid Layout for both states */}
-//       <div className="use-cases-grid">
-//         {/* First row */}
-//         <div className="grid-row">
-//           {displayedItems.slice(0, 2).map((item, index) => (
-//             <UseCaseCard 
-//               key={item.id} 
-//               item={item} 
-//               index={index}
-//               onIndustryClick={handleIndustryClick}
-//             />
-//           ))}
-//         </div>
-        
-//         {/* Second row */}
-//         <div className="grid-row">
-//           {displayedItems.slice(2, 4).map((item, index) => (
-//             <UseCaseCard 
-//               key={item.id} 
-//               item={item} 
-//               index={index + 2}
-//               onIndustryClick={handleIndustryClick}
-//             />
-//           ))}
-//         </div>
-
-//         {/* Additional rows only when showAll is true */}
-//         {showAll && displayedItems.length > 4 && (
-//           <div className="grid-row">
-//             {displayedItems.slice(4, 5).map((item, index) => (
-//               <UseCaseCard 
-//                 key={item.id} 
-//                 item={item} 
-//                 index={index + 4}
-//                 onIndustryClick={handleIndustryClick}
-//               />
-//             ))}
-//           </div>
-//         )}
-//       </div>
-
-//       {/* Round View More Button with Arrow */}
-//       <div className="view-more-container">
-//         <button 
-//           className={`view-more-button ${showAll ? 'expanded' : ''}`}
-//           onClick={handleViewMore}
-//           aria-label={showAll ? 'Show less industries' : 'Show more industries'}
-//         >
-//           <span className="arrow-icon">
-//             <svg 
-//               width="24" 
-//               height="24" 
-//               viewBox="0 0 24 24" 
-//               fill="none" 
-//               stroke="currentColor" 
-//               strokeWidth="2"
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//             >
-//               <path d="M6 9l6 6 6-6" />
-//             </svg>
-//           </span>
-//         </button>
-//       </div>
-//     </section>
-//   );
-// };
-
-// // Individual Use Case Card Component
-// const UseCaseCard = ({ item, index, onIndustryClick }) => {
-//   const handleClick = () => {
-//     onIndustryClick(item.id);
-//   };
-
-//   return (
-//     <motion.div
-//       className="use-case-item"
-//       initial={{ opacity: 0, scale: 0.9, y: 20 }}
-//       whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//       transition={{ duration: 0.4, delay: index * 0.1 }}
-//       viewport={{ once: true }}
-//       whileHover={{ scale: 1.05, y: -5 }}
-//       onClick={handleClick}
-//     >
-//       <div 
-//         className="use-case-header"
-//         style={{ backgroundImage: `url(${item.image})` }}
-//       >
-//         <div className="title-glass-container">
-//           <h3 className="use-case-title">{item.title}</h3>
-//         </div>
-//       </div>
-//     </motion.div>
-//   );
-// };
-
-// export default IndustryUseCases;
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useCaseData } from "../data/useCaseData";
 import { useNavigate } from "react-router-dom";
 import "./IndustryUseCases.css";
 
+// Animation variant
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
 const IndustryUseCases = () => {
   const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const initialItems = useCaseData.slice(0, 4);
   const displayedItems = showAll ? useCaseData : initialItems;
@@ -158,6 +25,7 @@ const IndustryUseCases = () => {
   const handleViewMore = () => setShowAll(!showAll);
 
   const handleIndustryClick = (industryId) => {
+    window.scrollTo(0, 0);
     switch (industryId) {
       case 1:
         navigate("/industry/manufacturing");
@@ -181,51 +49,59 @@ const IndustryUseCases = () => {
   };
 
   return (
-    <section className="use-cases py-20 px-6 md:px-10 bg-transparent border-t border-gray-800">
-      <h2 className="section-title text-center text-4xl md:text-5xl font-bold text-white mb-14">
-        Industry Solutions
-      </h2>
+    <>
+      {/* Header Section */}
+     
+      {/* Industry Use Cases Section */}
+      <section className="use-cases py-20 px-6 md:px-10 bg-transparent border-t border-gray-800">
+        <h2 className="section-title text-center text-4xl md:text-5xl font-bold text-white mb-14">
+          Industry Solutions  <h1 className="fancy-heading">
+         
+          <span className="italic-part"> Powered by AI</span>
+        </h1>
+        </h2>
 
-      <div className="use-cases-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-        {displayedItems.map((item, index) => (
-          <UseCaseCard
-            key={item.id}
-            item={item}
-            index={index}
-            onIndustryClick={handleIndustryClick}
-          />
-        ))}
-      </div>
+        <div className="use-cases-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+          {displayedItems.map((item, index) => (
+            <UseCaseCard
+              key={item.id}
+              item={item}
+              index={index}
+              onIndustryClick={handleIndustryClick}
+            />
+          ))}
+        </div>
 
-      <div className="view-more-container flex justify-center mt-12">
-        <button
-          className={`view-more-button ${
-            showAll ? "expanded" : ""
-          } flex items-center justify-center`}
-          onClick={handleViewMore}
-          aria-label={showAll ? "Show less industries" : "Show more industries"}
-        >
-          <motion.span
-            animate={{ rotate: showAll ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="arrow-icon w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 text-gray-300 hover:border-blue-400 hover:text-blue-400 transition-all duration-300"
+        <div className="view-more-container flex justify-center mt-12">
+          <button
+            className={`view-more-button ${
+              showAll ? "expanded" : ""
+            } flex items-center justify-center`}
+            onClick={handleViewMore}
+            aria-label={showAll ? "Show less industries" : "Show more industries"}
           >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            <motion.span
+              animate={{ rotate: showAll ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="arrow-icon w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 text-gray-300 hover:border-blue-400 hover:text-blue-400 transition-all duration-300"
             >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </motion.span>
-        </button>
-      </div>
-    </section>
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </motion.span>
+          </button>
+        </div>
+      </section>
+    </>
   );
 };
 

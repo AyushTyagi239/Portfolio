@@ -1,41 +1,53 @@
 // src/data/manufacturingData.js
 const manufacturingData = {
   title: "Manufacturing",
-  subtitle: "How AI transforms production, quality, and supply chain in factories.",
-  sections: [
-    {
-      heading: "1. How is AI being used in Manufacturing?",
-      content: `AI is applied across production lines to enable predictive maintenance, automated quality inspection, process optimization, and robotics-driven assembly. Data from PLCs, sensors, and cameras is streamed into ML models to detect anomalies and optimize throughput.`,
-      details: [
-        "Sensors + time series models monitor equipment health",
-        "Computer vision inspects defects on the production line",
-        "Reinforcement learning optimizes robot paths and throughput"
-      ],
-    },
-    {
-      heading: "2. AI in Manufacturing — Use Cases",
-      content: `Key use cases:\n1) Predictive maintenance: reduces unplanned downtime.\n2) Quality inspection: automated defect detection using CV.\n3) Production scheduling: demand-aware dynamic scheduling.\n4) Energy optimization: reduce energy use via smart controls.\n5) Digital twin: simulation + "what-if" optimization.`,
-      details: [
-        "Predictive maintenance example: vibration sensors -> failure prediction",
-        "Digital twin example: simulate line changes before applying on real floor"
-      ],
-    },
-    {
-      heading: "3. Benefits of Using AI in Manufacturing",
-      content: `- Reduced downtime, lower maintenance costs\n- Higher yield and fewer defects\n- Faster time-to-market via optimized workflows\n- Greater worker safety and lower manual inspection burden`,
-      details: [],
-    },
-    {
-      heading: "4. Challenges and Implementation Notes",
-      content: `- Data quality & integration from legacy PLCs\n- Need labeled data for CV and supervised models\n- Edge vs cloud tradeoffs for latency-sensitive workflows\n- Skilled personnel and change management`,
-      details: ["Data ingestion patterns", "Edge inference vs cloud retraining"],
-    },
-    {
-      heading: "5. Example Project — Quick Implementation Plan",
-      content: `1) Start with one use-case: predictive maintenance on motor/gearbox.\n2) Collect sensor data for 4–8 weeks.\n3) Build anomaly detection model (autoencoder/time-series model).\n4) Deploy model at edge for real-time alerts.\n5) Measure MTTR and iterate.`,
-      details: ["MVP timeline: 8–12 weeks", "KPIs: downtime %, false alarm rate"],
-    },
-  ],
+  subtitle: "How AI transforms production, quality, and supply chain across modern factories.",
+
+  overview: {
+    heading: "How AI is used in Manufacturing",
+    content: `AI enables smarter, faster, and more efficient factory operations. From predictive maintenance to intelligent robotics, AI helps manufacturers reduce downtime, enhance product quality, and optimize every stage of production.`,
+    icon: "fas fa-industry"
+  },
+
+  problems: {
+    heading: "How AI Solves Major Manufacturing Problems",
+    points: [
+      "Predictive analytics reduces unplanned downtime and improves equipment reliability.",
+      "Computer vision enhances quality inspection and minimizes human error.",
+      "AI-driven forecasting balances production with demand in real time.",
+      "Intelligent automation lowers energy consumption and production costs.",
+    ],
+    icon: "fas fa-tools"
+  },
+
+  solutionsSection: {
+    heading: "Our AI-Powered Solutions",
+    description: "Explore our intelligent products designed to optimize production, maintenance, and decision-making in manufacturing environments.",
+    icon: "fas fa-lightbulb",
+    solutions: [
+      {
+        id: 1,
+        title: "Predictive Maintenance",
+        description: "AI algorithms predict equipment failures before they happen, reducing downtime by up to 50%.",
+        icon: "fas fa-brain",
+        image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 2,
+        title: "Quality Inspection",
+        description: "Computer vision systems detect defects with 99.9% accuracy, improving product quality.",
+        icon: "fas fa-eye",
+        image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=350&fit=crop&auto=format"
+      },
+      {
+        id: 3,
+        title: "Smart Analytics",
+        description: "Real-time production optimization and demand forecasting for maximum efficiency.",
+        icon: "fas fa-chart-line",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop&auto=format"
+      }
+    ]
+  },
 };
 
 export default manufacturingData;

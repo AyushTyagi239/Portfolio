@@ -6,68 +6,30 @@ import StaggeredMenu from './StaggeredMenu';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
- const menuItems = [
-  {
-    label: 'Industries',
-    children: [
-      {
-        label: 'Manufacturing',
-        link: '/industry/manufacturing',
-        ariaLabel: 'Manufacturing Industry Solutions'
-      },
-      {
-        label: 'Healthcare',
-        link: '/industry/healthcare', 
-        ariaLabel: 'Healthcare Industry Solutions'
-      },
-      {
-        label: 'BFSI',
-        link: '/industry/bfsi',
-        ariaLabel: 'Banking Financial Services Insurance Solutions'
-      },
-      {
-        label: 'Education',
-        link: '/industry/education',
-        ariaLabel: 'Education Industry Solutions'
-      },
-      {
-        label: 'Hospitality',
-        link: '/industry/hospitality',
-        ariaLabel: 'Hospitality Industry Solutions'
-      }
-    ]
-  },
-  {
-    label: 'Our Products',
-    children: [
-      {
-        label: 'Tender Analysis',
-        link: '/usecase/tender-analysis',
-        ariaLabel: 'Tender Analysis Product'
-      },
-      {
-        label: 'SLM',
-        link: '/usecase/neuraedge-slm',
-        ariaLabel: 'SLM Product'
-      }
-    ]
-  },
-  {
-    label: 'About Us',
-    link: 'https://www.igtpl.co.in/',
-    ariaLabel: 'About our company'
-  },
-//  {
-//   label:'Home'
-//   link:'/home',
-//   ariaLabel: 'Home page'
-//  },
-{
-    label: 'home',
-    link: '/',
-    ariaLabel: ''
-  },
-];
+
+  const menuItems = [
+    {
+      label: 'Industries',
+      children: [
+        { label: 'Manufacturing', link: '/industry/manufacturing' },
+        { label: 'Healthcare', link: '/industry/healthcare' },
+        { label: 'BFSI', link: '/industry/bfsi' },
+        { label: 'Education', link: '/industry/education' },
+        { label: 'Hospitality', link: '/industry/hospitality' },
+      ],
+    },
+    {
+      label: 'Our Products',
+      children: [
+        { label: 'Tender Analysis', link: '/usecase/tender-analysis' },
+        { label: 'SLM', link: '/usecase/neuraedge-slm' },
+      ],
+    },
+    {
+      label: 'About Us',
+      link: 'https://www.igtpl.co.in/',
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -77,24 +39,40 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      {/* Left - Home Icon */}
       <div className="header-left">
-        <a href="https://www.igtpl.co.in/" target="_blank" rel="noopener noreferrer">
-          <img src={rightLogo} alt="Intensity Logo" className="header-logo" />
+        <a href="/" className="home-button" aria-label="Go to Home">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="home-icon"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 9.75L12 3l9 6.75M4.5 10.5v9.75A1.5 1.5 0 006 21.75h12a1.5 1.5 0 001.5-1.5V10.5"
+            />
+          </svg>
         </a>
-        <img src={leftLogo} alt="Super AI Logo" className="header-logo" />
       </div>
 
+      {/* Center - Both Logos */}
       <div className="header-center">
-  <h1 className="header-title">INTENSITY X <span>SUPER AI</span></h1>
-</div>
+        <div className="center-logos">
+          <img src={rightLogo} alt="Intensity Logo" className="header-logo" />
+          <img src={leftLogo} alt="Super AI Logo" className="header-logo" />
+        </div>
+      </div>
 
-
+      {/* Right - Menu */}
       <div className="header-right">
-        <StaggeredMenu items={menuItems}
-        onItemClick={(item) => {
-    // Handle navigation when items are clicked
-    console.log('Navigating to:', item.link);
-  }}/>
+        <StaggeredMenu
+          items={menuItems}
+          onItemClick={(item) => console.log('Navigating to:', item.link)}
+        />
       </div>
     </header>
   );

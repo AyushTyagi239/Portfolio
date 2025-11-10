@@ -1,6 +1,13 @@
-/* ------------------------------
-   NEW LAYOUT STYLES
---------------------------------*/
+/* Base Styles */
+.industry-page {
+  background: linear-gradient(135deg, #01091c 0%, #062253 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+.industry-content {
+  padding-top: 8rem;
+}
 
 /* Layout Container */
 .layout-container {
@@ -8,27 +15,56 @@
   margin: 0 auto;
 }
 
+/* Page Header */
+.industry-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+.industry-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  background: linear-gradient(to right, #fff, #a5ffd6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.industry-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Content Wrapper */
 .content-wrapper {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   align-items: flex-start;
 }
 
 /* Content Side */
 .content-side {
   flex: 1;
-  min-width: 0; /* Prevent overflow */
+  min-width: 0;
 }
 
-/* Carousel Side */
-.carousel-side {
+/* Image Side */
+.image-side {
   width: 45%;
   flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 1s ease forwards 0.6s;
 }
 
-/* Sticky Carousel */
-.sticky-carousel {
+/* Sticky Image */
+.sticky-image {
   position: sticky;
   top: 100px;
   display: flex;
@@ -36,191 +72,322 @@
   gap: 1.5rem;
 }
 
-/* Carousel Wrapper with Hover Effects */
-.carousel-wrapper {
+/* Image Wrapper */
+.image-wrapper {
   position: relative;
   border-radius: 1.25rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   background: transparent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  height: 400px;
 }
 
-.carousel-wrapper::before {
-  content: '';
+.image-wrapper:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(163, 107, 255, 0.25),
+    0 0 0 1px rgba(163, 107, 255, 0.1);
+}
+
+.manufacturing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover .manufacturing-image {
+  transform: scale(1.1);
+}
+
+.image-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(163, 107, 255, 0.1) 0%, 
-    rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(45deg, rgba(1, 9, 28, 0.8), rgba(6, 34, 83, 0.8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 1.25rem;
 }
 
-.carousel-wrapper:hover::before {
+.image-wrapper:hover .image-overlay {
   opacity: 1;
 }
 
-.carousel-wrapper:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 8px 25px rgba(163, 107, 255, 0.15),
-    0 0 0 1px rgba(163, 107, 255, 0.1);
+.image-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #a5ffd6;
 }
 
-/* Carousel Info Box */
-.carousel-info {
-  background: rgba(248, 248, 255, 0.65);
-  border: 1px solid rgba(215, 215, 252, 0.703);
+.image-overlay p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Image Info */
+.image-info {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1.25rem;
   padding: 1.5rem;
-  box-shadow: 0 0 15px rgba(130, 90, 255, 0.15);
   backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 1s;
 }
 
-.carousel-info h3 {
+.image-info h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #dcd7ff;
+  color: #fff;
   margin-bottom: 0.8rem;
 }
 
-/* Additional Content */
-.additional-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.image-info p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
 }
 
-.additional-content .industry-section {
-  background: rgba(25, 25, 35, 0.65);
-  border: 1px solid rgba(180, 180, 255, 0.1);
+/* Industry Sections */
+.industry-section {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1.25rem;
-  padding: 1.5rem;
-  box-shadow: 0 0 15px rgba(130, 90, 255, 0.15);
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
   backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+  transition: all 0.3s ease;
 }
 
-.additional-content h3 {
-  font-size: 1.1rem;
+.industry-section:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.industry-section:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.industry-section:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.industry-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(130, 90, 255, 0.25);
+}
+
+.industry-section h2 {
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #dcd7ff;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.additional-content ul {
+.industry-section h2::before {
+  content: "▹";
+  color: #a5ffd6;
+  font-weight: bold;
+}
+
+.industry-section p {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.industry-section ul {
   margin-top: 0.8rem;
   margin-left: 1.25rem;
-  list-style: disc;
-  color: #a5a5ff;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.additional-content li {
-  margin-bottom: 0.35rem;
-  font-size: 0.9rem;
-}
-
-/* Sections Container */
-.sections-container {
+.industry-section li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-left: 0.5rem;
 }
 
-/* No Sections Text */
-.no-sections {
+.industry-section li:before {
+  content: "•";
+  color: #a5ffd6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* === FULL WIDTH OUR AI SOLUTIONS === */
+.solutions-fullwidth {
+  width: 102%;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(90deg, rgba(1, 10, 19, 0.596), rgba(4, 18, 47, 0.95));
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   text-align: center;
-  color: #aaa;
+}
+
+.solutions-fullwidth h2 {
+  font-size: 2rem;
+  color: #a5ffd6;
+  margin-bottom: 1rem;
+}
+
+.solutions-fullwidth p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Horizontal Layout */
+.solutions-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.solutions-grid::-webkit-scrollbar {
+  height: 12px;
+}
+
+.solutions-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.solution-card {
+  min-width: 300px;
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.solution-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.solution-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.solution-card:hover .solution-img {
+  transform: scale(1.1);
+}
+
+.solution-content {
+  padding: 1.5rem;
+}
+
+.solution-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.solution-content p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Coming Soon */
+.coming-soon {
+  text-align: center;
   padding: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.coming-soon h3 {
+  color: #a5ffd6;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.coming-soon p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .solutions-grid {
+    gap: 1rem;
+  }
+}
+.coming-soon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed rgba(165, 255, 214, 0.4);
+  border-radius: 1rem;
+  min-width: 300px;
+  height: 260px;
+  flex: 0 0 auto;
+  animation: fadeInUp 1s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.coming-soon-box:hover {
+  background: rgba(165, 255, 214, 0.1);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.coming-soon-content h3 {
+  color: #a5ffd6;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.coming-soon-content p {
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
 }
 
-/* ------------------------------
-   RESPONSIVE DESIGN
---------------------------------*/
-
-/* Large Desktop */
-@media (min-width: 1440px) {
-  .carousel-side {
-    width: 40%;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .industry-content {
-    padding-top: 6rem;
-  }
-  
-  .sticky-carousel {
-    top: 90px;
-  }
-  
-  .content-wrapper {
-    gap: 1.5rem;
-  }
-  
-  .carousel-side {
-    width: 48%;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .industry-content {
-    padding-top: 5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .content-wrapper {
-    flex-direction: column;
-  }
-  
-  .carousel-side {
-    width: 100%;
-    order: -1; /* Carousel first on mobile */
-    margin-bottom: 2rem;
-  }
-  
-  .sticky-carousel {
-    position: relative;
-    top: 0;
-  }
-  
-  .industry-header h1 {
-    font-size: 1.75rem;
-  }
-  
-  .industry-header p {
-    font-size: 1rem;
-  }
-  
-  .carousel-wrapper {
-    height: 300px; /* Further reduced for mobile */
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .industry-content {
-    padding-top: 4.5rem;
-  }
-  
-  .industry-section {
-    padding: 1.2rem;
-  }
-  
-  .industry-header h1 {
-    font-size: 1.5rem;
-  }
-  
-  .carousel-wrapper {
-    height: 250px;
-  }
-}

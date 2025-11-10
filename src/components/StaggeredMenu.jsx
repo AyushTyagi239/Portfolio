@@ -364,6 +364,35 @@ export const StaggeredMenu = ({
       </li>
     ));
   };
+  // Close menu when clicking outside
+React.useEffect(() => {
+  if (!open) return; // only add listener when menu is open
+
+  const handleClickOutside = (event) => {
+    if (
+      panelRef.current &&
+      !panelRef.current.contains(event.target) &&
+      toggleBtnRef.current &&
+      !toggleBtnRef.current.contains(event.target)
+    ) {
+      // close the menu
+      openRef.current = false;
+      setOpen(false);
+      playClose();
+      animateIcon(false);
+      animateColor(false);
+      animateText(false);
+      onMenuClose?.();
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, [open, playClose, animateIcon, animateColor, animateText, onMenuClose]);
+
 
   return (
     <div
