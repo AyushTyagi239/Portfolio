@@ -30,7 +30,7 @@ const healthcareData = {
         title: "Fall Detection",
         description: "Generate alerts when a person collapses to reduce response time and provide better care.",
         icon: "fas fa-user-fall",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=350&fit=crop&auto=format"
+        image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 2,
@@ -44,14 +44,14 @@ const healthcareData = {
         title: "Staff Presence Monitoring",
         description: "Generate alerts when nurses/doctors/receptionists are not at designated places to ensure availability for patients.",
         icon: "fas fa-user-md",
-        image: "https://images.unsplash.com/photo-1584467735871-8db9ac8e5e3a?w=500&h=350&fit=crop&auto=format"
+        image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 4,
         title: "Patient Out of Bed Detection",
         description: "Generate alerts for crucial patients when they leave the bed to ensure proper care in ICUs and critical rooms.",
         icon: "fas fa-procedures",
-        image: "https://images.unsplash.com/photo-1516549655669-df66514e35b7?w=500&h=350&fit=crop&auto=format"
+        image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=350&fit=crop&auto=format"
       }
     ]
   },

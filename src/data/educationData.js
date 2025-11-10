@@ -30,7 +30,7 @@ const educationData = {
         title: "Automated Attendance",
         description: "Facial recognition to automate attendance and entry of students, saving crucial time while marking attendance.",
         icon: "fas fa-user-check",
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=350&fit=crop&auto=format"
+        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 2,
@@ -44,14 +44,13 @@ const educationData = {
         title: "Weapon Detection",
         description: "Detect pulling out weapons in crucial areas - authorities can take immediate action.",
         icon: "fas fa-ban",
-        image: "https://images.unsplash.com/photo-1587334892137-1aafc787984e?w=500&h=350&fit=crop&auto=format"
-      },
+        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"     },
       {
         id: 4,
         title: "Violence Detection",
         description: "Detect creating nuisance in crucial areas - authorities can intervene in real time.",
         icon: "fas fa-exclamation-triangle",
-        image: "https://images.unsplash.com/photo-1551524164-6caac0541cc7?w=500&h=350&fit=crop&auto=format"
+        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 5,

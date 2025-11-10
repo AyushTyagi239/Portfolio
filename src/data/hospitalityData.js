@@ -51,14 +51,14 @@ const hospitalityData = {
         title: "Smoke/Fire Detection",
         description: "Real-time alerts for such activities for prevention and safety enhancement.",
         icon: "fas fa-fire-extinguisher",
-        image: "https://images.unsplash.com/photo-1567602901358-5ba17615aaeb?w=500&h=350&fit=crop&auto=format"
+       image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
       },
       {
         id: 5,
         title: "Luggage Detection",
         description: "Object tracking and object left behind detection for authorities to act on.",
         icon: "fas fa-suitcase",
-        image: "https://images.unsplash.com/photo-1583676361843-bf51c45c287d?w=500&h=350&fit=crop&auto=format"
+        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&h=350&fit=crop&auto=format"
       }
     ]
   },

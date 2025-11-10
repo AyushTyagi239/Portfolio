@@ -24,29 +24,44 @@ const bfsiData = {
     heading: "Our AI-Powered Solutions",
     description: "Discover our intelligent financial solutions designed to optimize operations, enhance security, and improve customer experiences.",
     icon: "fas fa-lightbulb",
-    solutions: [
-      {
-        id: 1,
-        title: "Fraud Detection System",
-        description: "Real-time AI algorithms detect and prevent fraudulent transactions with 99.8% accuracy.",
-        icon: "fas fa-user-shield",
-        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 2,
-        title: "Smart Wealth Management",
-        description: "AI-driven investment platforms provide personalized portfolio recommendations and automated rebalancing.",
-        icon: "fas fa-piggy-bank",
-        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 3,
-        title: "Intelligent Loan Processing",
-        description: "Automated credit assessment and document processing reduces approval times by 70%.",
-        icon: "fas fa-file-invoice-dollar",
-        image: "https://images.unsplash.com/photo-1554224154-260f33b43554?w=500&h=350&fit=crop&auto=format"
-      }
-    ]
+  solutions: [
+  {
+    id: 1,
+    title: "Facial Recognition at Entry",
+    description: "AI-powered facial recognition enables secure, contactless access by identifying authorized individuals in real time.",
+    icon: "fas fa-user-check",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=350&fit=crop&auto=format"
+  },
+  {
+    id: 2,
+    title: "Loitering Detection",
+    description: "Smart video analytics detect suspicious loitering activity and alert security personnel instantly.",
+    icon: "fas fa-street-view",
+    image: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?w=500&h=350&fit=crop&auto=format"
+  },
+  {
+    id: 3,
+    title: "Tampering Detection",
+    description: "AI models monitor cameras and sensors to identify any tampering or unauthorized adjustments in real time.",
+    icon: "fas fa-tools",
+    image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=500&h=350&fit=crop&auto=format"
+  },
+  {
+    id: 4,
+    title: "Violence Detection",
+    description: "Computer vision algorithms identify violent actions or aggressive behavior to ensure immediate intervention.",
+    icon: "fas fa-exclamation-triangle",
+    image:"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=350&fit=crop&auto=format"
+  },
+  {
+    id: 5,
+    title: "Intrusion Detection",
+    description: "AI-powered perimeter security detects unauthorized entries and sends real-time alerts to the monitoring system.",
+    icon: "fas fa-shield-alt",
+    image: "https://images.unsplash.com/photo-1576502200916-3808e07386a5?w=500&h=350&fit=crop&auto=format"
+  }
+]
+
   },
 };
 

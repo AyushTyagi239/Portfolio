@@ -42,7 +42,7 @@ import healthcareQueueDetectionData from "./data/otherproducts/healthcare/Queued
 import antiIntrusionData from "./data/otherproducts/healthcare/AntiIntrusion";
 import patientOutOfBedData from "./data/otherproducts/healthcare/Patient_out_of_bed";
 
-// BFSI Use Cases
+// BFSI Use Cases - CORRECTED IMPORT PATHS (lowercase)
 import facialRecognitionData from "./data/otherproducts/bfsi/facialRecognitionData";
 import loiteringDetectionData from "./data/otherproducts/bfsi/loiteringDetectionData";
 import tamperingDetectionData from "./data/otherproducts/bfsi/tamperingDetectionData";
@@ -237,6 +237,12 @@ const AppRoutes = () => {
           </Layout>
         }/>
 
+        <Route path="/solution/banking-&-financial-services/fraud-detection-system" element={
+          <Layout>
+            <ReadMorePage data={loiteringDetectionData} />
+          </Layout>
+        }/>
+
         <Route path="/solution/banking-&-financial-services/tampering-detection" element={
           <Layout>
             <ReadMorePage data={tamperingDetectionData} />
@@ -252,6 +258,24 @@ const AppRoutes = () => {
         <Route path="/solution/banking-&-financial-services/intrusion-detection" element={
           <Layout>
             <ReadMorePage data={intrusionDetectionBFSIData} />
+          </Layout>
+        }/>
+
+        {/* Catch-all route for undefined paths */}
+        <Route path="*" element={
+          <Layout>
+            <div className="min-h-screen flex items-center justify-center bg-gray-900">
+              <div className="text-center text-white">
+                <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+                <p className="text-xl mb-8">The page you're looking for doesn't exist.</p>
+                <a 
+                  href="/" 
+                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Go Back Home
+                </a>
+              </div>
+            </div>
           </Layout>
         }/>
 
