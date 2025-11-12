@@ -1,66 +1,66 @@
-// src/data/educationData.js
 const educationData = {
   title: "Education",
-  subtitle: "How AI enhances campus safety, attendance tracking, and student monitoring in educational institutions.",
+  subtitle: "AI-enhanced learning environments, safety systems, and administrative efficiency for educational institutions.",
 
   overview: {
-    heading: "How AI is used in Education",
-    content: `AI revolutionizes educational institutions by automating administrative tasks, enhancing campus security, and ensuring student safety. From automated attendance to real-time threat detection, AI creates safer and more efficient learning environments.`,
+    heading: "How AI is Transforming Education",
+    content: `AI empowers educational institutions with personalized learning, enhanced safety, and operational efficiency. From adaptive learning systems to campus security, AI creates smarter, safer, and more engaging educational experiences for students and educators alike.`,
     icon: "fas fa-graduation-cap"
   },
 
   problems: {
-    heading: "How AI Solves Major Education Problems",
+    heading: "Key Educational Challenges Addressed by AI",
     points: [
-      "Automated attendance tracking saves crucial instructional time.",
-      "Real-time intrusion detection secures sensitive campus areas.",
-      "Weapon and violence detection prevents potential threats proactively.",
-      "Overcrowding monitoring ensures campus safety and proper supervision.",
+      "Personalized learning and student performance tracking",
+      "Campus safety and security monitoring",
+      "Resource allocation and administrative efficiency",
+      "Curriculum effectiveness and teaching quality",
+      "Student engagement and retention"
     ],
     icon: "fas fa-book"
   },
 
-  solutionsSection: {
-    heading: "Our AI-Powered Solutions",
-    description: "Explore our intelligent products designed to enhance campus safety, automate processes, and ensure secure learning environments.",
-    icon: "fas fa-lightbulb",
-    solutions: [
-      {
-        id: 1,
-        title: "Automated Attendance",
-        description: "Facial recognition to automate attendance and entry of students, saving crucial time while marking attendance.",
-        icon: "fas fa-user-check",
-        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 2,
-        title: "Intrusion Detection",
-        description: "Generate alerts when sensitive areas are accessed - authorities can take action in real time.",
-        icon: "fas fa-shield-alt",
-        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 3,
-        title: "Weapon Detection",
-        description: "Detect pulling out weapons in crucial areas - authorities can take immediate action.",
-        icon: "fas fa-ban",
-        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"     },
-      {
-        id: 4,
-        title: "Violence Detection",
-        description: "Detect creating nuisance in crucial areas - authorities can intervene in real time.",
-        icon: "fas fa-exclamation-triangle",
-        image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 5,
-        title: "Overcrowding Detection",
-        description: "Generate alerts when students form crowds so authorities can act immediately.",
-        icon: "fas fa-users",
-        image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500&h=350&fit=crop&auto=format"
-      }
-    ]
-  },
+  categories: [
+    {
+      name: "Data Science Use Cases",
+      technology: "Data Science",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=500&fit=crop&auto=format",
+      icon: "📊",
+      useCases: [
+        "Student Performance Prediction",
+        "Adaptive Learning Systems",
+        "Resource Allocation",
+        "Enrollment Forecasting",
+        "Curriculum Effectiveness"
+      ]
+    },
+    {
+      name: "Generative AI Use Cases",
+      technology: "Generative AI",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=500&fit=crop&auto=format",
+      icon: "🤖",
+      useCases: [
+        "Automated Content Creation",
+        "Tutoring Assistants",
+        "Academic Writing Support",
+        "Virtual Campus Guides",
+        "Lesson & Course Design"
+      ]
+    },
+    {
+      name: "Vision AI Use Cases",
+      technology: "Vision AI",
+      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&h=500&fit=crop&auto=format",
+      icon: "👁️",
+      useCases: [
+        "Facial Recognition",
+        "Intrusion Detection",
+        "Weapon Detection",
+        "Violence Detection",
+        "Overcrowding Detection"
+      ]
+    }
+  ]
 };
 
 export default educationData;

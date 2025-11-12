@@ -20,41 +20,47 @@ const manufacturingData = {
     icon: "fas fa-tools"
   },
 
-  solutionsSection: {
-    heading: "Our AI-Powered Solutions",
-    description: "Explore our intelligent products designed to optimize production, maintenance, and decision-making in manufacturing environments.",
-    icon: "fas fa-lightbulb",
-    solutions: [
-      {
-        id: 1,
-        title: "ANPR System",
-        description: "Number plate based entry and exit monitoring of shipments for tracking and matching while shipping, to track number of objects in trucks.",
-        icon: "fas fa-car",
-        image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 2,
-        title: "Object Counting",
-        description: "Counting objects over conveyor belts and during loading in trucks to track count of manufactured and shipped goods, including defective items detection.",
-        icon: "fas fa-cubes",
-        image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 3,
-        title: "PPE Detection",
-        description: "Detection of safety equipment while working with machines to ensure safety compliance is properly adhered to.",
-        icon: "fas fa-hard-hat",
-        image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 4,
-        title: "Cross Camera Tracking",
-        description: "Tracking of objects and people across the factory vicinity for optimizing factory floors and operations.",
-        icon: "fas fa-video",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop&auto=format"
-      }
-    ]
-  },
+  // CORRECTED: Categories with proper structure
+  categories: [
+    {
+      name: "Data Science Use Cases",
+      technology: "Data Science",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&auto=format",
+      icon: "📊",
+      useCases: [
+        "Predictive Maintenance",
+        "Demand Forecasting", 
+        "Quality Control & Defect Detection",
+        "Resource Allocation Optimization",
+        "Supply Chain Optimization"
+      ]
+    },
+    {
+      name: "Generative AI Use Cases",
+      technology: "Generative AI",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=500&fit=crop&auto=format",
+      icon: "🤖",
+      useCases: [
+        "Automated Report Generation",
+        "Digital Twin Modeling",
+        "AI-Based Training Simulations",
+        "Visual Design Generation",
+        "Root Cause Analysis Assistant"
+      ]
+    },
+    {
+      name: "Vision AI Use Cases",
+      technology: "Vision AI", 
+      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=500&fit=crop&auto=format",
+      icon: "👁️",
+      useCases: [
+        "ANPR System",
+        "Object Counting",
+        "PPE Detection",
+        "Cross Camera Tracking"
+      ]
+    }
+  ]
 };
 
 export default manufacturingData;

@@ -234,7 +234,215 @@
   font-size: 1.2rem;
 }
 
-/* === FULL WIDTH OUR AI SOLUTIONS === */
+/* === SQUARE BOXES CATEGORIES SECTION === */
+.categories-fullwidth {
+  width: 102%;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(90deg, rgba(1, 10, 19, 0.596), rgba(4, 18, 47, 0.95));
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to right, #fff, #a5ffd6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #d1d5db;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.square-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.square-category-card {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 15px;
+  border: 2px solid #3b82f6;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  display: flex;
+  flex-direction: column;
+  height: 500px; /* Fixed height for consistency */
+}
+
+.square-category-card:nth-child(1) { animation-delay: 0.2s; }
+.square-category-card:nth-child(2) { animation-delay: 0.4s; }
+.square-category-card:nth-child(3) { animation-delay: 0.6s; }
+
+.square-category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Category Image Container */
+.category-image-container {
+  position: relative;
+  height: 200px; /* Reduced to make space for use cases */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.square-category-card:hover .category-image {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(1, 9, 28, 0.8), rgba(6, 34, 83, 0.8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.category-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.technology-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #3b82f6;
+}
+
+/* Use Cases Section - Always Visible */
+.industry-usecase-section .use-cases-section {
+  background: rgba(15, 23, 42, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.industry-usecase-section .use-cases-list {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-usecase-section .use-cases-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #a5ffd6;
+  text-align: left;
+}
+
+.industry-usecase-section .use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 180px;
+}
+
+.industry-usecase-section .use-cases-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.industry-usecase-section .use-cases-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.industry-usecase-section .use-case-rectangle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 45px;
+}
+
+.industry-usecase-section.use-case-rectangle:hover {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.industry-usecase-section .use-case-text {
+  color: white;
+  font-size: 0.8rem;
+  flex: 1;
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.industry-usecase-section .use-case-arrow {
+  color: #60a5fa;
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 0.4rem;
+}
+
+.industry-usecase-section .use-case-rectangle:hover .use-case-arrow {
+  transform: translateX(3px);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* === OLD SOLUTIONS SECTION (Keep for reference) === */
 .solutions-fullwidth {
   width: 102%;
   margin-top: 4rem;
@@ -340,27 +548,6 @@
   font-size: 1.1rem;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .solutions-grid {
-    gap: 1rem;
-  }
-}
 .coming-soon-box {
   display: flex;
   align-items: center;
@@ -391,7 +578,6 @@
   font-size: 1rem;
 }
 
-/* Add to your IndustryPage.css */
 .solution-card.clickable {
   cursor: pointer;
   transition: all 0.3s ease;
@@ -413,4 +599,97 @@
 
 .solution-card.clickable:hover .solution-click-hint {
   opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .image-side {
+    width: 100%;
+  }
+  
+  .square-categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .categories-fullwidth,
+  .solutions-fullwidth {
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+  
+  .square-category-card {
+    height: 450px;
+  }
+  
+  .category-image-container {
+    height: 180px;
+  }
+  
+ .industry-usecase-section .use-cases-grid {
+    grid-template-columns: 1fr;
+    max-height: 200px;
+  }
+  
+  .category-name {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .industry-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .solutions-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .square-categories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .square-category-card {
+    height: 420px;
+  }
+  
+  .category-image-container {
+    height: 160px;
+  }
+  
+  .industry-header h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .industry-usecase-section .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -5,7 +5,7 @@ import MANU_TRANS from "../assets/transition/MANU_TRANS.png";
 import edu from "../assets/transition/edu.png";
 import Healthcare from "../assets/transition/Healthcare.png";
 import hospitality from "../assets/transition/hosptality.png";
-import bfsi from "../assets/transition/bfsi.png"; // You might need to add this
+import bfsi from "../assets/transition/bfsi.png";   
 
 const IndustryPage = ({ data }) => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const IndustryPage = ({ data }) => {
     );
   }
 
-  const { title, subtitle, overview, problems, solutionsSection } = data;
+  const { title, subtitle, overview, problems, categories } = data;
 
   // Map industry titles to their respective images
   const industryImages = {
@@ -26,8 +26,8 @@ const IndustryPage = ({ data }) => {
     'Education': edu,
     'Healthcare': Healthcare,
     'Hospitality': hospitality,
-    'Banking & Financial Services': bfsi || MANU_TRANS, // Fallback to manufacturing image if bfsi not available
-    'BFSI': bfsi || MANU_TRANS // Fallback to manufacturing image if bfsi not available
+    'Banking & Financial Services': bfsi || MANU_TRANS,
+    'BFSI': bfsi || MANU_TRANS
   };
 
   // Map industry titles to their overlay content
@@ -91,98 +91,37 @@ const IndustryPage = ({ data }) => {
   const industryOverlay = industryOverlays[title] || industryOverlays['Manufacturing'];
   const industryInfoContent = industryInfo[title] || industryInfo['Manufacturing'];
 
-  const handleSolutionClick = (solution) => {
-    // Map industry titles to the exact route slugs used in AppRoutes
-    const industryRouteMap = {
-      'Banking & Financial Services': 'banking-&-financial-services',
-      'Manufacturing': 'manufacturing',
-      'Healthcare': 'healthcare', 
-      'Education': 'education',
-      'Hospitality': 'hospitality',
-      'BFSI': 'banking-&-financial-services' // Handle both titles
-    };
-
-    // Map solution titles to the exact route slugs used in AppRoutes
-    const solutionRouteMap = {
-      // BFSI Solutions
-      'Facial Recognition at Entry': 'facial-recognition-at-entry',
-      'Facial recognition at entry': 'facial-recognition-at-entry',
-      'Loitering Detection': 'loitering-detection', 
-      'Loitering detection': 'loitering-detection',
-      'Tampering Detection': 'tampering-detection',
-      'Tampering detection': 'tampering-detection',
-      'Violence Detection': 'violence-detection',
-      'Violence detection': 'violence-detection',
-      'Intrusion Detection': 'intrusion-detection',
-      'Intrusion detection': 'intrusion-detection',
-      
-      // Manufacturing Solutions
-      'ANPR System': 'anpr-system',
-      'ANPR': 'anpr-system',
-      'Object Counting': 'object-counting',
-      'Object counting': 'object-counting',
-      'PPE Detection': 'ppe-detection',
-      'PPE detection': 'ppe-detection',
-      'Cross Camera Tracking': 'cross-camera-tracking',
-      'Cross camera tracking': 'cross-camera-tracking',
-      
-      // Healthcare Solutions
-      'Fall Detection': 'fall-detection',
-      'Fall detection': 'fall-detection',
-      'Queue Detection': 'queue-detection',
-      'Queue detection': 'queue-detection',
-      'Anti Intrusion': 'anti-intrusion',
-      'Anti intrusion': 'anti-intrusion',
-      'Patient Out of Bed': 'patient-out-of-bed',
-      'Patient out of bed': 'patient-out-of-bed',
-      
-      // Education Solutions  
-      'Face Recognition': 'face-recognition',
-      'Face recognition': 'face-recognition',
-      'FR': 'face-recognition',
-      'Intrusion Detection': 'intrusion-detection',
-      'Intrusion detection': 'intrusion-detection',
-      'Automated Attendance': 'automated-attendance',
-      'Automated attendance': 'automated-attendance',
-      'Weapon Detection': 'weapon-detection',
-      'Weapon detection': 'weapon-detection',
-      'Violence Detection': 'violence-detection',
-      'Violence detection': 'violence-detection',
-      'Overcrowding Detection': 'overcrowding-detection',
-      'Overcrowding detection': 'overcrowding-detection',
-      
-      // Hospitality Solutions
-      'Parking Management': 'parking-management',
-      'Parking management': 'parking-management',
-      'Queue Detection': 'queue-detection',
-      'Queue detection': 'queue-detection',
-      'Face Recognition': 'facial-recognition-entry',
-      'Face recognition': 'facial-recognition-entry',
-      'FR': 'facial-recognition-entry',
-      'Smoke/Fire Detection': 'smoke-fire-detection',
-      'Smoke/fire detection': 'smoke-fire-detection',
-      'Luggage Detection': 'luggage-detection',
-      'Luggage detection': 'luggage-detection'
-    };
-
-    // Get the exact industry slug from the map, or create a fallback
-    const industrySlug = industryRouteMap[title] || title.toLowerCase().replace(/\s+/g, '-');
+  const handleUseCaseClick = (useCaseName, category) => {
+    // Create path based on category and use case
+    const industrySlug = title.toLowerCase().replace(/\s+/g, '-');
+    const categorySlug = category.technology.toLowerCase().replace(/\s+/g, '-');
+    const useCaseSlug = useCaseName.toLowerCase().replace(/\s+/g, '-');
     
-    // Get the exact solution slug from the map, or create a fallback
-    const solutionSlug = solutionRouteMap[solution.title] || solution.title.toLowerCase().replace(/\s+/g, '-');
-    
-    // Navigate to the solution page with the correct path
-    navigate(`/solution/${industrySlug}/${solutionSlug}`, {
+    navigate(`/solution/${industrySlug}/${categorySlug}/${useCaseSlug}`, {
       state: {
-        solution,
+        useCase: { title: useCaseName },
+        category,
         industry: title,
         industryData: data
       }
     });
   };
 
+  const getTechnologyColor = (technology) => {
+    switch (technology) {
+      case 'Data Science':
+        return '#3b82f6'; // blue
+      case 'Generative AI':
+        return '#8b5cf6'; // purple
+      case 'Vision AI':
+        return '#10b981'; // green
+      default:
+        return '#6b7280'; // gray
+    }
+  };
+
   return (
-    <div className="industry-page">
+    <div className="industry-usecase-section">
       <main className="industry-content max-w-7xl mx-auto px-6 py-8">
         <div className="layout-container">
           {/* Page Header */}
@@ -241,45 +180,63 @@ const IndustryPage = ({ data }) => {
           </div>
         </div>
 
-        {/* Full-width Our Powered AI Solutions Section */}
-        {solutionsSection && (
-          <div className="solutions-fullwidth">
-            <h2 className="text-white">{solutionsSection.heading}</h2>
-            <p className="text-white">{solutionsSection.description}</p>
-
-            {solutionsSection.solutions &&
-            solutionsSection.solutions.length > 0 ? (
-              <div className="solutions-grid">
-                {solutionsSection.solutions.map((solution) => (
-                  <div 
-                    key={solution.id} 
-                    className="solution-card clickable"
-                    onClick={() => handleSolutionClick(solution)}
-                  >
-                    <img
-                      src={solution.image}
-                      alt={solution.title}
-                      className="solution-img"
+        {/* Categories Boxes Section */}
+        {categories && categories.length > 0 && (
+          <div className="categories-fullwidth">
+            <h2 className="section-title">AI Solutions by Technology</h2>
+            <p className="section-subtitle">Click on any use case to explore detailed solutions</p>
+            
+            <div className="square-categories-grid">
+              {categories.map((category, index) => (
+                <div 
+                  key={index} 
+                  className="square-category-card"
+                  style={{ borderColor: getTechnologyColor(category.technology) }}
+                >
+                  {/* Category Image */}
+                  <div className="category-image-container">
+                    <img 
+                      src={category.image} 
+                      alt={category.name}
+                      className="category-image"
                     />
-                    <div className="solution-content">
-                      <h3 className="text-white">{solution.title}</h3>
-                      <p className="text-white">{solution.description}</p>
-                      <div className="solution-click-hint">
-                        <span className="text-blue-400">Click to learn more →</span>
+                    <div className="category-overlay">
+                      <div className="category-icon">{category.icon}</div>
+                      <h3 className="category-name">{category.name}</h3>
+                      <span 
+                        className="technology-badge"
+                        style={{ 
+                          backgroundColor: `${getTechnologyColor(category.technology)}20`,
+                          color: getTechnologyColor(category.technology),
+                          borderColor: getTechnologyColor(category.technology)
+                        }}
+                      >
+                        {category.technology}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Use Cases - Always Visible */}
+                  <div className="use-cases-section">
+                    <div className="use-cases-list">
+                      <h4 className="use-cases-title">Use Cases:</h4>
+                      <div className="use-cases-grid">
+                        {category.useCases.map((useCase, idx) => (
+                          <div 
+                            key={idx}
+                            className="use-case-rectangle clickable"
+                            onClick={() => handleUseCaseClick(useCase, category)}
+                          >
+                            <span className="use-case-text">{useCase}</span>
+                            <span className="use-case-arrow">→</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div className="coming-soon">
-                <h3>🚀 Coming Soon</h3>
-                <p>
-                  Our Powered AI Solutions are being crafted with precision and
-                  innovation.
-                </p>
-              </div>
-            )}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </main>

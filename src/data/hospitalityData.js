@@ -1,67 +1,66 @@
-// src/data/hospitalityData.js
 const hospitalityData = {
   title: "Hospitality",
-  subtitle: "How AI enhances guest experiences, safety, and operational efficiency in hospitality.",
+  subtitle: "AI-powered guest experiences, operational efficiency, and safety solutions for hotels and resorts.",
 
   overview: {
-    heading: "How AI is used in Hospitality",
-    content: `AI transforms hospitality by automating operations, enhancing guest safety, and providing seamless experiences. From smart parking to facial recognition entry, AI ensures efficient service delivery and proactive safety measures.`,
+    heading: "How AI is Revolutionizing Hospitality",
+    content: `AI transforms the hospitality industry by delivering personalized guest experiences, optimizing operations, and ensuring safety. From dynamic pricing to automated guest services, AI enables hotels and resorts to provide exceptional service while maximizing efficiency and revenue.`,
     icon: "fas fa-hotel"
   },
 
   problems: {
-    heading: "How AI Solves Major Hospitality Problems",
+    heading: "Key Hospitality Challenges Addressed by AI",
     points: [
-      "Automated parking management reduces guest wait times and improves space utilization.",
-      "Queue detection optimizes staff allocation at reception and service counters.",
-      "Facial recognition enables smooth, secure entry for pre-checked-in guests.",
-      "Real-time safety monitoring prevents incidents and enhances guest security.",
+      "Revenue optimization and dynamic pricing strategies",
+      "Guest personalization and experience enhancement",
+      "Operational efficiency and cost management",
+      "Safety and security monitoring",
+      "Staff optimization and queue management"
     ],
     icon: "fas fa-concierge-bell"
   },
 
-  solutionsSection: {
-    heading: "Our AI-Powered Solutions",
-    description: "Explore our intelligent products designed to optimize guest experiences, safety, and operational efficiency in hospitality.",
-    icon: "fas fa-lightbulb",
-    solutions: [
-      {
-        id: 1,
-        title: "Parking Management",
-        description: "Detection of cars/bikes in parking for easier and automated parking slot allocation.",
-        icon: "fas fa-parking",
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 2,
-        title: "Queue Detection",
-        description: "Detection of queues at reception to make work efficient by allotting more people at that counter.",
-        icon: "fas fa-users",
-        image: "https://images.unsplash.com/photo-1552422535-c45813c61732?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 3,
-        title: "Facial Recognition Entry",
-        description: "FR based entry of guests for smooth entry experience for guests who already checked in.",
-        icon: "fas fa-user-check",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 4,
-        title: "Smoke/Fire Detection",
-        description: "Real-time alerts for such activities for prevention and safety enhancement.",
-        icon: "fas fa-fire-extinguisher",
-       image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=500&h=350&fit=crop&auto=format"
-      },
-      {
-        id: 5,
-        title: "Luggage Detection",
-        description: "Object tracking and object left behind detection for authorities to act on.",
-        icon: "fas fa-suitcase",
-        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&h=350&fit=crop&auto=format"
-      }
-    ]
-  },
+  categories: [
+    {
+      name: "Data Science Use Cases",
+      technology: "Data Science",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=500&fit=crop&auto=format",
+      icon: "📊",
+      useCases: [
+        "Dynamic Pricing & Revenue Optimization",
+        "Customer Segmentation & Personalization",
+        "Demand Forecasting",
+        "Churn & Retention Analysis",
+        "Operational Efficiency Analytics"
+      ]
+    },
+    {
+      name: "Generative AI Use Cases",
+      technology: "Generative AI",
+      image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&h=500&fit=crop&auto=format",
+      icon: "🤖",
+      useCases: [
+        "Automated Guest Communication",
+        "Personalized Marketing Campaigns",
+        "Virtual Concierge Services",
+        "Menu or Experience Design",
+        "Automated Review Summarization"
+      ]
+    },
+    {
+      name: "Vision AI Use Cases",
+      technology: "Vision AI",
+      image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&h=500&fit=crop&auto=format",
+      icon: "👁️",
+      useCases: [
+        "Parking Management",
+        "Queue Detection",
+        "Face Recognition (FR)",
+        "Smoke/Fire Detection",
+        "Luggage Detection"
+      ]
+    }
+  ]
 };
 
 export default hospitalityData;
