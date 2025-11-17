@@ -54,12 +54,9 @@ const IndustryUseCases = () => {
      
       {/* Industry Use Cases Section */}
       <section className="use-cases py-20 px-6 md:px-10 bg-transparent border-t border-gray-800">
-        <h2 className="section-title text-center text-4xl md:text-5xl font-bold text-white mb-14">
-          Industry Solutions  <h1 className="fancy-heading">
-         
-          <span className="italic-part"> Powered by AI</span>
-        </h1>
-        </h2>
+       <h2 className="section-title text-center text-4xl md:text-5xl font-bold text-white mb-14">
+  Industry Solutions <span className="italic-part">Powered by AI</span>
+</h2>
 
         <div className="use-cases-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {displayedItems.map((item, index) => (

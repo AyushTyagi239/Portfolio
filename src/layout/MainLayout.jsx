@@ -29,7 +29,7 @@ const MainLayout = ({ children }) => {
       {/* <HeroSection/> */}
       
       
-      <div className>
+      <div className="">
         {children}
       </div>
       
