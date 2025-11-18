@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Navigate, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
-import Chatbot from "./pages/Chatbot";
+
 import ReadMorePage from "./pages/ReadMorePage";
 import DarkVeil from "./components/DarkVeil";
 import { NeuraEdgeChatbotData } from "./data/NeuraEdgeChatbotData";

@@ -1,13 +1,14 @@
+// src/components/Footer.jsx
 import React from "react";
-import './Footer.css'
+import "./Footer.css";
 import {
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
+  Mail as MailIcon,
+  Phone as PhoneIcon,
+  MapPin as MapPinIcon,
+  Facebook as FacebookIcon,
+  Twitter as TwitterIcon,
+  Linkedin as LinkedinIcon,
+} from "lucide-react";
 import logo from "../assets/IntensityLogoMonowhite.png";
 
 const Footer = () => {
@@ -17,7 +18,7 @@ const Footer = () => {
         {/* Left Section */}
         <div className="footer-left">
           <img src={logo} alt="Intensity Logo" className="footer-logo" />
-          
+
           <p className="footer-description">
             We are pioneers for comprehensive IT solutions driving innovation
             with intelligent technology and accelerating business
@@ -30,49 +31,49 @@ const Footer = () => {
         <div className="footer-right">
           <h3 className="footer-heading">CONNECT WITH US</h3>
           <p className="footer-address">
-            <FaMapMarkerAlt className="footer-icon" />
+            <MapPinIcon className="footer-icon" size={18} />
             A-21, FIEE Complex, Okhla Phase 2, New Delhi - 110020
           </p>
-          <a 
-            href="mailto:info@igtpl.co.in" 
+          <a
+            href="mailto:info@igtpl.co.in"
             className="footer-email"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
           >
-            <FaEnvelope className="footer-icon" /> info@igtpl.co.in
+            <MailIcon className="footer-icon" size={18} /> info@igtpl.co.in
           </a>
-          <a 
-            href="tel:+919717010199" 
+          <a
+            href="tel:+919717010199"
             className="footer-phone"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
           >
-            <FaPhone className="footer-icon" /> +91-9717010199
+            <PhoneIcon className="footer-icon" size={18} /> +91-9717010199
           </a>
           <div className="footer-socials">
-            <a 
-              href="https://www.facebook.com/igtpl/" 
+            <a
+              href="https://www.facebook.com/igtpl/"
               aria-label="Facebook"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook />
+              <FacebookIcon size={20} />
             </a>
-            <a 
-              href="https://x.com/igtpl?lang=en" 
+            <a
+              href="https://x.com/igtpl?lang=en"
               aria-label="Twitter"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter />
+              <TwitterIcon size={20} />
             </a>
-            <a 
-              href="https://www.linkedin.com/company/intensityglobal" 
+            <a
+              href="https://www.linkedin.com/company/intensityglobal"
               aria-label="LinkedIn"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin />
+              <LinkedinIcon size={20} />
             </a>
           </div>
         </div>
