@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import React from "react";
-import "./Footer.css";
+//import "./main.css";
+ import "./Footer.css";
 import {
   Mail as MailIcon,
   Phone as PhoneIcon,

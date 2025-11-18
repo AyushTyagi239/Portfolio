@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { websiteContent } from '../data/content';
 import { useNavigate } from 'react-router-dom';
 import './UseCasesSection.css';
+// import "./main.css";
 
 // Import background images
 import chatbotBg from '../assets/chatbot.png';

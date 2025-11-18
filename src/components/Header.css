@@ -1,110 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Calendas+Plus:wght@400;700&display=swap');
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  z-index: 1000;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(15px);
-  background: rgba(30, 0, 60, 0.25);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.header{
+  position:sticky;top:0;left:0;width:100%;z-index:1000;
+  background: rgba(1,9,28,0.85);
+  backdrop-filter: blur(8px); /* reduced blur for perf */
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition:background .25s ease,box-shadow .25s ease;
+  will-change: background;
 }
 
-.header.scrolled {
-  background: linear-gradient(90deg, #1d0941 0%, #14053b 100%);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem}
+
+.home-button{
+  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.025);transition:transform .2s ease,background .2s ease;
 }
+.home-button:hover{transform:scale(1.06);background:linear-gradient(135deg,#a855f7,#6b21a8)}
 
-/* Left - Home Button */
-.header-left {
-  flex: 0 0 auto;
+.header-center{position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
+.center-logos{display:flex;gap:1.25rem;pointer-events:auto}
+.header-logo{height:52px;transition:transform .2s ease,opacity .2s ease}
+.header-logo:hover{transform:scale(1.06)}
+
+.header.scrolled{
+  background:linear-gradient(90deg,#1d0941,#14053b);
+  backdrop-filter:blur(10px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
 }
-
-.home-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.home-button:hover {
-  background: linear-gradient(135deg, #a855f7, #6b21a8);
-  border-color: transparent;
-  transform: scale(1.1);
-}
-
-.home-icon {
-  width: 24px;
-  height: 24px;
-  color: inherit;
-}
-
-
-/* Center - Logos */
-.header-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-.center-logos {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  pointer-events: auto;
-}
-
-.header-logo {
-  height: 55px;
-  width: auto;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.header-logo:hover {
-  transform: scale(1.08);
-  opacity: 0.9;
-}
-
-/* Right - Menu */
-.header-right {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 480px) {
-  .header {
-    height: 60px;
-    padding: 0 15px;
-  }
-
-  .home-button {
-    padding: 6px 12px;
-    font-size: 1rem;
-  }
-
-  .header-logo {
-    height: 35px;
-  }
+@media (max-width:480px){
+  .header-inner{padding:0.5rem 0.75rem}
+  .header-logo{height:36px}
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import "./main.css";
 import './Header.css';
 import leftLogo from '../assets/Super_Ai.png';
 import rightLogo from '../assets/IntensityLogoMonowhite.png';

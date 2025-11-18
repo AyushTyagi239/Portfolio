@@ -1,6 +1,7 @@
 import React, { useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import "./IndustryPage.css";
+// import "./IndustryPage.css";
+import "./main.css";
 
 import MANU_TRANS from "../assets/transition/MANU_TRANS.png";
 import edu from "../assets/transition/edu.png";

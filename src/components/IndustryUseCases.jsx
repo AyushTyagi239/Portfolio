@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useCaseData } from "../data/useCaseData";
 import { useNavigate } from "react-router-dom";
 import "./IndustryUseCases.css";
-
+// import "./main.css";
 // Animation variant
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

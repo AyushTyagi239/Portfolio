@@ -1,76 +1,36 @@
-html, body {
-  background-color: #020617; /* dark navy or your theme */
+:root{
+  --bg-1: #01091c;
+  --bg-2: #062253;
+  --muted: #d1d5db;
+  --accent: #3b82f6;
+  --glass: rgba(255,255,255,0.04);
 }
-/* ===== LAYOUT UTILITIES ===== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.page-content,
+main,
+.industry-content {
+  padding-top: 100px; /* Adjust based on your header height */
 }
-
-.section-padding {
-  padding: 80px 0;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo {
-  width: 45px;
-  height: 45px;
-  background: linear-gradient(135deg, #0f172a, #1d4ed8);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-  transition: all 0.3s ease;
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg-1);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
 }
 
-.logo:hover {
-  transform: scale(1.05) rotate(5deg);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
+/* Utility containers */
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+.section-padding{padding:5rem 0}
+.logo-container{display:flex;align-items:center;gap:12px}
 
-.company-name {
-  font-size: 50px;
-  font-weight: 800;
-  background: linear-gradient(135deg,   #ffffff, #1d4ed8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-} */
+/* lightweight logo animation (only transform) */
+.logo{width:45px;height:45px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f172a,#1d4ed8);transition:transform .25s ease}
+.logo:hover{transform:scale(1.04)}
 
-.hero {
-
-  background-size: 400% 400%;
-  /* animation: gradientShift 8s ease infinite; */
-  color: rgb(0, 0, 0);
-  /* position: relative; */
-  overflow: hidden;
-}
-
-
-.hero-subtitle {
-  font-size: clamp(2.1rem, 2vw, 2.5rem);
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  font-weight: 400;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-
+/* hero: avoid huge background-size and heavy animations by default */
+.hero{background:linear-gradient(135deg,var(--bg-1),var(--bg-2));background-size:cover;color:inherit;overflow:hidden}
+.hero-subtitle{font-size:clamp(1.4rem,2vw,1.9rem);opacity:.95;max-width:60ch;margin:0 auto;text-align:center}

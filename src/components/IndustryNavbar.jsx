@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./IndustryNavbar.css";
+// import "./main.css";
 
 const IndustryNavbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
