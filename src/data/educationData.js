@@ -1,3 +1,7 @@
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.png"
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.png"
+import Vision_Image from "../assets/Industry/techs/AI_in_ds.png"
+
 const educationData = {
   title: "Education",
   subtitle: "AI-enhanced learning environments, safety systems, and administrative efficiency for educational institutions.",
@@ -22,10 +26,10 @@ const educationData = {
 
   categories: [
     {
-      name: "Data Science Use Cases",
-      technology: "Data Science",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=500&fit=crop&auto=format",
-      icon: "📊",
+      name: "Data Science",
+      technology: " ",
+      image: Ds_Image,
+      icon: "",
       useCases: [
         "Student Performance Prediction",
         "Adaptive Learning Systems",
@@ -35,10 +39,10 @@ const educationData = {
       ]
     },
     {
-      name: "Generative AI Use Cases",
-      technology: "Generative AI",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=500&fit=crop&auto=format",
-      icon: "🤖",
+      name: "Generative AI",
+      technology: " ",
+      image: gen_Ai_Image,
+      icon: "",
       useCases: [
         "Automated Content Creation",
         "Tutoring Assistants",
@@ -48,10 +52,10 @@ const educationData = {
       ]
     },
     {
-      name: "Vision AI Use Cases",
-      technology: "Vision AI",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&h=500&fit=crop&auto=format",
-      icon: "👁️",
+      name: "Vision AI",
+      technology: " ",
+      image: Vision_Image,
+      icon: "",
       useCases: [
         "Facial Recognition",
         "Intrusion Detection",

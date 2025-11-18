@@ -1,3 +1,8 @@
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.png"
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.png"
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.png"
+
+
 const bfsiData = {
   title: "Banking & Financial Services",
   subtitle: "AI-driven security, compliance, and customer experience solutions for financial institutions.",
@@ -22,10 +27,10 @@ const bfsiData = {
 
   categories: [
     {
-      name: "Data Science Use Cases",
-      technology: "Data Science",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=500&fit=crop&auto=format",
-      icon: "📊",
+      name: "Data Science",
+      technology: " ",
+      image: Ds_Image ,
+      icon: "",
       useCases: [
         "Credit Risk Scoring",
         "Fraud Detection",
@@ -35,10 +40,10 @@ const bfsiData = {
       ]
     },
     {
-      name: "Generative AI Use Cases",
-      technology: "Generative AI",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&auto=format",
-      icon: "🤖",
+      name: "Generative AI",
+      technology: " ",
+      image: gen_Ai_Image,
+      icon: "",
       useCases: [
         "Automated Report & Compliance",
         "AI Financial Advisors",
@@ -48,10 +53,10 @@ const bfsiData = {
       ]
     },
     {
-      name: "Vision AI Use Cases",
-      technology: "Vision AI",
-      image: "https://images.unsplash.com/photo-1563013541-2d1a36b57415?w=500&h=500&fit=crop&auto=format",
-      icon: "👁️",
+      name: "Vision AI",
+       technology: " ",
+      image: Vision_Image,
+      icon: "",
       useCases: [
         "Facial Recognition",
         "Loitering Detection",

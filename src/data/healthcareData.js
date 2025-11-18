@@ -1,3 +1,8 @@
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.png"
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.png"
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.png"
+
+
 const healthcareData = {
   title: "Healthcare",
   subtitle: "AI-powered solutions for enhanced patient care, safety, and operational efficiency.",
@@ -22,10 +27,10 @@ const healthcareData = {
 
   categories: [
     {
-      name: "Data Science Use Cases",
-      technology: "Data Science",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=500&fit=crop&auto=format",
-      icon: "📊",
+      name: "Data Science",
+      technology: " ",
+      image: Ds_Image,
+      icon: "",
       useCases: [
         "Predictive Diagnostics",
         "Patient Risk Stratification",
@@ -35,10 +40,10 @@ const healthcareData = {
       ]
     },
     {
-      name: "Generative AI Use Cases",
-      technology: "Generative AI",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=500&fit=crop&auto=format",
-      icon: "🤖",
+      name: "Generative AI",
+      technology: " ",
+      image: gen_Ai_Image,
+      icon: "",
       useCases: [
         "Medical Documentation Automation",
         "Synthetic Data Generation",
@@ -48,10 +53,10 @@ const healthcareData = {
       ]
     },
     {
-      name: "Vision AI Use Cases",
-      technology: "Vision AI",
-      image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&h=500&fit=crop&auto=format",
-      icon: "👁️",
+      name: "Vision AI",
+      technology: " ",
+      image: Vision_Image,
+      icon: "",
       useCases: [
         "Fall Detection",
         "Queue Detection",

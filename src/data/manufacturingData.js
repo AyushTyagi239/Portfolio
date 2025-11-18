@@ -1,4 +1,7 @@
-// src/data/manufacturingData.js
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.png"
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.png"
+import Vision_Image from "../assets/Industry/techs/AI_in_ds.png"
+
 const manufacturingData = {
   title: "Manufacturing",
   subtitle: "How AI transforms production, quality, and supply chain across modern factories.",
@@ -23,10 +26,10 @@ const manufacturingData = {
   // CORRECTED: Categories with proper structure
   categories: [
     {
-      name: "Data Science Use Cases",
-      technology: "Data Science",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&auto=format",
-      icon: "📊",
+      name: "Data Science",
+      technology: " ",
+      image: Ds_Image,
+      icon: "",
       useCases: [
         "Predictive Maintenance",
         "Demand Forecasting", 
@@ -36,10 +39,10 @@ const manufacturingData = {
       ]
     },
     {
-      name: "Generative AI Use Cases",
-      technology: "Generative AI",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=500&fit=crop&auto=format",
-      icon: "🤖",
+      name: "Generative AI",
+      technology: " ",
+      image: gen_Ai_Image,
+      icon: "",
       useCases: [
         "Automated Report Generation",
         "Digital Twin Modeling",
@@ -49,10 +52,10 @@ const manufacturingData = {
       ]
     },
     {
-      name: "Vision AI Use Cases",
-      technology: "Vision AI", 
-      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=500&fit=crop&auto=format",
-      icon: "👁️",
+      name: "Vision AI",
+      technology: " ", 
+      image: Vision_Image,
+      icon: "",
       useCases: [
         "ANPR System",
         "Object Counting",

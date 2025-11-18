@@ -1,5 +1,5 @@
-import React from "react";
-import { Navigate, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Navigate, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
 import Chatbot from "./pages/Chatbot";
@@ -49,9 +49,21 @@ import tamperingDetectionData from "./data/otherproducts/bfsi/tamperingDetection
 import violenceDetectionBFSIData from "./data/otherproducts/bfsi/violenceDetectionData";
 import intrusionDetectionBFSIData from "./data/otherproducts/bfsi/intrusionDetectionData";
 
+// ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const AppRoutes = () => {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
@@ -266,7 +278,7 @@ const AppRoutes = () => {
           <Layout>
             <div className="min-h-screen flex items-center justify-center bg-gray-900">
               <div className="text-center text-white">
-                <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+                <h1 className="text-4xl font-bold mb-4">Under work please check out our other products</h1>
                 <p className="text-xl mb-8">The page you're looking for doesn't exist.</p>
                 <a 
                   href="/" 
