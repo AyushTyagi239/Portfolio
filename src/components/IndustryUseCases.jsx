@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useCaseData } from "../data/useCaseData";
 import { useNavigate } from "react-router-dom";
 import "./IndustryUseCases.css";
-// import "./main.css";
+ import "./main.css";
 // Animation variant
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -107,7 +107,7 @@ const UseCaseCard = ({ item, index, onIndustryClick }) => {
 
   return (
     <motion.div
-      className="use-case-item bg-[#1e293b] border border-gray-700 rounded-2xl p-6 w-full max-w-[270px] text-center cursor-pointer hover:text-white transition-all duration-300"
+      className="use-case-item "
       initial={{ opacity: 0, scale: 0.95, y: 20 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.08 }}

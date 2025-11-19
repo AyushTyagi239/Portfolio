@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-// import "./IndustryPage.css";
+import "./IndustryPage.css";
 import "./main.css";
 
 import MANU_TRANS from "../assets/transition/MANU_TRANS.png";
@@ -141,7 +141,7 @@ const IndustryPage = ({ data }) => {
   }, []);
 
   return (
-    <div className="industry-usecase-section">
+    <div className="industry-page industry-usecase-section">
       <main className="industry-content max-w-7xl mx-auto px-6 py-8">
         <div className="layout-container">
           {/* Header */}

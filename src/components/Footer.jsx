@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
-//import "./main.css";
+import "./main.css";
  import "./Footer.css";
 import {
   Mail as MailIcon,

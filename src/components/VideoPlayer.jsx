@@ -4,8 +4,9 @@ import NeuraEdgeChatbotThumbnail from "../assets/NeuraEdgeChatbotThumbnail.png"
 
 const VideoPlayer = ({ title, videoUrl, thumbnail }) => {
   return (
-    <section className="w-full px-4 py-12 bg-transparent border-t border-gray-800">
-      <div className="max-w-2xl mx-auto text-center">
+    <section className="w-full py-20 border-t border-gray-800">
+  <div className="container mx-auto px-6 md:px-12 max-w-6xl text-center">
+
         {/* Title */}
         {title && (
           <motion.h2

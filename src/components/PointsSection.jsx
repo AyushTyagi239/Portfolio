@@ -8,8 +8,9 @@ const PointsSection = ({ title, points }) => {
   const displayedPoints = showAll ? points : points.slice(0, 4);
 
   return (
-    <section className="w-full px-6 md:px-10 py-20 bg-transparent border-t border-gray-800">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-20 border-t border-gray-800">
+  <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -24,28 +25,38 @@ const PointsSection = ({ title, points }) => {
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
           {displayedPoints.map((point, idx) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05, duration: 0.4 }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 20px rgba(96,165,250,0.2)",
-                borderColor: "#3b82f6",
-              }}
-              className="group flex items-start space-x-4 bg-[#1e293b] rounded-xl border border-gray-700 p-6 
-                         shadow-sm transition-all duration-300 ease-out cursor-pointer"
-            >
-              {/* Icon */}
-              <div className="flex-shrink-0 mt-1 transition-colors duration-300">
-                <CheckCircle2 className="w-6 h-6 text-blue-400 group-hover:text-green-400 transition-colors duration-300" />
-              </div>
+  key={idx}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: idx * 0.05, duration: 0.4 }}
+  whileHover={{
+    scale: 1.03,
+    boxShadow: "0 0 25px rgba(96,165,250,0.25)",
+    borderColor: "#3b82f6",
+  }}
+  className="
+    group
+    flex items-start gap-5
+    bg-[#1e293b]
+    rounded-2xl
+    border border-gray-700
+    p-8
+    shadow-md
+    transition-all duration-300 ease-out
+    cursor-pointer
+  "
+>
+  {/* Icon */}
+  <div className="flex-shrink-0 pt-1">
+    <CheckCircle2 className="w-7 h-7 text-blue-400 group-hover:text-green-400 transition-colors duration-300" />
+  </div>
 
-              {/* Text */}
-              <p className="text-lg text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
-                {point}
-              </p>
-            </motion.div>
+  {/* Text */}
+  <p className="text-lg text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+    {point}
+  </p>
+</motion.div>
+
           ))}
         </div>
 

@@ -1,54 +1,160 @@
-/* base page */
-.industry-usecase-section{background:linear-gradient(135deg,var(--bg-1),var(--bg-2));min-height:100vh;padding-top:6.5rem}
-.industry-content{padding:0 1rem 3rem}
-/* header */
-.industry-header{text-align:center;margin-bottom:2rem}
-.industry-header h1{font-size:2.4rem;background:linear-gradient(90deg,#fff,#a5ffd6);-webkit-background-clip:text;color:transparent}
-.industry-header p{color:var(--muted);max-width:70ch;margin:0 auto}
+/* === INDUSTRY PAGE (MATCHED WITH main.css) === */
 
-/* layout - use grid for consistent behavior */
-.content-wrapper{display:grid;grid-template-columns:1fr 360px;gap:1.75rem;align-items:start}
-@media(max-width:980px){.content-wrapper{grid-template-columns:1fr}}
+/* Page wrapper */
+.industry-page {
+  background: var(--main-bg);
+  min-height: 100vh;
+  color: var(--text-primary);
+  padding-top: 7rem; /* ensures perfect spacing under sticky header */
+}
 
-/* image column */
-.image-side{width:100%}
-.sticky-image{position:sticky;top:88px}
-.image-wrapper{border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,0.28);background:#071126}
-.manufacturing-image{width:100%;height:auto;display:block;object-fit:cover;will-change:transform}
-.image-overlay{position:absolute;inset:auto 0 0 0;padding:1rem;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6))}
-.image-overlay h3{color:#a5ffd6;margin:0 0 .25rem}
-.image-info{margin-top:1rem;padding:1rem;background:rgba(255,255,255,0.03);border-radius:10px;color:var(--muted)}
+/* Content container */
+.industry-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 3rem;
+}
 
-/* sections */
-.industry-section{background:rgba(255,255,255,0.03);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem;transition:box-shadow .18s,transform .18s}
-.industry-section:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.25)}
-.industry-section h2{font-size:1.2rem;display:flex;align-items:center;gap:.6rem}
-.industry-section p, .industry-section li{color:var(--muted);line-height:1.6}
+/* Header */
+.industry-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-/* categories */
-.categories-fullwidth{padding:2.5rem 1rem;margin-top:3.25rem;background:linear-gradient(180deg,rgba(1,6,20,0.4),rgba(3,12,28,0.9))}
-.section-title{font-size:1.9rem;margin-bottom:.5rem}
-.square-categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.industry-header h1 {
+  font-size: 3rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-/* card */
-.square-category-card{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02)}
-.category-image-container{height:170px;overflow:hidden}
-.category-image{width:100%;height:100%;object-fit:cover;display:block;will-change:transform}
-.category-overlay{position:absolute;bottom:0;left:0;right:0;padding:.75rem;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.6))}
-.category-name{font-weight:600;color:#fff}
+.industry-header p {
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
 
-/* use-cases list */
-.use-cases-section{padding:1rem;background:transparent}
-.use-cases-grid{display:flex;flex-direction:column;gap:.5rem;max-height:220px;overflow:auto;padding-right:6px}
-.use-case-rectangle{display:flex;justify-content:space-between;align-items:center;padding:.6rem .9rem;background:rgba(255,255,255,0.02);border-radius:8px;cursor:pointer;transition:background .12s}
-.use-case-rectangle:hover{background:rgba(255,255,255,0.04);}
-.use-case-text{color:#fff;font-weight:500;font-size:.95rem}
+/* Layout (match main.css flex layout) */
+.content-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
 
-/* animations disabled on load; use IntersectionObserver in JS to add class that triggers fades */
-.fade-in{opacity:1;transform:none;transition:opacity .35s,transform .35s}
+.content-side {
+  flex: 1;
+  min-width: 0;
+}
 
-/* responsive */
-@media(max-width:768px){
-  .industry-header h1{font-size:1.8rem}
-  .square-category-card{min-height:340px}
+.image-side {
+  width: 42%;
+  flex-shrink: 0;
+}
+
+/* Sticky image */
+.sticky-image {
+  position: sticky;
+  top: 130px; /* matches main.css 140px */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: #071126;
+  box-shadow: var(--shadow-heavy);
+}
+
+.manufacturing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info box */
+.image-info {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(6px);
+}
+
+.image-info h3 {
+  margin-bottom: 0.5rem;
+  color: #a5ffd6;
+}
+
+/* Content sections */
+.industry-section {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border-light);
+  border-radius: 1.25rem;
+  padding: 1.6rem;
+  backdrop-filter: blur(6px);
+  transition: transform .25s ease;
+  margin-bottom: 1.5rem;
+}
+
+.industry-section:hover {
+  transform: translateY(-5px);
+}
+
+.industry-section h2 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.industry-section h2::before {
+  content: "▹";
+  color: #a5ffd6;
+  font-size: 1.4rem;
+}
+
+.industry-section p,
+.industry-section li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Categories */
+.categories-fullwidth {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, rgba(1, 6, 20, 0.4), rgba(3, 12, 28, 0.9));
+  border-radius: 1.25rem;
+}
+
+.square-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .image-side {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .industry-header h1 {
+    font-size: 2rem;
+  }
 }
