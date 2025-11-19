@@ -954,3 +954,22 @@ html {
     font-size: 0.8rem;
   }
 }
+/* Add this to your existing Main.css */
+
+/* Reset for ReadMorePage to prevent global style conflicts */
+.readmore-page,
+.readmore-page main,
+.readmore-page .page-content {
+  padding-top: 0 !important;
+}
+
+.readmore-page .container {
+  max-width: none;
+  padding: 0;
+}
+
+/* Ensure sections align properly */
+.readmore-page section {
+  margin: 0 auto;
+  max-width: 1200px;
+}

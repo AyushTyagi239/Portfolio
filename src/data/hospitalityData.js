@@ -1,6 +1,6 @@
-import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.png"
-import Ds_Image from "../assets/Industry/techs/AI_in_ds.png"
-import Vision_Image from "../assets/Industry/techs/Ai_in_vision.png"
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp"
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp"
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp"
 
 
 const hospitalityData = {

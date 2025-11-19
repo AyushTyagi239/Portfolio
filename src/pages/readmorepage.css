@@ -1,0 +1,391 @@
+/* === READMORE PAGE (MATCHED WITH INDUSTRY PAGE) === */
+
+/* Page wrapper */
+.readmore-page {
+  background: var(--main-bg);
+  min-height: 100vh;
+  color: var(--text-primary);
+  padding-top: 7rem;
+}
+
+/* Container */
+.readmore-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 3rem;
+}
+
+/* Hero Section */
+.readmore-hero {
+  padding-bottom: 3rem;
+}
+
+.readmore-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-button-wrapper {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.readmore-description {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+/* Layout (match industry page flex layout) */
+.content-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.content-side {
+  flex: 1;
+  min-width: 0;
+}
+
+.image-side {
+  width: 42%;
+  flex-shrink: 0;
+}
+
+/* Sticky image */
+.sticky-image {
+  position: sticky;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: #071126;
+  box-shadow: var(--shadow-heavy);
+}
+
+.readmore-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--accent-color);
+  border-radius: 50%;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Features List */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.feature-item:hover {
+  color: var(--text-primary);
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  background: #a5ffd6;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-dot {
+  transform: scale(1.2);
+}
+
+/* Video Section */
+.video-section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-container {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
+  border-radius: 1.25rem;
+  padding: 0.5rem;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.video-element {
+  width: 100%;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* Advantages Section */
+.advantages-section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.advantage-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
+  border-radius: 1.25rem;
+  padding: 1.6rem;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-heavy);
+}
+
+.advantage-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.advantage-icon {
+  width: 3rem;
+  height: 3rem;
+  background: rgba(165, 255, 214, 0.1);
+  border: 1px solid #a5ffd6;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+  transform: scale(1.1);
+}
+
+.advantage-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.advantage-card:hover .advantage-content p {
+  color: var(--text-primary);
+}
+
+/* Enhanced Live Demo Button */
+.demo-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  border-radius: 0.875rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-button.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 
+    0 8px 32px rgba(102, 126, 234, 0.4),
+    0 4px 16px rgba(102, 126, 234, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-button.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.demo-button.primary:hover::before {
+  left: 100%;
+}
+
+.demo-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 40px rgba(102, 126, 234, 0.6),
+    0 6px 20px rgba(102, 126, 234, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced View More Button */
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
+  border-radius: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  font-size: 1rem;
+}
+
+.view-more-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-light);
+}
+
+/* Icons */
+.icon-sm {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon-md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .image-side {
+    width: 100%;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .readmore-title {
+    font-size: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .advantage-card {
+    padding: 1.25rem;
+  }
+
+  .demo-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .view-more-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .readmore-container {
+    padding: 0 16px 2rem;
+  }
+
+  .content-wrapper {
+    gap: 2rem;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-button {
+    padding: 0.875rem 1.75rem;
+  }
+}

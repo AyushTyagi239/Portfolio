@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./IndustryNavbar.css";
-// import "./main.css";
 
 const IndustryNavbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -40,7 +39,7 @@ const IndustryNavbar = () => {
 
   const handleProductClick = (path) => {
     navigate(path);
-    setActiveDropdown(null); // close dropdown after navigation
+    setActiveDropdown(null);
   };
 
   return (
@@ -52,27 +51,27 @@ const IndustryNavbar = () => {
           {industries.map((industry) => (
             <div
               key={industry.name}
-              className={`dropdown ${
-                activeDropdown === industry.name ? "active" : ""
-              }`}
+              className="dropdown-wrapper"
               onMouseEnter={() => setActiveDropdown(industry.name)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button className="dropdown-btn">{industry.name}</button>
 
-              {activeDropdown === industry.name && (
-                <div className="dropdown-menu">
-                  {industry.products.map((product, index) => (
-                    <button
-                      key={index}
-                      className="dropdown-item"
-                      onClick={() => handleProductClick(product.path)}
-                    >
-                      {product.name}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <div
+                className={`dropdown-menu ${
+                  activeDropdown === industry.name ? "show" : ""
+                }`}
+              >
+                {industry.products.map((product, index) => (
+                  <button
+                    key={index}
+                    className="dropdown-item"
+                    onClick={() => handleProductClick(product.path)}
+                  >
+                    {product.name}
+                  </button>
+                ))}
+              </div>
             </div>
           ))}
         </div>
