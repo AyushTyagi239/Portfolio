@@ -6,9 +6,9 @@ import './UseCasesSection.css';
 import "./main.css";
 
 // Import background images
-import chatbotBg from '../assets/chatbot.png';
-import tenderBg from '../assets/Tender.png';
-import neuraedgeBg from '../assets/slm.png';
+import chatbotBg from '../assets/Industry/techs/Ai_in_vision.webp';
+import tenderBg from '../assets/Industry/techs/Ai_in_vision.webp';
+import neuraedgeBg from '../assets/Industry/techs/Ai_in_vision.webp';
 // Remove defaultBg since it's not imported, or uncomment and import it
 
 const UseCasesSection = () => {

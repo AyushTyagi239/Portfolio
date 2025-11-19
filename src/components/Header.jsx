@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import "./main.css";
 import './Header.css';
-import leftLogo from '../assets/Super_Ai.png';
-import rightLogo from '../assets/IntensityLogoMonowhite.png';
+import leftLogo from '../assets/Super_Ai.webp';
+import rightLogo from '../assets/IntensityLogoMonowhite.webp';
 import StaggeredMenu from './StaggeredMenu';
 
 const Header = () => {

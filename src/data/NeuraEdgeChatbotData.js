@@ -1,6 +1,6 @@
 import NeuraEdgeDemo from "../assets/NeuraEdgeDemo.mp4";
-import NeuraEdgeChatbotThumbnail from "../assets/NeuraEdgeChatbotThumbnail.png";
-import ChatbotStockImage from "../assets/chatbot_stock_image.jpg";
+import NeuraEdgeChatbotThumbnail from "../assets/Industry/techs/Ai_in_vision.webp";
+import ChatbotStockImage from "../assets/Industry/Manufacturing.webp";
 
 export const NeuraEdgeChatbotData = {
   title: "NeuraEdge SLM based AI Document Intelligence",

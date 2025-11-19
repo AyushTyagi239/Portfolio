@@ -10,7 +10,7 @@ import {
   Twitter as TwitterIcon,
   Linkedin as LinkedinIcon,
 } from "lucide-react";
-import logo from "../assets/IntensityLogoMonowhite.png";
+import logo from "../assets/IntensityLogoMonowhite.webp";
 
 const Footer = () => {
   return (

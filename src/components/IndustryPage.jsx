@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./IndustryPage.css";
 import "./main.css";
 
-import MANU_TRANS from "../assets/transition/MANU_TRANS.png";
-import edu from "../assets/transition/edu.png";
-import Healthcare from "../assets/transition/Healthcare.png";
-import hospitality from "../assets/transition/hosptality.png";
-import bfsi from "../assets/transition/bfsi.png";   
+import MANU_TRANS from "../assets/Industry/Finance.webp";
+import edu from "../assets/Industry/Finance.webp";
+import Healthcare from "../assets/Industry/Finance.webp";
+import hospitality from "../assets/Industry/Finance.webp";
+import bfsi from "../assets/Industry/Finance.webp";   
 
 const IndustryPage = ({ data }) => {
   const navigate = useNavigate();

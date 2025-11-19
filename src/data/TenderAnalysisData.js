@@ -1,6 +1,6 @@
 import TenderAnalysisDemo from "../assets/TenderAnalysisDemo.mp4";
 // import TenderAnalyzerThumbnail from "../assets/images/TenderAnalyzerThumbnail.png";
-import TenderImage from "../assets/chatbot.png"
+import TenderImage from "../assets/Industry/techs/Ai_in_vision.webp"
 
 export const TenderAnalysisData = {
   title: "Tender Analyzer (AI Procurement Intelligence)",

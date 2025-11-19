@@ -1,9 +1,9 @@
 // Import all images
-import manufacturingImg from '../assets/Industry/Manufacturing.png';
-import healthcareImg from '../assets/Industry/Hospital.png';
-import bfsiImg from '../assets/Industry/BFSI.png';
-import educationImg from '../assets/Industry/Education.png';
-import hospitalityImg from '../assets/Industry/HOSPITALITY.png';
+import manufacturingImg from '../assets/Industry/Manufacturing.webp';
+import healthcareImg from '../assets/Industry/Hospital.webp';
+import bfsiImg from '../assets/Industry/Finance.webp';
+import educationImg from '../assets/Industry/Education.webp';
+import hospitalityImg from '../assets/Industry/HOSPITALITY.webp';
 // import retailImg from '../assets/images/retail.jpg';
 // import logisticsImg from '../assets/images/logistics.jpg';
 // import energyImg from '../assets/images/energy.jpg';

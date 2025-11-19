@@ -3,8 +3,8 @@ import React from "react";
 import UseCasesSection from "../components/UseCasesSection";
 import IndustryUseCases from "../components/IndustryUseCases";
 
-import BFSI_TRANS from "../assets/transition/BFSI_TRANS.png"
-import MANU_TRANS from "../assets/transition/MANU_TRANS.png"
+import BFSI_TRANS from "../assets/Industry/Finance.webp"
+import MANU_TRANS from "../assets/Industry/Finance.webp"
 
 
 
