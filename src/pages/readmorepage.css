@@ -1,4 +1,4 @@
-/* === READMORE PAGE (MATCHED WITH INDUSTRY PAGE) === */
+/* === READMORE PAGE (OPTIMIZED) === */
 
 /* Page wrapper */
 .readmore-page {
@@ -21,13 +21,14 @@
 }
 
 .readmore-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
   text-align: center;
   margin-bottom: 2rem;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .hero-button-wrapper {
@@ -37,16 +38,16 @@
 
 .readmore-description {
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 700px;
 }
 
-/* Layout (match industry page flex layout) */
+/* Layout */
 .content-wrapper {
   display: flex;
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
   align-items: flex-start;
 }
 
@@ -56,7 +57,7 @@
 }
 
 .image-side {
-  width: 42%;
+  width: min(42%, 500px);
   flex-shrink: 0;
 }
 
@@ -83,6 +84,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.readmore-image:hover {
+  transform: scale(1.02);
 }
 
 .floating-badge {
@@ -96,6 +102,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 /* Features List */
@@ -111,6 +118,7 @@
   gap: 1rem;
   color: var(--text-secondary);
   transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .feature-item:hover {
@@ -123,13 +131,14 @@
   background: #a5ffd6;
   border-radius: 50%;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .feature-item:hover .feature-dot {
   transform: scale(1.2);
 }
 
-/* Video Section */
+/* Video Section - FIXED THUMBNAIL ISSUE */
 .video-section {
   padding: 3rem 0;
   border-top: 1px solid var(--border-light);
@@ -141,19 +150,21 @@
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .section-header p {
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 .video-wrapper {
@@ -162,18 +173,60 @@
 }
 
 .video-container {
+  position: relative;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--border-light);
   border-radius: 1.25rem;
   padding: 0.5rem;
   backdrop-filter: blur(6px);
   box-shadow: var(--shadow-heavy);
+  overflow: hidden;
+  min-height: 300px; /* Prevent layout shift */
 }
 
 .video-element {
   width: 100%;
+  height: auto;
   border-radius: 1rem;
   display: block;
+  transition: opacity 0.3s ease;
+}
+
+.video-element.video-loading {
+  opacity: 0;
+  height: 0;
+  min-height: 0;
+}
+
+.video-element.video-loaded {
+  opacity: 1;
+}
+
+/* Video placeholder for loading state */
+.video-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Advantages Section */
@@ -184,7 +237,7 @@
 
 .advantages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -197,6 +250,7 @@
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
   cursor: pointer;
+  will-change: transform; /* Performance optimization */
 }
 
 .advantage-card:hover {
@@ -244,11 +298,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.25rem 2.5rem;
+  padding: clamp(1rem, 3vw, 1.25rem) clamp(2rem, 4vw, 2.5rem);
   border-radius: 0.875rem;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
@@ -328,6 +382,12 @@
   text-align: center;
 }
 
+/* Performance optimizations */
+.readmore-image,
+.video-element {
+  content-visibility: auto;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .content-wrapper {
@@ -336,6 +396,12 @@
 
   .image-side {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .sticky-image {
+    position: static;
   }
 
   .advantages-grid {
@@ -344,12 +410,12 @@
 }
 
 @media (max-width: 600px) {
-  .readmore-title {
-    font-size: 2rem;
+  .readmore-page {
+    padding-top: 6rem;
   }
 
-  .section-header h2 {
-    font-size: 2rem;
+  .readmore-container {
+    padding: 0 16px 2rem;
   }
 
   .advantages-grid {
@@ -361,31 +427,24 @@
     padding: 1.25rem;
   }
 
-  .demo-button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
-  .view-more-btn {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
+  .video-container {
+    min-height: 250px;
+    padding: 0.25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .readmore-container {
-    padding: 0 16px 2rem;
-  }
-
   .content-wrapper {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .advantages-grid {
     grid-template-columns: 1fr;
   }
 
-  .demo-button {
-    padding: 0.875rem 1.75rem;
+  .demo-button,
+  .view-more-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

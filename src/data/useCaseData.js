@@ -9,6 +9,7 @@ import hospitalityImg from '../assets/Industry/HOSPITALITY.webp';
 // import energyImg from '../assets/images/energy.jpg';
 
 export const useCaseData = [
+   
   {
     id: 1,
     title: "Manufacturing",

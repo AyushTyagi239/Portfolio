@@ -1,7 +1,6 @@
-import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp"
-import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp"
-import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp"
-
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp";
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp";
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp";
 
 const hospitalityData = {
   title: "Hospitality",
@@ -29,40 +28,42 @@ const hospitalityData = {
     {
       name: "Data Science",
       technology: " ",
-      image:Ds_Image,
+      image: Ds_Image,
       icon: "",
       useCases: [
-        "Dynamic Pricing & Revenue Optimization",
-        "Customer Segmentation & Personalization",
-        "Demand Forecasting",
-        "Churn & Retention Analysis",
-        "Operational Efficiency Analytics"
+        { name: "Dynamic Pricing & Revenue Optimization", live: false },
+        { name: "Customer Segmentation & Personalization", live: false },
+        { name: "Demand Forecasting", live: false },
+        { name: "Churn & Retention Analysis", live: false },
+        { name: "Operational Efficiency Analytics", live: false }
       ]
     },
+
     {
       name: "Generative AI",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        "Automated Guest Communication",
-        "Personalized Marketing Campaigns",
-        "Virtual Concierge Services",
-        "Menu or Experience Design",
-        "Automated Review Summarization"
+        { name: "Automated Guest Communication", live: false },
+        { name: "Personalized Marketing Campaigns", live: false },
+        { name: "Virtual Concierge Services", live: false },
+        { name: "Menu or Experience Design", live: false },
+        { name: "Automated Review Summarization", live: false }
       ]
     },
+
     {
       name: "Vision AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        "Parking Management",
-        "Queue Detection",
-        "Face Recognition (FR)",
-        "Smoke/Fire Detection",
-        "Luggage Detection"
+        { name: "Parking Management", live: false },
+        { name: "Queue Detection", live: false },
+        { name: "Face Recognition (FR)", live: false },
+        { name: "Smoke/Fire Detection", live: false },
+        { name: "Luggage Detection", live: false }
       ]
     }
   ]

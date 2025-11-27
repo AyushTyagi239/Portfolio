@@ -27,6 +27,7 @@ const IndustryUseCases = () => {
   const handleIndustryClick = (industryId) => {
     window.scrollTo(0, 0);
     switch (industryId) {
+       
       case 1:
         navigate("/industry/manufacturing");
         break;

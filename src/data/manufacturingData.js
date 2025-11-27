@@ -1,6 +1,6 @@
-import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp"
-import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp"
-import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp"
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp";
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp";
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp";
 
 const manufacturingData = {
   title: "Manufacturing",
@@ -23,44 +23,46 @@ const manufacturingData = {
     icon: "fas fa-tools"
   },
 
-  // CORRECTED: Categories with proper structure
   categories: [
     {
       name: "Data Science",
-      technology: " ",
+      technology: " ",       // ✔ your original value
       image: Ds_Image,
       icon: "",
       useCases: [
-        "Predictive Maintenance",
-        "Demand Forecasting", 
-        "Quality Control & Defect Detection",
-        "Resource Allocation Optimization",
-        "Supply Chain Optimization"
+        { name: "Tender Analysis", live: true },
+        { name: "Predictive Maintenance", live: false },
+        { name: "Demand Forecasting", live: false },
+        { name: "Quality Control & Defect Detection", live: false },
+        { name: "Resource Allocation Optimization", live: false },
+        { name: "Supply Chain Optimization", live: false }
       ]
     },
+
     {
       name: "Generative AI",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        "Automated Report Generation",
-        "Digital Twin Modeling",
-        "AI-Based Training Simulations",
-        "Visual Design Generation",
-        "Root Cause Analysis Assistant"
+        { name: "Automated Report Generation", live: false },
+        { name: "Digital Twin Modeling", live: false },
+        { name: "AI-Based Training Simulations", live: false },
+        { name: "Visual Design Generation", live: false },
+        { name: "Root Cause Analysis Assistant", live: false }
       ]
     },
+
     {
       name: "Vision AI",
-      technology: " ", 
+      technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        "ANPR System",
-        "Object Counting",
-        "PPE Detection",
-        "Cross Camera Tracking"
+        { name: "ANPR System", live: false },
+        { name: "Object Counting", live: false },
+        { name: "PPE Detection", live: false },
+        { name: "Cross Camera Tracking", live: false }
       ]
     }
   ]

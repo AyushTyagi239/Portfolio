@@ -1,7 +1,6 @@
-import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp"
-import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp"
-import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp"
-
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp";
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp";
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp";
 
 const healthcareData = {
   title: "Healthcare",
@@ -32,36 +31,38 @@ const healthcareData = {
       image: Ds_Image,
       icon: "",
       useCases: [
-        "Predictive Diagnostics",
-        "Patient Risk Stratification",
-        "Operational & Bed Forecasting",
-        "Drug Effectiveness Analysis",
-        "Fraud Detection"
+        { name: "Predictive Diagnostics", live: false },
+        { name: "Patient Risk Stratification", live: false },
+        { name: "Operational & Bed Forecasting", live: false },
+        { name: "Drug Effectiveness Analysis", live: false },
+        { name: "Fraud Detection", live: false }
       ]
     },
+
     {
       name: "Generative AI",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        "Medical Documentation Automation",
-        "Synthetic Data Generation",
-        "Clinical Decision Support",
-        "Medical Image Interpretation Aid",
-        "Patient Communication Bots"
+        { name: "Medical Documentation Automation", live: false },
+        { name: "Synthetic Data Generation", live: false },
+        { name: "Clinical Decision Support", live: false },
+        { name: "Medical Image Interpretation Aid", live: false },
+        { name: "Patient Communication Bots", live: false }
       ]
     },
+
     {
       name: "Vision AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        "Fall Detection",
-        "Queue Detection",
-        "Anti-Intrusion",
-        "Patient Out of Bed"
+        { name: "Fall Detection", live: false },
+        { name: "Queue Detection", live: false },
+        { name: "Anti-Intrusion", live: false },
+        { name: "Patient Out of Bed", live: false }
       ]
     }
   ]

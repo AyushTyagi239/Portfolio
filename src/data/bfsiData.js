@@ -1,7 +1,6 @@
-import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp"
-import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp"
-import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp"
-
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp";
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp";
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp";
 
 const bfsiData = {
   title: "Banking & Financial Services",
@@ -29,40 +28,42 @@ const bfsiData = {
     {
       name: "Data Science",
       technology: " ",
-      image: Ds_Image ,
+      image: Ds_Image,
       icon: "",
       useCases: [
-        "Credit Risk Scoring",
-        "Fraud Detection",
-        "Customer Lifetime Value",
-        "Portfolio Optimization",
-        "Churn Prediction"
+        { name: "Credit Risk Scoring", live: false },
+        { name: "Fraud Detection", live: false },
+        { name: "Customer Lifetime Value", live: false },
+        { name: "Portfolio Optimization", live: false },
+        { name: "Churn Prediction", live: false }
       ]
     },
+
     {
       name: "Generative AI",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        "Automated Report & Compliance",
-        "AI Financial Advisors",
-        "Fraud Case Narratives",
-        "Personalized Communication",
-        "Scenario Simulation"
+        { name: "Automated Report & Compliance", live: false },
+        { name: "AI Financial Advisors", live: false },
+        { name: "Fraud Case Narratives", live: false },
+        { name: "Personalized Communication", live: false },
+        { name: "Scenario Simulation", live: false }
       ]
     },
+
     {
       name: "Vision AI",
-       technology: " ",
+      technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        "Facial Recognition",
-        "Loitering Detection",
-        "Tampering Detection",
-        "Violence Detection",
-        "Intrusion Detection"
+        { name: "Facial Recognition", live: false },
+        { name: "Loitering Detection", live: false },
+        { name: "Tampering Detection", live: false },
+        { name: "Violence Detection", live: false },
+        { name: "Intrusion Detection", live: false }
       ]
     }
   ]

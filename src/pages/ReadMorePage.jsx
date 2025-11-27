@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles, Play, ArrowRight, ExternalLink } from "lucide-react";
-import './readmorepage.css';
+import VideoPlayer from "../components/VideoPlayer";   // ✅ NEW COMPONENT
+import "./readmorepage.css";
 
 const ReadMorePage = ({ data }) => {
   const { title, intro, video, advantages, image, demoLink } = data;
@@ -13,11 +14,17 @@ const ReadMorePage = ({ data }) => {
 
   const displayedAdvantages = showAllAdvantages ? advantages : advantages.slice(0, 4);
 
+  const toggleAdvantages = useCallback(() => {
+    setShowAllAdvantages(prev => !prev);
+  }, []);
+
   return (
     <div className="readmore-page">
+
       {/* HERO SECTION */}
       <section className="readmore-hero">
         <div className="readmore-container">
+          
           <motion.h1 
             className="readmore-title"
             initial={{ opacity: 0, y: 40 }}
@@ -49,6 +56,7 @@ const ReadMorePage = ({ data }) => {
 
           <div className="content-wrapper">
             <div className="content-side">
+              
               <motion.p 
                 className="readmore-description"
                 initial={{ opacity: 0, x: -50 }}
@@ -57,7 +65,7 @@ const ReadMorePage = ({ data }) => {
               >
                 {intro}
               </motion.p>
-              
+
               <div className="features-list">
                 {advantages.slice(0, 3).map((feature, idx) => (
                   <motion.div
@@ -72,6 +80,7 @@ const ReadMorePage = ({ data }) => {
                   </motion.div>
                 ))}
               </div>
+
             </div>
 
             <div className="image-side">
@@ -82,55 +91,36 @@ const ReadMorePage = ({ data }) => {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <div className="image-wrapper">
-                  <img src={image} alt={title} className="readmore-image" />
+                  <img 
+                    src={image} 
+                    alt={title} 
+                    className="readmore-image"
+                    loading="eager"
+                  />
                   <div className="floating-badge">
                     <Sparkles className="icon-sm" />
                   </div>
                 </div>
               </motion.div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* VIDEO SECTION */}
+      {/* VIDEO SECTION — NEW COMPONENT */}
       {video && (
-        <section className="video-section">
-          <div className="readmore-container">
-            <motion.div 
-              className="section-header"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2>{video.title}</h2>
-              <p>Watch how our solution transforms your workflow</p>
-            </motion.div>
-
-            <motion.div
-              className="video-wrapper"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="video-container">
-                <video
-                  src={video.videoUrl}
-                  poster={video.thumbnail}
-                  controls
-                  muted
-                  loop
-                  className="video-element"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <VideoPlayer
+          title={video.title}
+          videoUrl={video.videoUrl}
+          thumbnail={video.thumbnail}
+        />
       )}
 
-      {/* ADVANTAGES SECTION */}
+      {/* ADVANTAGES */}
       <section className="advantages-section">
         <div className="readmore-container">
+
           <motion.div 
             className="section-header"
             initial={{ opacity: 0, y: 30 }}
@@ -169,7 +159,7 @@ const ReadMorePage = ({ data }) => {
               transition={{ duration: 0.6 }}
             >
               <motion.button
-                onClick={() => setShowAllAdvantages(!showAllAdvantages)}
+                onClick={toggleAdvantages}
                 className="view-more-btn"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -184,10 +174,12 @@ const ReadMorePage = ({ data }) => {
               </motion.button>
             </motion.div>
           )}
+
         </div>
       </section>
+
     </div>
   );
 };
 
-export default ReadMorePage;
+export default React.memo(ReadMorePage);

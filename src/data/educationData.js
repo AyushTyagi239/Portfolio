@@ -1,6 +1,6 @@
-import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp"
-import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp"
-import Vision_Image from "../assets/Industry/techs/AI_in_ds.webp"
+import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp";
+import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp";
+import Vision_Image from "../assets/Industry/techs/AI_in_ds.webp";
 
 const educationData = {
   title: "Education",
@@ -31,37 +31,39 @@ const educationData = {
       image: Ds_Image,
       icon: "",
       useCases: [
-        "Student Performance Prediction",
-        "Adaptive Learning Systems",
-        "Resource Allocation",
-        "Enrollment Forecasting",
-        "Curriculum Effectiveness"
+        { name: "Student Performance Prediction", live: false },
+        { name: "Adaptive Learning Systems", live: false },
+        { name: "Resource Allocation", live: false },
+        { name: "Enrollment Forecasting", live: false },
+        { name: "Curriculum Effectiveness", live: false }
       ]
     },
+
     {
       name: "Generative AI",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        "Automated Content Creation",
-        "Tutoring Assistants",
-        "Academic Writing Support",
-        "Virtual Campus Guides",
-        "Lesson & Course Design"
+        { name: "Automated Content Creation", live: false },
+        { name: "Tutoring Assistants", live: false },
+        { name: "Academic Writing Support", live: false },
+        { name: "Virtual Campus Guides", live: false },
+        { name: "Lesson & Course Design", live: false }
       ]
     },
+
     {
       name: "Vision AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        "Facial Recognition",
-        "Intrusion Detection",
-        "Weapon Detection",
-        "Violence Detection",
-        "Overcrowding Detection"
+        { name: "Facial Recognition", live: false },
+        { name: "Intrusion Detection", live: false },
+        { name: "Weapon Detection", live: false },
+        { name: "Violence Detection", live: false },
+        { name: "Overcrowding Detection", live: false }
       ]
     }
   ]
