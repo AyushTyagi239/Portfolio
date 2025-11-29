@@ -26,16 +26,17 @@ const educationData = {
 
   categories: [
     {
-      name: "Data Science",
+      name: "AI Labs",
       technology: " ",
       image: Ds_Image,
       icon: "",
       useCases: [
-        { name: "Student Performance Prediction", live: false },
-        { name: "Adaptive Learning Systems", live: false },
-        { name: "Resource Allocation", live: false },
-        { name: "Enrollment Forecasting", live: false },
-        { name: "Curriculum Effectiveness", live: false }
+        { name: "Intel Unnati AI Lab", live: true, displayLiveButton: false },
+        { name: "Gen AI Lab", live: true, displayLiveButton: false },
+        { name: "High Performance Computing Lab", live: true, displayLiveButton: false },
+        { name: "Deep Learning Lab", live: true, displayLiveButton: false },
+        { name: "Confidential Computing Lab", live: true, displayLiveButton: false },
+        { name: "AI IoT Lab", live: true, displayLiveButton: false }
       ]
     },
 
@@ -45,11 +46,11 @@ const educationData = {
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        { name: "Automated Content Creation", live: false },
-        { name: "Tutoring Assistants", live: false },
-        { name: "Academic Writing Support", live: false },
-        { name: "Virtual Campus Guides", live: false },
-        { name: "Lesson & Course Design", live: false }
+        { name: "NeuraDesk Research Copilot", live: false },
+        { name: "Curriculum Designer", live: false },
+        { name: "AI Auto Grader", live: false },
+        { name: "Resume Intelligence", live: false },
+        { name: "Smart School ERP", live: false }
       ]
     },
 
@@ -59,6 +60,7 @@ const educationData = {
       image: Vision_Image,
       icon: "",
       useCases: [
+        { name: "Video Analytics Monitor", live: false},
         { name: "Facial Recognition", live: false },
         { name: "Intrusion Detection", live: false },
         { name: "Weapon Detection", live: false },

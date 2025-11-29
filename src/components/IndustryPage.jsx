@@ -218,14 +218,15 @@ const IndustryPage = ({ data }) => {
                             key={idx}
                             className={`use-case-rectangle ${useCase.live ? "clickable" : "disabled"}`}
                             onClick={() => useCase.live && handleUseCaseClick(useCase.name, category)}
+                            // onClick={() => handleUseCaseClick(useCase.name, category)}
                           >
                             <span className="use-case-text">{useCase.name}</span>
 
-                            {useCase.live && (
+                            {useCase.displayLiveButton && (
                               <span className="live-tag">LIVE</span>
                             )}
 
-                            {useCase.live && <span className="use-case-arrow">→</span>}
+                            {useCase.displayLiveButton && <span className="use-case-arrow">→</span>}
                           </div>
                         ))}
                       </div>

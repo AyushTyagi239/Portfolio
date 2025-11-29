@@ -49,6 +49,14 @@ import tamperingDetectionData from "./data/otherproducts/bfsi/tamperingDetection
 import violenceDetectionBFSIData from "./data/otherproducts/bfsi/violenceDetectionData";
 import intrusionDetectionBFSIData from "./data/otherproducts/bfsi/intrusionDetectionData";
 
+//AI labs
+import { AI_IOT_Lab } from "./data/AI_Labs/AI_IOT";
+import { GenAIData } from "./data/AI_Labs/GenAI";
+import { Unnati_AI__Lab } from "./data/AI_Labs/Unnati_AI_Lab";
+import { HPC_Data } from "./data/AI_Labs/HPC";
+import { ConfidentialComputingData } from "./data/AI_Labs/ConfidentialComputing";
+import { DL_Lab_Data } from "./data/AI_Labs/DL_Lab";
+
 // ScrollToTop component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -272,6 +280,43 @@ const AppRoutes = () => {
             <ReadMorePage data={intrusionDetectionBFSIData} />
           </Layout>
         }/>
+
+        <Route path="solution/education/-/ai-iot-lab" element={
+          <Layout>
+            <ReadMorePage data={AI_IOT_Lab} liveLink={"false"} />
+          </Layout>
+        } />
+
+        <Route path="/solution/education/-/gen-ai-lab" element={
+          <Layout>
+            <ReadMorePage data={GenAIData} liveLink={"false"} />
+          </Layout>
+        } />
+
+        <Route path="/solution/education/-/intel-unnati-ai-lab" element={
+          <Layout>
+            <ReadMorePage data={Unnati_AI__Lab} liveLink={"false"} />
+          </Layout>
+        } />
+
+        <Route path="/solution/education/-/high-performance-computing-lab" element={
+          <Layout>
+            <ReadMorePage data={HPC_Data} liveLink={"false"} />
+          </Layout>
+        } />
+
+        <Route path="/solution/education/-/confidential-computing-lab" element={
+          <Layout>
+            <ReadMorePage data={ConfidentialComputingData} liveLink={"false"} />
+          </Layout>
+        } />
+
+        <Route path="/solution/education/-/deep-learning-lab" element={
+          <Layout>
+            <ReadMorePage data={DL_Lab_Data} liveLink={"false"} />
+          </Layout>
+        } />
+
 
         {/* Catch-all route for undefined paths */}
         <Route path="*" element={

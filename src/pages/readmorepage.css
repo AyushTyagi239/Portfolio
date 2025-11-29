@@ -1,5 +1,11 @@
 /* === READMORE PAGE (OPTIMIZED) === */
 
+.readmore-page .readmore-description.whitespace-preserve {
+    /* This tells the browser to respect newline characters (\n) and spaces, 
+       but still wrap the text when it hits the edge of the container. */
+    white-space: pre-wrap; 
+}
+
 /* Page wrapper */
 .readmore-page {
   background: var(--main-bg);

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles, Play, ArrowRight, ExternalLink } from "lucide-react";
-import VideoPlayer from "../components/VideoPlayer";   // ✅ NEW COMPONENT
+import VideoPlayer from "../components/VideoPlayer";   
 import "./readmorepage.css";
 
-const ReadMorePage = ({ data }) => {
+const ReadMorePage = ({ data, liveLink }) => {
   const { title, intro, video, advantages, image, demoLink } = data;
   const [showAllAdvantages, setShowAllAdvantages] = useState(false);
 
@@ -34,31 +34,33 @@ const ReadMorePage = ({ data }) => {
             {title}
           </motion.h1>
 
-          <motion.div 
-            className="hero-button-wrapper"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <motion.a 
-              href={demoLink} 
-              className="demo-button primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          {liveLink !== "false" && (
+            <motion.div 
+              className="hero-button-wrapper"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Play className="icon-sm" />
-              Live Demo
-              <ExternalLink className="icon-sm" />
-            </motion.a>
-          </motion.div>
+              <motion.a 
+                href={demoLink} 
+                className="demo-button primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Play className="icon-sm" />
+                Live Demo
+                <ExternalLink className="icon-sm" />
+              </motion.a>
+            </motion.div>
+          )}
 
           <div className="content-wrapper">
             <div className="content-side">
               
               <motion.p 
-                className="readmore-description"
+                className="readmore-description whitespace-preserve" 
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -66,7 +68,7 @@ const ReadMorePage = ({ data }) => {
                 {intro}
               </motion.p>
 
-              <div className="features-list">
+              {/* <div className="features-list">
                 {advantages.slice(0, 3).map((feature, idx) => (
                   <motion.div
                     key={idx}
@@ -79,7 +81,7 @@ const ReadMorePage = ({ data }) => {
                     <span>{feature}</span>
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
 
             </div>
 
@@ -103,7 +105,6 @@ const ReadMorePage = ({ data }) => {
                 </div>
               </motion.div>
             </div>
-
           </div>
         </div>
       </section>

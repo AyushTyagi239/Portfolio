@@ -17,7 +17,7 @@ export const readMoreData = {
     "Reduced operational costs with scalable AI systems.",
     "Enhanced customer satisfaction with personalized chat flows.",
     "Data-driven decision-making through AI analytics.",
-        "24/7 automated response using Small Language Models.",
+    "24/7 automated response using Small Language Models.",
     "Reduced operational costs with scalable AI systems.",
 
   ],
