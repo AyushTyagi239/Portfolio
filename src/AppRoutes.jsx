@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
-import { StudentPerformancePredictionData } from "./data/AI_Labs/StudentPerformancePrediction";
-import { AdaptiveLearningSystemsData } from "./data/AI_Labs/AdaptiveLearningSystems";
-import { ResourceAllocationData } from "./data/AI_Labs/ResourceAllocation";
-import { EnrollmentForecastingData } from "./data/AI_Labs/EnrollmentForecasting";
-import { CurriculumEffectivenessData } from "./data/AI_Labs/CurriculumEffectiveness";
+import { UnnatiArtificialIntelligenceData } from "./data/AI_Labs/UnnatiArtificialIntelligence";
+import { UnnatiAIIoTData } from "./data/AI_Labs/UnnatiAIIoT";
+import { UnnatiAppliedAIData } from "./data/AI_Labs/UnnatiAppliedAI";
+import { UnnatiHPCData } from "./data/AI_Labs/UnnatiHPC";
+import { UnnatiDeepLearningHabanaData } from "./data/AI_Labs/UnnatiDeepLearningHabana";
+import { UnnatiSecurityData } from "./data/AI_Labs/UnnatiSecurity";
+import UnnatiPage from "./pages/UnnatiPage";
 
 import ReadMorePage from "./pages/ReadMorePage";
 import DarkVeil from "./components/DarkVeil";
@@ -286,70 +288,60 @@ const AppRoutes = () => {
           </Layout>
         }/>
          
-        <Route path="solution/education/-/ai-iot-lab" element={
-          <Layout>
-            <ReadMorePage data={AI_IOT_Lab} liveLink={"false"} />
-          </Layout>
-        } />
-        <Route
-  path="/solution/education/-/student-performance-prediction"
+<Route
+  path="/solution/education/unnati/artificial-intelligence"
   element={
     <Layout>
-      <ReadMorePage
-        data={StudentPerformancePredictionData}
-        liveLink={"true"}
-      />
+      <UnnatiPage data={UnnatiArtificialIntelligenceData} />
     </Layout>
   }
 />
 
 <Route
-  path="/solution/education/-/adaptive-learning-systems"
+  path="/solution/education/unnati/aiiot"
   element={
     <Layout>
-      <ReadMorePage
-        data={AdaptiveLearningSystemsData}
-        liveLink={"false"}
-      />
+      <UnnatiPage data={UnnatiAIIoTData} />
     </Layout>
   }
 />
 
 <Route
-  path="/solution/education/-/resource-allocation"
+  path="/solution/education/unnati/applied-ai"
   element={
     <Layout>
-      <ReadMorePage
-        data={ResourceAllocationData}
-        liveLink={"false"}
-      />
+      <UnnatiPage data={UnnatiAppliedAIData} />
     </Layout>
   }
 />
 
 <Route
-  path="/solution/education/-/enrollment-forecasting"
+  path="/solution/education/unnati/high-performance-computing"
   element={
     <Layout>
-      <ReadMorePage
-        data={EnrollmentForecastingData}
-        liveLink={"false"}
-      />
+      <UnnatiPage data={UnnatiHPCData} />
     </Layout>
   }
 />
 
 <Route
-  path="/solution/education/-/curriculum-effectiveness"
+  path="/solution/education/unnati/deep-learning-habana-gaudi"
   element={
     <Layout>
-      <ReadMorePage
-        data={CurriculumEffectivenessData}
-        liveLink={"false"}
-      />
+      <UnnatiPage data={UnnatiDeepLearningHabanaData} />
     </Layout>
   }
 />
+
+<Route
+  path="/solution/education/unnati/security"
+  element={
+    <Layout>
+      <UnnatiPage data={UnnatiSecurityData} />
+    </Layout>
+  }
+/>
+
 
         <Route path="/solution/education/-/gen-ai-lab" element={
           <Layout>

@@ -80,13 +80,15 @@ const IndustryPage = ({ data }) => {
   // ----------------------------
   // CLICK → USE CASE PAGE
   // ----------------------------
-  const educationLabRoutes = {
-  "Student Performance Prediction": "/solution/education/-/student-performance-prediction",
-  "Adaptive Learning Systems": "/solution/education/-/adaptive-learning-systems",
-  "Resource Allocation": "/solution/education/-/resource-allocation",
-  "Enrollment Forecasting": "/solution/education/-/enrollment-forecasting",
-  "Curriculum Effectiveness": "/solution/education/-/curriculum-effectiveness",
+ const educationLabRoutes = {
+  "Unnati Artificial Intelligence": "/solution/education/unnati/artificial-intelligence",
+  "Unnati AIIoT": "/solution/education/unnati/aiiot",
+  "Unnati Applied AI": "/solution/education/unnati/applied-ai",
+  "Unnati High Performance Computing": "/solution/education/unnati/high-performance-computing",
+  "Unnati Deep Learning with Habana Gaudi": "/solution/education/unnati/deep-learning-habana-gaudi",
+  "Unnati Security": "/solution/education/unnati/security",
 };
+
 
   const handleUseCaseClick = useCallback(
   (useCaseName, category) => {

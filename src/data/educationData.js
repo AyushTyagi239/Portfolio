@@ -32,11 +32,12 @@ const educationData = {
       image: Ds_Image,
       icon: "",
       useCases: [
-        { name: "Student Performance Prediction", live: true},
-        { name: "Adaptive Learning Systems", live: true },
-        { name: "Resource Allocation", live: true },
-        { name: "Enrollment Forecasting", live: true},
-        { name: "Curriculum Effectiveness", live: true }
+        { name: "Unnati Artificial Intelligence", live: true},
+        { name: "Unnati AIIoT", live: true },
+        { name: "Unnati Applied AI", live: true },
+        { name: "Unnati High Performance Computing", live: true},
+        { name: "Unnati Deep Learning with Habana Gaudi", live: true },
+        { name: "Unnati Security", live: true }
       ]
     },
 
