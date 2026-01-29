@@ -1,4 +1,4 @@
-import unnatiImg from "../../assets/Industry/Education.webp";
+import unnatiImg from "../../assets/Industry/hcc.png";
 
 export const UnnatiHPCData = {
   title: "Unnati High Performance Computing",

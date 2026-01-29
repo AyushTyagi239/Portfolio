@@ -1,4 +1,4 @@
-import unnatiImg from "../../assets/Industry/Education.webp";
+import unnatiImg from "../../assets/Industry/artificialInt.png";
 
 export const UnnatiArtificialIntelligenceData = {
   title: "Unnati Artificial Intelligence",
