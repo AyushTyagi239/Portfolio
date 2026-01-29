@@ -2,6 +2,11 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./layout/MainLayout"
 import HomePage from "./pages/HomePage";
+import { StudentPerformancePredictionData } from "./data/AI_Labs/StudentPerformancePrediction";
+import { AdaptiveLearningSystemsData } from "./data/AI_Labs/AdaptiveLearningSystems";
+import { ResourceAllocationData } from "./data/AI_Labs/ResourceAllocation";
+import { EnrollmentForecastingData } from "./data/AI_Labs/EnrollmentForecasting";
+import { CurriculumEffectivenessData } from "./data/AI_Labs/CurriculumEffectiveness";
 
 import ReadMorePage from "./pages/ReadMorePage";
 import DarkVeil from "./components/DarkVeil";
@@ -280,12 +285,71 @@ const AppRoutes = () => {
             <ReadMorePage data={intrusionDetectionBFSIData} />
           </Layout>
         }/>
-
+         
         <Route path="solution/education/-/ai-iot-lab" element={
           <Layout>
             <ReadMorePage data={AI_IOT_Lab} liveLink={"false"} />
           </Layout>
         } />
+        <Route
+  path="/solution/education/-/student-performance-prediction"
+  element={
+    <Layout>
+      <ReadMorePage
+        data={StudentPerformancePredictionData}
+        liveLink={"true"}
+      />
+    </Layout>
+  }
+/>
+
+<Route
+  path="/solution/education/-/adaptive-learning-systems"
+  element={
+    <Layout>
+      <ReadMorePage
+        data={AdaptiveLearningSystemsData}
+        liveLink={"false"}
+      />
+    </Layout>
+  }
+/>
+
+<Route
+  path="/solution/education/-/resource-allocation"
+  element={
+    <Layout>
+      <ReadMorePage
+        data={ResourceAllocationData}
+        liveLink={"false"}
+      />
+    </Layout>
+  }
+/>
+
+<Route
+  path="/solution/education/-/enrollment-forecasting"
+  element={
+    <Layout>
+      <ReadMorePage
+        data={EnrollmentForecastingData}
+        liveLink={"false"}
+      />
+    </Layout>
+  }
+/>
+
+<Route
+  path="/solution/education/-/curriculum-effectiveness"
+  element={
+    <Layout>
+      <ReadMorePage
+        data={CurriculumEffectivenessData}
+        liveLink={"false"}
+      />
+    </Layout>
+  }
+/>
 
         <Route path="/solution/education/-/gen-ai-lab" element={
           <Layout>

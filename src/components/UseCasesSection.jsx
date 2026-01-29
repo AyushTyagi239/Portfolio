@@ -59,6 +59,18 @@ const UseCasesSection = () => {
     }
   };
 
+  const isVisionUseCase = (useCase) => {
+  const visionKeywords = ['vision', 'anpr', 'ppe', 'object', 'camera'];
+  return visionKeywords.some(keyword =>
+    useCase.title.toLowerCase().includes(keyword)
+  );
+};
+
+const handleVisionNavigation = () => {
+  navigate('/manufacturing/vision-ai');
+};
+
+
   return (
     <section className="use-cases section-padding">
       <div className="container">
@@ -77,56 +89,74 @@ const UseCasesSection = () => {
           <div className="use-cases-container" ref={scrollContainerRef}>
             {filteredUseCases.map((useCase, index) => (
               <motion.div
-                key={useCase.id}
-                className="use-case-item"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                {/* ===== CARD HEADER WITH BACKGROUND IMAGE ===== */}
-                <div 
-                  className="use-case-header"
-                  style={{
-                    backgroundImage: `url(${backgroundImages[useCase.id]})` // FIXED: Remove default fallback
-                  }}
-                >
-                  {/* Glass Blur Overlay */}
-                  <div className="glass-overlay"></div>
-                  
-                  {/* Title Container with Glass Effect */}
-                  <div className="title-glass-container">
-                    <h3 className="use-case-title">{useCase.title}</h3>
-                  </div>
-                </div>
+  key={useCase.id}
+  className={`use-case-item ${
+    isVisionUseCase(useCase) ? 'vision-clickable' : ''
+  }`}
+  onClick={() => {
+    if (isVisionUseCase(useCase)) {
+      handleVisionNavigation();
+    }
+  }}
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.3, delay: index * 0.1 }}
+  viewport={{ once: true }}
+>
+  {/* ===== CARD HEADER WITH BACKGROUND IMAGE ===== */}
+  <div
+    className="use-case-header"
+    onClick={() => {
+      if (isVisionUseCase(useCase)) {
+        handleVisionNavigation();
+      }
+    }}
+    style={{
+      backgroundImage: `url(${backgroundImages[useCase.id]})`
+    }}
+  >
+    {/* Glass Blur Overlay */}
+    <div className="glass-overlay"></div>
 
-                {/* ===== CARD CONTENT ===== */}
-                <div className="use-case-content">
-                  <p className="use-case-description">{useCase.description}</p>
+    {/* Title Container with Glass Effect */}
+    <div className="title-glass-container">
+      <h3 className="use-case-title">{useCase.title}</h3>
+    </div>
+  </div>
 
-                  {/* ===== BUTTONS ===== */}
-                  <div className="use-case-buttons">
-                    {useCase.demoLink && (
-                      <a
-                        href={useCase.demoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="demo-button"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Live Now →
-                      </a>
-                    )}
+  {/* ===== CARD CONTENT ===== */}
+  <div className="use-case-content">
+    <p className="use-case-description">{useCase.description}</p>
 
-                    <button
-                      className="read-more-button"
-                      onClick={() => handleReadMore(useCase.id)}
-                    >
-                      Read More →
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
+    {/* ===== BUTTONS ===== */}
+    <div className="use-case-buttons">
+      {useCase.demoLink && !isVisionUseCase(useCase) && (
+        <a
+          href={useCase.demoLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="demo-button"
+          onClick={(e) => e.stopPropagation()}
+        >
+          Live Now →
+        </a>
+      )}
+
+      {!isVisionUseCase(useCase) && (
+        <button
+          className="read-more-button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleReadMore(useCase.id);
+          }}
+        >
+          Read More →
+        </button>
+      )}
+    </div>
+  </div>
+</motion.div>
+
             ))}
           </div>
         </div>

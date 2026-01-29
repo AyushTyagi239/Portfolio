@@ -31,33 +31,7 @@ export const websiteContent = {
     
   ],
   
-  // services: [
-  //   {
-  //     title: "Cyber Security",
-  //     description: "Advanced security solutions to protect your digital assets and data from modern threats."
-  //   },
-    
-  //   {
-  //     title: "IT Infrastructure",
-  //     description: "Robust and scalable IT infrastructure solutions tailored to your business needs."
-  //   },
-  //   {
-  //     title: "Network Solutions",
-  //     description: "Secure and high-performance networking solutions for optimal connectivity."
-  //   },
-  //   {
-  //     title: "SAP Solutions",
-  //     description: "Enterprise resource planning solutions with SAP implementation and support."
-  //   },
-  //   {
-  //     title: "Cloud Solutions",
-  //     description: "Scalable cloud services and migration strategies for modern business needs."
-  //   },
-  //   {
-  //     title: "AI Solutions",
-  //     description: "Cutting-edge artificial intelligence applications and consulting services."
-  //   }
-  // ],
+  
   
   footer: {
     text: "Made by Intensity Team",

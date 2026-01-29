@@ -10,8 +10,9 @@ import hospitality from "../assets/Industry/Finance.webp";
 import bfsi from "../assets/Industry/Finance.webp";
 
 const IndustryPage = ({ data }) => {
+  
   const navigate = useNavigate();
-
+  
   if (!data) {
     return (
       <div className="text-center text-white py-20">
@@ -19,7 +20,7 @@ const IndustryPage = ({ data }) => {
       </div>
     );
   }
-
+   
   const { title, subtitle, overview, problems, categories } = data;
 
   // ----------------------------
@@ -79,32 +80,52 @@ const IndustryPage = ({ data }) => {
   // ----------------------------
   // CLICK → USE CASE PAGE
   // ----------------------------
+  const educationLabRoutes = {
+  "Student Performance Prediction": "/solution/education/-/student-performance-prediction",
+  "Adaptive Learning Systems": "/solution/education/-/adaptive-learning-systems",
+  "Resource Allocation": "/solution/education/-/resource-allocation",
+  "Enrollment Forecasting": "/solution/education/-/enrollment-forecasting",
+  "Curriculum Effectiveness": "/solution/education/-/curriculum-effectiveness",
+};
+
   const handleUseCaseClick = useCallback(
-    (useCaseName, category) => {
+  (useCaseName, category) => {
 
-      // 💥 TENDER ANALYSIS SPECIAL CASE
-      if (useCaseName.toLowerCase() === "tender analysis") {
-        navigate("/usecase/tender-analysis");
-        return;
-      }
+    // ✅ EDUCATION EXPERIENCE CENTER LABS
+    if (educationLabRoutes[useCaseName]) {
+      navigate(educationLabRoutes[useCaseName]);
+      return;
+    }
 
-      const industrySlug = title.toLowerCase().replace(/\s+/g, "-");
-      const categorySlug = category?.technology
-        ? category.technology.toLowerCase().replace(/\s+/g, "-")
-        : "-";
-      const useCaseSlug = useCaseName.toLowerCase().replace(/\s+/g, "-");
+    // ✅ NEURA EAGLE-AI
+    if (category?.name === "Neura Eagle-AI") {
+      navigate("/manufacturing/vision-ai");
+      return;
+    }
 
-      navigate(`/solution/${industrySlug}/${categorySlug}/${useCaseSlug}`, {
-        state: {
-          useCase: { title: useCaseName },
-          category,
-          industry: title,
-          industryData: data,
-        },
-      });
-    },
-    [navigate, title, data]
-  );
+    // ✅ TENDER ANALYSIS
+    if (useCaseName.toLowerCase() === "tender analysis") {
+      navigate("/usecase/tender-analysis");
+      return;
+    }
+
+    // ✅ DEFAULT BEHAVIOR
+    const industrySlug = title.toLowerCase().replace(/\s+/g, "-");
+    const useCaseSlug = useCaseName.toLowerCase().replace(/\s+/g, "-");
+
+    navigate(`/solution/${industrySlug}/${useCaseSlug}`, {
+      state: {
+        useCase: { title: useCaseName },
+        category,
+        industry: title,
+        industryData: data,
+      },
+    });
+  },
+  [navigate, title, data]
+);
+
+
   // ----------------------------
   // TECHNOLOGY COLOR
   // ----------------------------
@@ -187,9 +208,20 @@ const IndustryPage = ({ data }) => {
 
                   {/* FIXED UPDATED CARD */}
                   <div
-                    className="category-card-image"
-                    style={{ backgroundImage: `url(${category.image})` }}
-                  >
+  className="category-card-image"
+  style={{ backgroundImage: `url(${category.image})` }}
+  onClick={() => {
+    const isNeuraEagleAI =
+  category.name === "Neura Eagle-AI";
+
+if (isNeuraEagleAI) {
+  navigate("/manufacturing/vision-ai");
+  return;
+}
+
+  }}
+>
+
                     {/* Tag */}
                     <div
                       className="category-tag"

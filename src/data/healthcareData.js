@@ -40,7 +40,7 @@ const healthcareData = {
     },
 
     {
-      name: "Generative AI",
+      name: "Neura Bot",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
@@ -54,15 +54,15 @@ const healthcareData = {
     },
 
     {
-      name: "Vision AI",
+      name: "Neura Eagle-AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        { name: "Fall Detection", live: false },
-        { name: "Queue Detection", live: false },
-        { name: "Anti-Intrusion", live: false },
-        { name: "Patient Out of Bed", live: false }
+        { name: "Fall Detection", live: true },
+        { name: "Queue Detection", live: true },
+        { name: "Anti-Intrusion", live: true },
+        { name: "Patient Out of Bed", live: true }
       ]
     }
   ]

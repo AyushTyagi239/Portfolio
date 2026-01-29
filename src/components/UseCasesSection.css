@@ -5,3 +5,10 @@
 .demo-button,.read-more-button{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff;padding:.6rem 1rem;border-radius:10px;border:none;cursor:pointer}
 .scroll-indicator{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:#fff;color:#0f172a;box-shadow:0 6px 18px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center}
 @media(max-width:480px){.use-cases-container{gap:.75rem}.use-case-item{min-width:200px}}
+.vision-clickable {
+  cursor: pointer;
+}
+
+.vision-clickable:hover {
+  transform: translateY(-4px);
+}

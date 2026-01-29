@@ -29,3 +29,47 @@
   .header-inner{padding:0.5rem 0.75rem}
   .header-logo{height:36px}
 }
+/* Shared style for Back, Home, Forward */
+.nav-button {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect (same for all) */
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Active click */
+.nav-button:active {
+  transform: scale(0.96);
+}
+
+/* Home icon sizing */
+.home-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Header left spacing */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

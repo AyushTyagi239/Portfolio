@@ -40,7 +40,7 @@ const hospitalityData = {
     },
 
     {
-      name: "Generative AI",
+      name: "Neura Bot",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
@@ -54,16 +54,16 @@ const hospitalityData = {
     },
 
     {
-      name: "Vision AI",
+      name: "Neura Eagle-AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        { name: "Parking Management", live: false },
-        { name: "Queue Detection", live: false },
-        { name: "Face Recognition (FR)", live: false },
-        { name: "Smoke/Fire Detection", live: false },
-        { name: "Luggage Detection", live: false }
+        { name: "Parking Management", live: true },
+        { name: "Queue Detection", live: true },
+        { name: "Face Recognition (FR)", live: true },
+        { name: "Smoke/Fire Detection", live: true },
+        { name: "Luggage Detection", live: true }
       ]
     }
   ]

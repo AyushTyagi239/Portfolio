@@ -30,7 +30,7 @@ const manufacturingData = {
       image: Ds_Image,
       icon: "",
       useCases: [
-        { name: "Tender Analysis", live: true },
+        
         { name: "Predictive Maintenance", live: false },
         { name: "Demand Forecasting", live: false },
         { name: "Quality Control & Defect Detection", live: false },
@@ -40,12 +40,13 @@ const manufacturingData = {
     },
 
     {
-      name: "Generative AI",
+      name: "Neura Bot",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        { name: "Automated Report Generation", live: false },
+        { name: "Tender Analysis", live: true },
+        { name: "Document Intelligence", live: false },
         { name: "Digital Twin Modeling", live: false },
         { name: "AI-Based Training Simulations", live: false },
         { name: "Visual Design Generation", live: false },
@@ -54,17 +55,18 @@ const manufacturingData = {
     },
 
     {
-      name: "Vision AI",
-      technology: " ",
-      image: Vision_Image,
-      icon: "",
-      useCases: [
-        { name: "ANPR System", live: false },
-        { name: "Object Counting", live: false },
-        { name: "PPE Detection", live: false },
-        { name: "Cross Camera Tracking", live: false }
-      ]
-    }
+  name: "Neura Eagle-AI",
+  technology: " ",
+  image: Vision_Image,
+  icon: "",
+  useCases: [
+    { name: "ANPR System", live: true },
+    { name: "Object Counting", live: true },
+    { name: "PPE Detection", live: true },
+    { name: "Cross Camera Tracking", live: true }
+  ]
+}
+
   ]
 };
 

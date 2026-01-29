@@ -40,7 +40,7 @@ const bfsiData = {
     },
 
     {
-      name: "Generative AI",
+      name: "Neura Bot",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
@@ -54,16 +54,16 @@ const bfsiData = {
     },
 
     {
-      name: "Vision AI",
+      name: "Neura Eagle-AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        { name: "Facial Recognition", live: false },
-        { name: "Loitering Detection", live: false },
-        { name: "Tampering Detection", live: false },
-        { name: "Violence Detection", live: false },
-        { name: "Intrusion Detection", live: false }
+        { name: "Facial Recognition", live: true },
+        { name: "Loitering Detection", live: true },
+        { name: "Tampering Detection", live: true },
+        { name: "Violence Detection", live: true },
+        { name: "Intrusion Detection", live: true }
       ]
     }
   ]

@@ -1,6 +1,7 @@
 import gen_Ai_Image from "../assets/Industry/techs/AI_in_genai.webp";
 import Ds_Image from "../assets/Industry/techs/AI_in_ds.webp";
-import Vision_Image from "../assets/Industry/techs/AI_in_ds.webp";
+import Vision_Image from "../assets/Industry/techs/Ai_in_vision.webp";
+import { tr } from "framer-motion/client";
 
 const educationData = {
   title: "Education",
@@ -26,46 +27,45 @@ const educationData = {
 
   categories: [
     {
-      name: "AI Labs",
+      name: "AI Unnati Lab",
       technology: " ",
       image: Ds_Image,
       icon: "",
       useCases: [
-        { name: "Intel Unnati AI Lab", live: true, displayLiveButton: false },
-        { name: "Gen AI Lab", live: true, displayLiveButton: false },
-        { name: "High Performance Computing Lab", live: true, displayLiveButton: false },
-        { name: "Deep Learning Lab", live: true, displayLiveButton: false },
-        { name: "Confidential Computing Lab", live: true, displayLiveButton: false },
-        { name: "AI IoT Lab", live: true, displayLiveButton: false }
+        { name: "Student Performance Prediction", live: true},
+        { name: "Adaptive Learning Systems", live: true },
+        { name: "Resource Allocation", live: true },
+        { name: "Enrollment Forecasting", live: true},
+        { name: "Curriculum Effectiveness", live: true }
       ]
     },
 
     {
-      name: "Generative AI",
+      name: "Neura Bot",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
       useCases: [
-        { name: "NeuraDesk Research Copilot", live: false },
-        { name: "Curriculum Designer", live: false },
-        { name: "AI Auto Grader", live: false },
-        { name: "Resume Intelligence", live: false },
-        { name: "Smart School ERP", live: false }
+        { name: "Digital Library", live: false },
+        { name: "Tutoring Assistants", live: false },
+        { name: "Student co-pilot", live: true },
+        { name: "Virtual Campus Guides", live: false },
+        { name: "Lesson & Course Design", live: false }
       ]
     },
 
     {
-      name: "Vision AI",
+      name: "Neura Eagle-AI",
       technology: " ",
       image: Vision_Image,
       icon: "",
       useCases: [
-        { name: "Video Analytics Monitor", live: false},
-        { name: "Facial Recognition", live: false },
-        { name: "Intrusion Detection", live: false },
-        { name: "Weapon Detection", live: false },
-        { name: "Violence Detection", live: false },
-        { name: "Overcrowding Detection", live: false }
+        { name: "Facial Recognition", live: true },
+        { name: "Intrusion Detection", live: true },
+        { name: "Check-in- out ", live: true },
+        { name: "Weapon Detection", live: true },
+        { name: "Violence Detection", live: true },
+        { name: "Overcrowding Detection", live: true }
       ]
     }
   ]
