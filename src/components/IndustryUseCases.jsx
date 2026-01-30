@@ -2,13 +2,25 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useCaseData } from "../data/useCaseData";
 import { useNavigate } from "react-router-dom";
+import LogoLoop from './LogoLoop';
 import "./IndustryUseCases.css";
- import "./main.css";
+import "./main.css";
+
 // Animation variant
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
+
+// Text-based products and technologies
+const partnerLogos = [
+  { node: <span className="text-2xl font-bold text-white">NVIDIA</span>, title: "NVIDIA", href: "#" },
+  { node: <span className="text-2xl font-bold text-white">Intel <span className="text-blue-400">Unnati</span></span>, title: "Intel Unnati", href: "#" },
+  { node: <span className="text-2xl font-bold text-white">NeuraEagle<span className="text-blue-400">i</span></span>, title: "Vision (NeuraEaglei)", href: "#" },
+  { node: <span className="text-2xl font-bold text-white">EduBot</span>, title: "EduBot", href: "#" },
+  { node: <span className="text-2xl font-bold text-white">Neura<span className="text-blue-400">Bot</span></span>, title: "Chatbot (NeuraBot)", href: "#" },
+  { node: <span className="text-2xl font-bold text-white">AI<span className="text-blue-400">Training</span></span>, title: "AI Training", href: "#" },
+];
 
 const IndustryUseCases = () => {
   const [showAll, setShowAll] = useState(false);
@@ -27,7 +39,6 @@ const IndustryUseCases = () => {
   const handleIndustryClick = (industryId) => {
     window.scrollTo(0, 0);
     switch (industryId) {
-       
       case 1:
         navigate("/industry/manufacturing");
         break;
@@ -55,9 +66,9 @@ const IndustryUseCases = () => {
      
       {/* Industry Use Cases Section */}
       <section className="use-cases py-20 px-6 md:px-10 bg-transparent border-t border-gray-800">
-       <h2 className="section-title text-center text-4xl md:text-5xl font-bold text-white mb-14">
-  Industry Solutions <span className="italic-part">Powered by AI</span>
-</h2>
+        <h2 className="section-title text-center text-4xl md:text-5xl font-bold text-white mb-14">
+          Industry Solutions <span className="italic-part">Powered by AI</span>
+        </h2>
 
         <div className="use-cases-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {displayedItems.map((item, index) => (
@@ -97,6 +108,28 @@ const IndustryUseCases = () => {
               </svg>
             </motion.span>
           </button>
+        </div>
+      </section>
+
+      {/* Logo Loop Section */}
+      <section className="py-16 px-6 md:px-10 bg-transparent">
+        {/* <h3 className="text-center text-2xl md:text-3xl font-semibold text-white mb-8">
+          Our Technologies & Products
+        </h3> */}
+        <div style={{ height: '120px', position: 'relative', overflow: 'hidden' }}>
+          <LogoLoop
+            logos={partnerLogos}
+            speed={100}
+            direction="left"
+            logoHeight={60}
+            gap={80}
+            hoverSpeed={0}
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#000000"
+            ariaLabel="Our technologies and products"
+            useCustomRender={false}
+          />
         </div>
       </section>
     </>

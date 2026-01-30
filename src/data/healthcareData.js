@@ -40,7 +40,7 @@ const healthcareData = {
     },
 
     {
-      name: "Neura Bot",
+      name: "NeuraBot",
       technology: " ",
       image: gen_Ai_Image,
       icon: "",
@@ -54,7 +54,7 @@ const healthcareData = {
     },
 
     {
-      name: "Neura Eagle-AI",
+      name: "NeuraEagleI",
       technology: " ",
       image: Vision_Image,
       icon: "",

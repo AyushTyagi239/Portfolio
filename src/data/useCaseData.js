@@ -20,7 +20,7 @@ export const useCaseData = [
   },
   {
     id: 2,
-    title: "Health Care",
+    title: "HealthCare",
     description: "Revolutionize patient care with intelligent diagnostics, telemedicine solutions, and personalized treatment plans powered by advanced AI algorithms.",
     image: healthcareImg,
     demoLink: "/demo/healthcare",
