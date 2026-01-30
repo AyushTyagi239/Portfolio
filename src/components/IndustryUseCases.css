@@ -1,20 +1,88 @@
-.use-cases{padding:2rem 0;position:relative}
-.use-case-item{background:rgba(20,26,38,0.65);border-radius:14px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column;height:220px}
-.use-case-header{flex:1;background-position:center;background-size:cover;border-radius:12px 12px 0 0;filter:brightness(1.05)}
-.title-glass-container{padding:.8rem 1rem;background:rgba(0,0,0,0.5);border-radius:10px;color:#fff}
-.use-case-title{font-size:1.15rem;font-weight:700}
-.use-case-item:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(0,0,0,0.28)}
-.view-more-button{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1e293b,#2563eb);border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(37,99,235,0.2);transition:transform .18s}
-.view-more-button:hover{transform:translateY(-4px) scale(1.06)}
-@media(max-width:768px){.use-case-item{height:200px}}
+/* ============================= */
+/* USE CASES */
+/* ============================= */
+
+.use-cases {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.use-case-item {
+  background: rgba(20, 26, 38, 0.65);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+}
+
+.use-case-header {
+  flex: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px 12px 0 0;
+  filter: brightness(1.05);
+}
+
+.title-glass-container {
+  padding: .8rem 1rem;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  color: #fff;
+}
+
+.use-case-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.use-case-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.28);
+}
+
+.view-more-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#1e293b,#2563eb);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.2);
+  transition: transform .18s;
+}
+
+.view-more-button:hover {
+  transform: translateY(-4px) scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .use-case-item {
+    height: 200px;
+  }
+}
+
+/* ============================= */
+/* SECTION TITLES */
+/* ============================= */
+
 .section-title {
   line-height: 1.3 !important;
   overflow: visible !important;
   padding-bottom: 12px;
 }
+
 .italic-part {
   line-height: 1.3 !important;
 }
+
+/* ============================= */
+/* CATEGORY CARDS */
+/* ============================= */
+
 .category-card {
   background: rgba(20, 26, 38, 0.65);
   border-radius: 14px;
@@ -33,7 +101,6 @@
   background-position: center;
   position: relative;
 
-  /* Center content */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,10 +112,105 @@
   font-weight: 700;
   color: white;
   padding: 8px 20px;
-
   background: rgba(0, 0, 0, 0.55);
   border-radius: 12px;
   backdrop-filter: blur(6px);
-
   z-index: 10;
+}
+
+/* ================================================= */
+/* LOGO LOOP — SMALL, UNIFIED, BUSINESS STYLE */
+/* ================================================= */
+
+/* Single size control */
+.logoloop {
+  --logoloop-logoHeight: 28px;
+  line-height: 1;
+}
+
+/* SVG logos (NVIDIA, Intel) */
+.logoloop svg {
+  font-size: 28px;
+  line-height: 1;
+  color: #e5e7eb;
+}
+
+/* Text-only logos */
+.logo-text {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #e5e7eb;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Logo + text combo (Intel + Unnati Lab) */
+.logo-text-combo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #e5e7eb;
+  line-height: 1;
+}
+
+/* Slightly smaller Intel icon to match text */
+.logo-text-combo svg {
+  font-size: 24px;
+}
+
+/* Unified hover effect */
+.logoloop__item:hover svg,
+.logoloop__item:hover .logo-text,
+.logoloop__item:hover .logo-text-combo {
+  color: #a855f7;
+}
+
+/* ================================================= */
+/* LOGO LOOP — COLORED LOGOS WITH BLACK BACKGROUND */
+/* ================================================= */
+
+/* Common logo background */
+.logoloop__node,
+.logoloop__link {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NVIDIA — official green */
+.logo-nvidia {
+  color: #76b900; /* NVIDIA green */
+  font-size: 28px;
+}
+
+/* Intel logo + text */
+.logo-intel svg {
+  color: #38bdf8; /* soft Intel blue */
+  font-size: 24px;
+}
+
+.logo-intel span {
+  color: #e5e7eb;
+}
+
+/* Text-only logo boxes */
+.logo-text-box {
+  color: #f9fafb;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Hover glow */
+.logoloop__item:hover .logoloop__node,
+.logoloop__item:hover .logoloop__link {
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
 }

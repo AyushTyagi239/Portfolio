@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-import leftLogo from "../assets/Super_Ai.webp";
 import rightLogo from "../assets/IntensityLogoMonowhite.webp";
 import StaggeredMenu from "./StaggeredMenu";
 
@@ -43,9 +42,9 @@ const Header = () => {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
 
-      {/* LEFT - BACK | HOME | FORWARD */}
+      {/* LEFT - BACK | HOME | FORWARD | LOGO */}
       <div className="header-left">
-        {/* Back */}
+
         <button
           className="nav-button"
           onClick={() => navigate(-1)}
@@ -54,7 +53,6 @@ const Header = () => {
           ←
         </button>
 
-        {/* Home */}
         <button
           className="nav-button home-button"
           onClick={() => navigate("/")}
@@ -76,7 +74,6 @@ const Header = () => {
           </svg>
         </button>
 
-        {/* Forward */}
         <button
           className="nav-button"
           onClick={() => navigate(1)}
@@ -84,14 +81,17 @@ const Header = () => {
         >
           →
         </button>
+
+        <img
+          src={rightLogo}
+          alt="Intensity Logo"
+          className="header-logo left-logo"
+        />
       </div>
 
-      {/* CENTER - LOGOS */}
+      {/* CENTER - TITLE */}
       <div className="header-center">
-        <div className="center-logos">
-          <img src={rightLogo} alt="Intensity Logo" className="header-logo" />
-          <img src={leftLogo} alt="Super AI Logo" className="header-logo" />
-        </div>
+        <h1 className="header-title">AI-Portfolio</h1>
       </div>
 
       {/* RIGHT - MENU */}

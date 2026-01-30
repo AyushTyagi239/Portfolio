@@ -1,75 +1,113 @@
-.header{
-  position:sticky;top:0;left:0;width:100%;z-index:1000;
-  background: rgba(1,9,28,0.85);
-  backdrop-filter: blur(8px); /* reduced blur for perf */
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  transition:background .25s ease,box-shadow .25s ease;
-  will-change: background;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap');
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(1, 9, 28, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem}
-
-.home-button{
-  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,0.18);
-  background:rgba(255,255,255,0.025);transition:transform .2s ease,background .2s ease;
+.header.scrolled {
+  background: linear-gradient(90deg, #1d0941, #14053b);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
-.home-button:hover{transform:scale(1.06);background:linear-gradient(135deg,#a855f7,#6b21a8)}
 
-.header-center{position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
-.center-logos{display:flex;gap:1.25rem;pointer-events:auto}
-.header-logo{height:52px;transition:transform .2s ease,opacity .2s ease}
-.header-logo:hover{transform:scale(1.06)}
+/* LEFT SECTION */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 1rem;
+}
 
-.header.scrolled{
-  background:linear-gradient(90deg,#1d0941,#14053b);
-  backdrop-filter:blur(10px);
-  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+/* LOGO */
+.header-logo {
+  height: 42px;
+  transition: transform 0.2s ease;
 }
-@media (max-width:480px){
-  .header-inner{padding:0.5rem 0.75rem}
-  .header-logo{height:36px}
+
+.header-logo:hover {
+  transform: scale(1.05);
 }
-/* Shared style for Back, Home, Forward */
+
+.left-logo {
+  margin-left: 10px; /* swapped spacing */
+}
+
+/* CENTER TITLE */
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.header-title {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  font-size: 34px;        /* BIG like a page heading */
+  font-weight: 800;       /* Bold & confident */
+  letter-spacing: 1.2px; /* Business spacing */
+  color: #ffffff;
+
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  line-height: 1;
+}
+
+
+
+/* RIGHT SECTION */
+.header-right {
+  position: absolute;
+  right: 1rem;
+}
+
+/* NAV BUTTONS */
 .nav-button {
   width: 38px;
   height: 38px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
-
   color: white;
   font-size: 18px;
-  font-weight: 500;
-
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-/* Hover effect (same for all) */
 .nav-button:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-1px);
 }
 
-/* Active click */
 .nav-button:active {
   transform: scale(0.96);
 }
 
-/* Home icon sizing */
+/* HOME ICON */
 .home-icon {
   width: 18px;
   height: 18px;
 }
 
-/* Header left spacing */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+/* MOBILE */
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-logo {
+    height: 34px;
+  }
 }

@@ -12,21 +12,14 @@ import IndustryNavbar from "../components/IndustryNavbar";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen ">
+    <div >
       {/* <HeroSection/> */}
       
     
       {/* <EndToEndSolutions/> */}
       
 
-<TrueFocus 
-sentence="Neurabot  NeuraEagleI  IntelAI-Unnati"
-manualMode={false}
-blurAmount={2}
-borderColor="#3614bd"
-animationDuration={0.5}
-pauseBetweenAnimations={0.5}
-/>
+
       {/* <IndustryNavbar/> */}
       <IndustryUseCases/>
       {/* <GetStartedSection /> */}

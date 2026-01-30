@@ -14,7 +14,7 @@ function App() {
       <DarkVeil/>
       
       <UseCaseSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
     
   );
