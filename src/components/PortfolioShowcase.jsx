@@ -55,7 +55,7 @@ const PortfolioShowcase = () => {
           variants={fadeInUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
+          viewport={{ Se: true }}
         >
           My Work & <span className="italic-part">Expertise</span>
         </motion.h2>
