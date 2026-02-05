@@ -9,27 +9,35 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
+  // ✅ PORTFOLIO MENU
   const menuItems = [
     {
-      label: "Industries",
+      label: "About Me",
+      link: "/about",
+    },
+    {
+      label: "Work",
       children: [
-        { label: "Manufacturing", link: "/industry/manufacturing" },
-        { label: "Healthcare", link: "/industry/healthcare" },
-        { label: "BFSI", link: "/industry/bfsi" },
-        { label: "Education", link: "/industry/education" },
-        { label: "Hospitality", link: "/industry/hospitality" },
+        { label: "AI & LLM Systems", link: "/portfolio/ai-solutions" },
+        { label: "Web Applications", link: "/portfolio/websites" },
+        { label: "Game Development", link: "/portfolio/game-dev" },
       ],
     },
     {
-      label: "Our Products",
+      label: "Live Projects",
       children: [
-        { label: "Tender Analysis", link: "/usecase/tender-analysis" },
-        { label: "SLM", link: "/usecase/neuraedge-slm" },
+        { label: "AI Chatbot", link: "/projects/chatbot" },
+        { label: "Expense App", link: "/projects/hisab" },
+        { label: "Games", link: "/projects/games" },
       ],
     },
     {
-      label: "About Us",
-      link: "https://www.igtpl.co.in/",
+      label: "Articles",
+      link: "/blogs",
+    },
+    {
+      label: "Contact",
+      link: "/contact",
     },
   ];
 
@@ -41,10 +49,9 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-
-      {/* LEFT - BACK | HOME | FORWARD | LOGO */}
+      
+      {/* LEFT - NAV + LOGO */}
       <div className="header-left">
-
         <button
           className="nav-button"
           onClick={() => navigate(-1)}
@@ -84,14 +91,14 @@ const Header = () => {
 
         <img
           src={rightLogo}
-          alt="Intensity Logo"
+          alt="Portfolio Logo"
           className="header-logo left-logo"
         />
       </div>
 
       {/* CENTER - TITLE */}
       <div className="header-center">
-        <h1 className="header-title">AI-Portfolio</h1>
+        <h1 className="header-title">My Portfolio</h1>
       </div>
 
       {/* RIGHT - MENU */}
@@ -99,15 +106,12 @@ const Header = () => {
         <StaggeredMenu
           items={menuItems}
           onItemClick={(item) => {
-            if (item?.link?.startsWith("http")) {
-              window.open(item.link, "_blank");
-            } else if (item?.link) {
+            if (item?.link) {
               navigate(item.link);
             }
           }}
         />
       </div>
-
     </header>
   );
 };

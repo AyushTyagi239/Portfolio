@@ -46,7 +46,7 @@ const manufacturingData = {
       icon: "",
       useCases: [
         { name: "Tender Analysis", live: true },
-        { name: "Document Intelligence", live: false },
+        { name: "Document Intelligence", live: true },
         { name: "Digital Twin Modeling", live: false },
         { name: "AI-Based Training Simulations", live: false },
         { name: "Visual Design Generation", live: false },

@@ -14,7 +14,7 @@ export const websiteContent = {
       id: 1,
       title: "Neuraedge SLM Solution / Document Intelligence",
       description: "Advanced document processing and intelligence using state-of-the-art language models.",
-      demoLink: "https://neuradesk.superaip.com/"
+      demoLink: "https://neuraedge.superaip.com/"
     },
     {
       id: 2,

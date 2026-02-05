@@ -4,74 +4,51 @@ import healthcareImg from '../assets/Industry/Hospital.webp';
 import bfsiImg from '../assets/Industry/Finance.webp';
 import educationImg from '../assets/Industry/Education.webp';
 import hospitalityImg from '../assets/Industry/HOSPITALITY.webp';
-// import retailImg from '../assets/images/retail.jpg';
-// import logisticsImg from '../assets/images/logistics.jpg';
-// import energyImg from '../assets/images/energy.jpg';
 
 export const useCaseData = [
-   
   {
     id: 1,
-    title: "Manufacturing",
-    description: "Streamline production processes with AI-powered quality control, predictive maintenance, and supply chain optimization for enhanced efficiency and reduced downtime.",
+    title: "AI & LLM Systems",
+    description:
+      "End-to-end AI systems including LLMs, RAG-based chatbots, agentic workflows, prompt engineering, and production-ready AI deployments.",
     image: manufacturingImg,
-    demoLink: "/demo/manufacturing",
-    readMoreLink: "/use-cases/manufacturing"
+    demoLink: "/demo/ai-solutions",
+    readMoreLink: "/portfolio/ai-solutions",
   },
   {
     id: 2,
-    title: "HealthCare",
-    description: "Revolutionize patient care with intelligent diagnostics, telemedicine solutions, and personalized treatment plans powered by advanced AI algorithms.",
+    title: "Professional Resume",
+    description:
+      "Role-focused resumes tailored for Software Developer, Full Stack Developer, and Game Developer positions, optimized for ATS and recruiter screening.",
     image: healthcareImg,
-    demoLink: "/demo/healthcare",
-    readMoreLink: "/use-cases/healthcare"
+    demoLink: "/resume",
+    readMoreLink: "/portfolio/resume",
   },
   {
     id: 3,
-    title: "BFSI",
-    description: "Transform banking and financial services with fraud detection, risk assessment, and personalized financial recommendations using cutting-edge technology.",
+    title: "Web Applications",
+    description:
+      "High-performance web applications built using React, Next.js, modern UI systems, animations, and scalable frontend architectures.",
     image: bfsiImg,
-    demoLink: "/demo/bfsi",
-    readMoreLink: "/use-cases/bfsi"
+    demoLink: "/demo/websites",
+    readMoreLink: "/portfolio/websites",
   },
   {
     id: 4,
-    title: "Education",
-    description: "Enhance learning experiences with adaptive learning platforms, virtual classrooms, and AI-powered educational tools for students and educators.",
+    title: "Game Development & Design",
+    description:
+      "2D and 3D games developed in Unity with a strong focus on gameplay mechanics, level design, performance optimization, and player experience.",
     image: educationImg,
-    demoLink: "/demo/education",
-    readMoreLink: "/use-cases/education"
+    demoLink: "/demo/game-dev",
+    readMoreLink: "/portfolio/game-dev",
   },
   {
     id: 5,
-    title: "Hospitality",
-    description: "Elevate guest experiences with smart hotel management, personalized services, and efficient operational systems for the hospitality industry.",
+    title: "Articles & Insights",
+    description:
+      "Technical articles and LinkedIn-style posts where I share learnings, project breakdowns, AI concepts, and real-world engineering insights.",
     image: hospitalityImg,
-    demoLink: "/demo/hospitality",
-    readMoreLink: "/use-cases/hospitality"
+    demoLink: "/blogs",
+    readMoreLink: "/portfolio/articles",
   },
-//   {
-//     id: 6,
-//     title: "Retail",
-//     description: "Transform retail operations with intelligent inventory management, personalized shopping experiences, and AI-driven customer insights.",
-//     image: retailImg,
-//     demoLink: "/demo/retail",
-//     readMoreLink: "/use-cases/retail"
-//   },
-//   {
-//     id: 7,
-//     title: "Logistics",
-//     description: "Optimize supply chain and logistics with route optimization, real-time tracking, and predictive analytics for efficient operations.",
-//     image: logisticsImg,
-//     demoLink: "/demo/logistics",
-//     readMoreLink: "/use-cases/logistics"
-//   },
-//   {
-//     id: 8,
-//     title: "Energy",
-//     description: "Drive sustainability with smart grid management, energy optimization, and predictive maintenance for the energy sector.",
-//     image: energyImg,
-//     demoLink: "/demo/energy",
-//     readMoreLink: "/use-cases/energy"
-//   }
 ];
