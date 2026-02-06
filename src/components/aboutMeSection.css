@@ -1,0 +1,413 @@
+/* ================================
+   About Me Section – Big Text & Circular Floating Photo
+================================ */
+
+.about-me {
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture */
+.about-me::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(79, 70, 229, 0.025), transparent 55%),
+    radial-gradient(circle at 85% 70%, rgba(59, 130, 246, 0.02), transparent 60%);
+  pointer-events: none;
+}
+
+/* ================================
+   Layout
+================================ */
+
+.about-me-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================
+   Content - BIGGER WHITE TEXT
+================================ */
+
+.about-me-content {
+  color: #fff;
+  max-width: 680px;
+}
+
+.about-me-title {
+  font-size: 3.2rem; /* BIGGER */
+  margin-bottom: 30px;
+  font-weight: 800; /* Bolder */
+  letter-spacing: -0.8px;
+  color: #ffffff; /* Pure white */
+  line-height: 1.2;
+}
+
+.about-me-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  border-radius: 3px;
+}
+
+.about-me-description {
+  font-size: 1.25rem; /* BIGGER */
+  line-height: 1.9;
+  color: #f1f5f9; /* Lighter white */
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/* ================================
+   Subsections - BIGGER TEXT
+================================ */
+
+.about-me-subsection {
+  margin-bottom: 32px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(79, 70, 229, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.about-me-subsection:first-of-type {
+  margin-top: 35px;
+}
+
+.about-me-subsection:hover {
+  border-left-color: #4f46e5;
+}
+
+.about-me-subtitle {
+  font-size: 1.4rem; /* BIGGER */
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff; /* Pure white */
+}
+
+.about-me-text {
+  font-size: 1.15rem; /* BIGGER */
+  line-height: 1.8;
+  color: #e2e8f0; /* Light gray */
+  font-weight: 300;
+}
+
+/* ================================
+   Actions
+================================ */
+
+.about-me-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+/* Buttons - Slightly Bigger */
+.btn-outline,
+.btn-primary {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+/* Outline Button */
+.btn-outline {
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  border-color: #4f46e5;
+  background: rgba(79, 70, 229, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* ================================
+   CIRCULAR FLOATING IMAGE
+================================ */
+
+.about-me-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.about-me-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* CIRCULAR */
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: circular-float 8s ease-in-out infinite;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.about-me-image:hover {
+  border-color: rgba(79, 70, 229, 0.4);
+  transform: scale(1.02) translateY(-10px);
+  box-shadow: 
+    0 35px 70px -15px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(79, 70, 229, 0.2);
+}
+
+/* Enhanced floating animation for circular image */
+@keyframes circular-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+    box-shadow: 
+      0 35px 60px -15px rgba(0, 0, 0, 0.65),
+      0 0 0 1px rgba(79, 70, 229, 0.1);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 
+      0 30px 55px -13px rgba(0, 0, 0, 0.63),
+      0 0 0 1px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Floating Orb Effects Around Circle */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  opacity: 0.08;
+  animation: orb-rotate 15s linear infinite;
+  z-index: 1;
+}
+
+.orb-1 {
+  width: 80px;
+  height: 80px;
+  top: 20px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 30px;
+  animation-delay: 5s;
+}
+
+.orb-3 {
+  width: 40px;
+  height: 40px;
+  top: 150px;
+  left: 50px;
+  animation-delay: 10s;
+}
+
+@keyframes orb-rotate {
+  0% {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+/* Glow Ring Effect */
+.about-me-image-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 1100px) {
+  .about-me-container {
+    gap: 50px;
+  }
+  
+  .about-me-title {
+    font-size: 2.8rem;
+  }
+  
+  .about-me-image {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .about-me-image-wrapper::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me {
+    padding: 90px 20px;
+  }
+
+  .about-me-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .about-me-content {
+    max-width: 100%;
+  }
+
+  .about-me-title {
+    font-size: 2.5rem;
+  }
+
+  .about-me-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-me-description {
+    font-size: 1.15rem;
+  }
+
+  .about-me-subsection {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+  }
+
+  .about-me-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .about-me-text {
+    font-size: 1.1rem;
+  }
+
+  .about-me-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .about-me-image-wrapper {
+    min-height: 350px;
+  }
+  
+  .about-me-image {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .about-me-image-wrapper::after {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .floating-orb {
+    display: none; /* Hide on mobile for performance */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-title {
+    font-size: 2.2rem;
+  }
+  
+  .about-me-description {
+    font-size: 1.1rem;
+  }
+  
+  .about-me-image {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .about-me-image-wrapper::after {
+    width: 260px;
+    height: 260px;
+  }
+}
+/* Header row: title + buttons */
+.about-me-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.about-me-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 768px) {
+  .about-me-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-header-actions {
+    margin-top: 12px;
+  }
+}

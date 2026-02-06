@@ -10,12 +10,14 @@ import PortfolioPage from "./components/PortfolioPage";
 
 // Portfolio Data
 import { aiSolutionsData } from "./data/aiSolutionsData";
-import { resumeData } from "./data/resumeData";
-import { websitesData } from "./data/websitesData";
-import { gameDevData } from "./data/gameDevData";
-import { articlesData } from "./data/articlesData";
+import { resumeData } from "./data/portfolio/resume.data";
+import { websitesData } from "./data/portfolio/websites.data";
+import { gameDevData } from "./data/portfolio/gameDev.data";
+import { articlesData } from "./data/portfolio/articles.data";
 
-// Scroll to top on route change
+/* ---------------------------------------
+   Scroll to top on every route change
+---------------------------------------- */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -26,13 +28,42 @@ const ScrollToTop = () => {
   return null;
 };
 
+/* ---------------------------------------
+   Portfolio Routes Config
+---------------------------------------- */
+const portfolioRoutes = [
+  {
+    path: "/portfolio/ai-solutions",
+    data: aiSolutionsData,
+  },
+  {
+    path: "/portfolio/resume",
+    data: resumeData,
+  },
+  {
+    path: "/portfolio/websites",
+    data: websitesData,
+  },
+  {
+    path: "/portfolio/game-dev",
+    data: gameDevData,
+  },
+  {
+    path: "/portfolio/articles",
+    data: articlesData,
+  },
+];
+
+/* ---------------------------------------
+   App Routes
+---------------------------------------- */
 const AppRoutes = () => {
   return (
     <>
       <ScrollToTop />
 
       <Routes>
-        {/* ✅ HOME (DO NOT REMOVE) */}
+        {/* HOME */}
         <Route
           path="/"
           element={
@@ -42,51 +73,18 @@ const AppRoutes = () => {
           }
         />
 
-        {/* Portfolio Routes */}
-        <Route
-          path="/portfolio/ai-solutions"
-          element={
-            <Layout>
-              <PortfolioPage data={aiSolutionsData} />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/portfolio/resume"
-          element={
-            <Layout>
-              <PortfolioPage data={resumeData} />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/portfolio/websites"
-          element={
-            <Layout>
-              <PortfolioPage data={websitesData} />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/portfolio/game-dev"
-          element={
-            <Layout>
-              <PortfolioPage data={gameDevData} />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/portfolio/articles"
-          element={
-            <Layout>
-              <PortfolioPage data={articlesData} />
-            </Layout>
-          }
-        />
+        {/* PORTFOLIO ROUTES */}
+        {portfolioRoutes.map(({ path, data }) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <Layout>
+                <PortfolioPage data={data} />
+              </Layout>
+            }
+          />
+        ))}
 
         {/* 404 */}
         <Route
