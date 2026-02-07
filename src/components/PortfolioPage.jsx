@@ -1,150 +1,90 @@
 import React from "react";
 import "../components/portfoliopage.css";
 
-const PortfolioPage = ({ data, belowSection }) => {
+const PortfolioPage = ({ data }) => {
+  if (!data) return null;
+
+  const isArticleLayout = Array.isArray(data.projects);
+
+  const isAISolutions = !!data.sectionTitle;
+
   return (
     <section className="portfolio">
       <div className="portfolio-container">
 
-        {/* HERO IMAGE */}
-        {data.heroImage && (
-          <div className="portfolio-hero">
-            <img
-              src={data.heroImage}
-              alt={data.title}
-              className="portfolio-hero-image"
-            />
-          </div>
-        )}
-
-        {/* TITLE */}
+        {/* PAGE HEADING */}
         <h1 className="portfolio-title">
-          {data.title}
+          {data.sectionTitle || data.title}
         </h1>
 
-        {/* DESCRIPTION */}
-        {data.description && (
+        {/* INTRO */}
+        {(data.sectionSubtitle || data.description) && (
           <p className="portfolio-description">
-            {data.description}
+            {data.sectionSubtitle || data.description}
           </p>
         )}
 
-        {/* TEXT SECTIONS */}
-        {data.sections && (
-          <div className="portfolio-grid">
-            {data.sections.map((item, index) => (
+        {/* ===============================
+            ARTICLE LAYOUT (AI + WEB)
+        =============================== */}
+        {isArticleLayout && (
+          <div className="ai-article-projects">
+            {data.projects.map((project, index) => (
               <div
                 key={index}
-                className="portfolio-card"
+                className="ai-article-project"
               >
-                <h3 className="portfolio-card-title">
-                  {item.title}
-                </h3>
-                <p className="portfolio-card-text">
-                  {item.content}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
+                {/* TEXT */}
+                <div className="ai-project-text">
+                  <h2 className="ai-project-title">
+                    {project.title}
+                  </h2>
 
-        {/* RESUME / PROFILE HIGHLIGHTS */}
-        {data.highlights && (
-          <div className="portfolio-highlights">
-            {data.highlights.map((item, index) => (
-              <div
-                key={index}
-                className="portfolio-highlight-card"
-              >
-                <img
-                  src={item.image}
-                  alt={item.label}
-                />
-                <p>{item.label}</p>
-              </div>
-            ))}
-          </div>
-        )}
+                  {project.description && (
+                    <p className="ai-project-description">
+                      {project.description}
+                    </p>
+                  )}
 
-        {/* PROJECTS GRID */}
-        {data.projects && (
-          <div className="portfolio-projects">
-            <h2 className="portfolio-subtitle">
-              Projects
-            </h2>
+                  {project.highlights && (
+                    <ul className="ai-project-highlights">
+                      {project.highlights.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  )}
 
-            <div className="portfolio-project-grid">
-              {data.projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="portfolio-project-card"
-                >
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="portfolio-project-image"
-                  />
-
-                  <div className="portfolio-project-content">
-                    <h3>{project.name}</h3>
-
-                    <div className="portfolio-project-actions">
-                      {project.linkedin && (
-                        <a
-                          href={project.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-outline"
+                  {project.techStack && (
+                    <div className="ai-project-tech">
+                      {project.techStack.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="tech-badge"
                         >
-                          LinkedIn
-                        </a>
-                      )}
-
-                      {project.live && (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-primary"
-                        >
-                          Live
-                        </a>
-                      )}
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                  </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
 
-        {/* ARTICLES */}
-        {data.articles && (
-          <div className="portfolio-articles">
-            <h2 className="portfolio-subtitle">
-              Articles
-            </h2>
-
-            <ul>
-              {data.articles.map((article, index) => (
-                <li key={index}>
-                  <a
-                    href={article.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {article.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* BELOW FOLD SLOT (Optional) */}
-        {belowSection && (
-          <div className="portfolio-below-section">
-            {belowSection}
+                {/* IMAGE / VISUAL */}
+                <div className="ai-project-visual">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                    />
+                  ) : (
+                    <div className="ai-image-placeholder">
+                      {isAISolutions
+                        ? "AI System Architecture"
+                        : "Project Preview"}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         )}
 
