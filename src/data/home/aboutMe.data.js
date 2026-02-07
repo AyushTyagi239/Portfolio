@@ -37,4 +37,5 @@ Open to freelance and consulting opportunities. Let’s build something impactfu
   image: profileImage,
   linkedin: "https://www.linkedin.com/in/ayush-tyagi-0a3694267/",
   email: "tyagiayush239@gmail.com",
+  fiverr: "https://www.fiverr.com/ayush_ty/build-ai-web-applications-with-react-and-nextjs",
 };

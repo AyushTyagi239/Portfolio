@@ -32,6 +32,17 @@ const AboutMeSection = ({ data = {} }) => {
                 </a>
               )}
 
+              {data.fiverr && (
+                <a
+                  href={data.fiverr}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-outline"
+                >
+                  Fiverr
+                </a>
+              )}
+
               {data.email && (
                 <a
                   href={`mailto:${data.email}`}
