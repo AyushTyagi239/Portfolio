@@ -5,13 +5,11 @@ const PortfolioPage = ({ data }) => {
   if (!data) return null;
 
   const isArticleLayout = Array.isArray(data.projects);
-
   const isAISolutions = !!data.sectionTitle;
 
   return (
     <section className="portfolio">
       <div className="portfolio-container">
-
         {/* PAGE HEADING */}
         <h1 className="portfolio-title">
           {data.sectionTitle || data.title}
@@ -30,10 +28,8 @@ const PortfolioPage = ({ data }) => {
         {isArticleLayout && (
           <div className="ai-article-projects">
             {data.projects.map((project, index) => (
-              <div
-                key={index}
-                className="ai-article-project"
-              >
+              <div key={index} className="ai-article-project">
+                
                 {/* TEXT */}
                 <div className="ai-project-text">
                   <h2 className="ai-project-title">
@@ -57,10 +53,7 @@ const PortfolioPage = ({ data }) => {
                   {project.techStack && (
                     <div className="ai-project-tech">
                       {project.techStack.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="tech-badge"
-                        >
+                        <span key={i} className="tech-badge">
                           {tech}
                         </span>
                       ))}
@@ -71,23 +64,27 @@ const PortfolioPage = ({ data }) => {
                 {/* IMAGE / VISUAL */}
                 <div className="ai-project-visual">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                    />
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                      />
+                    </a>
                   ) : (
                     <div className="ai-image-placeholder">
-                      {isAISolutions
-                        ? "AI System Architecture"
-                        : "Project Preview"}
+                      Project Preview
                     </div>
                   )}
                 </div>
+
               </div>
             ))}
           </div>
         )}
-
       </div>
     </section>
   );

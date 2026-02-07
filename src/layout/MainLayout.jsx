@@ -32,7 +32,7 @@ const MainLayout = React.memo(({ children }) => {
       {/* Page content */}
       <main className="flex-1">{children}</main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 });

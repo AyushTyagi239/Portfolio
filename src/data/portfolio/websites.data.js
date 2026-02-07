@@ -1,136 +1,79 @@
+import foodiesHub from "../../assets/portfolio/web/foodies-hub.webp";
+import foodBuddy from "../../assets/portfolio/web/food-buddy.webp";
+import sportsQuiz from "../../assets/portfolio/web/sports-quiz.webp";
+import taskManager from "../../assets/portfolio/web/task-manager.webp";
+import timerGame from "../../assets/portfolio/web/timer-challenge.webp";
+
 export const websitesData = {
   title: "Websites & Web Apps",
   description:
-    "Modern web applications and interactive experiences built using React and Next.js, with a strong focus on clean UI, scalable state management, and real-world user interaction patterns.",
-
-  sections: [
-    {
-      title: "Landing Pages",
-      content:
-        "Responsive, conversion-focused landing pages with modern layouts and animations.",
-    },
-    {
-      title: "Dashboards",
-      content:
-        "Admin panels, analytics dashboards, and internal tools designed for clarity and scalability.",
-    },
-    {
-      title: "Web Applications",
-      content:
-        "Interactive React and Next.js applications built with real-world flows, state management, and production-ready patterns.",
-    },
-  ],
+    "Modern web applications built using React and Next.js.",
 
   projects: [
     {
       title: "Foodies Hub — Community Recipe Platform",
+      image: foodiesHub,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_reactjs-nextjs-redux-activity-7351178835222040576-apfL",
       description:
-        "A full-stack community platform built using the Next.js App Router, allowing users to share recipes, images, and food experiences through a clean and modern interface.",
-
+        "A full-stack Next.js community platform for sharing recipes.",
       highlights: [
-        "Dynamic routing and nested layouts using Next.js App Router",
-        "Server & Client Components architecture",
-        "Server Actions for form submissions",
-        "Image upload with live preview",
-        "UI feedback using useFormState() and useFormStatus()",
-        "Cache handling with revalidatePath() for SSR correctness",
-        "Error boundaries, loading states, and production-mode testing",
-      ],
-
-      techStack: [
-        "React",
-        "Next.js 13+",
-        "Redux",
-        "CSS Modules",
+        "Next.js App Router",
         "Server Actions",
+        "Image upload with preview",
       ],
+      techStack: ["React", "Next.js", "Redux"],
     },
 
     {
       title: "Food Buddy — React Food Ordering App",
+      image: foodBuddy,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_foodbuddy-reactjs-nextjs-activity-7347144619115036672-ujce",
       description:
-        "A complete food ordering web application built entirely from scratch to practice real-world React patterns, state management, and scalable component architecture.",
-
+        "A complete food ordering app built with React.",
       highlights: [
-        "Dynamic cart and checkout system",
-        "State management using Context API and useReducer",
-        "Custom hooks and side-effect handling",
-        "HTTP request handling with simulated backend",
-        "Scalable component structure for growing applications",
+        "Context API & useReducer",
+        "Dynamic cart system",
       ],
-
-      techStack: [
-        "React",
-        "JavaScript",
-        "Context API",
-        "useReducer",
-        "Custom Hooks",
-      ],
+      techStack: ["React", "JavaScript"],
     },
 
     {
-      title: "Sports Quiz App — Advanced React State Management",
+      title: "Sports Quiz App",
+      image: sportsQuiz,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_reactjs-frontenddevelopment-codingportfolio-activity-7344675297537007616-Dt6g",
       description:
-        "An interactive quiz application designed to strengthen React fundamentals around state, effects, component architecture, and timed interactions.",
-
+        "An interactive quiz app focused on advanced React state handling.",
       highlights: [
-        "Dynamic answer highlighting and quiz flow",
-        "Adaptive timers based on question difficulty",
-        "Effect cleanup functions for stable behavior",
-        "Component reset using keys",
-        "Clean component splitting for maintainability",
-        "Comprehensive results and performance dashboard",
+        "Effect cleanup",
+        "Adaptive timers",
       ],
-
-      techStack: [
-        "React",
-        "JavaScript",
-        "Hooks",
-        "Component Architecture",
-      ],
+      techStack: ["React", "Hooks"],
     },
 
     {
-      title: "React Task Manager — Projects & Tasks Dashboard",
+      title: "React Task Manager",
+      image: taskManager,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_reactjs-webdevelopment-frontenddevelopment-activity-7339286193592811520-BXoA",
       description:
-        "A task and project management application built to solidify React fundamentals and understand real-world UI interaction flows.",
-
+        "A task and project management dashboard.",
       highlights: [
-        "Create projects with title, description, and due date",
-        "Dynamic project selection and task rendering",
-        "Add and delete tasks within each project",
-        "Real-time UI updates using useState and useRef",
-        "Custom modal popup for validation and user feedback",
+        "useState & useRef",
+        "Custom modal validation",
       ],
-
-      techStack: [
-        "React",
-        "JavaScript",
-        "Tailwind CSS",
-        "JSX",
-      ],
+      techStack: ["React", "Tailwind CSS"],
     },
 
     {
-      title: "Timer Challenge Game — React Interaction Demo",
+      title: "Timer Challenge Game",
+      image: timerGame,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_reactjs-udemy-webdevelopment-activity-7337838472067461122-YA8x",
       description:
-        "A lightweight web-based game built with React to practice precise state handling, refs, and real-time user interaction. Players attempt to stop a timer as close as possible to a selected target time.",
-
+        "A timing-based React game focusing on refs and state.",
       highlights: [
-        "Multiple difficulty levels (1s, 5s, 10s, 15s)",
-        "Real-time timer logic with accuracy-based scoring",
-        "Game-over handling when the timer exceeds the limit",
-        "Clear separation between useRef (timing logic) and useState (UI state)",
-        "Interactive feedback loop between user actions and game state",
+        "Accuracy-based scoring",
+        "Multiple difficulty levels",
       ],
-
-      techStack: [
-        "React",
-        "JavaScript",
-        "useState",
-        "useRef",
-        "Component-Based Architecture",
-      ],
+      techStack: ["React", "useRef", "useState"],
     },
   ],
 };

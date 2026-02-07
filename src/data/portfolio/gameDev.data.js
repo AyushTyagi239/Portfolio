@@ -1,93 +1,50 @@
+import spaceShooter from "../../assets/portfolio/game/space-shooter.webp";
+import turboDrive from "../../assets/portfolio/game/turbo-drive.webp";
+import soldierio from "../../assets/portfolio/game/soldierio.webp";
+
 export const gameDevData = {
   title: "Game Development Projects",
   description:
-    "Hands-on game development projects built using Unity and C#, focusing on real-time gameplay mechanics, performance optimization, and immersive player experiences.",
-
-  sections: [
-    {
-      title: "2D Games",
-      content:
-        "Arcade-style and platformer games built with Unity, emphasizing player controls, enemy AI, and game physics.",
-    },
-    {
-      title: "3D Games",
-      content:
-        "3D simulations and driving games featuring realistic physics, camera systems, and environment interaction.",
-    },
-  ],
+    "Unity-based games focusing on gameplay mechanics and real-time logic.",
 
   projects: [
     {
-      title: "2D Space Shooter — Arcade-Style Unity Game",
+      title: "2D Space Shooter",
+      image: spaceShooter,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_gamedevelopment-unity-csharp-activity-7329452538213126144-u3NH",
       description:
-        "A classic arcade-style 2D space shooter game where players control a spaceship, dodge enemy fire, and shoot through an infinite wave of enemies.",
-
+        "A classic arcade-style space shooter with infinite enemies.",
       highlights: [
-        "Developed complete game mechanics using C#",
-        "Infinite enemy spawn system with increasing difficulty",
-        "Responsive shooting and dodging controls",
-        "Smooth 2D movement and visual effects",
-        "Gameplay balance and performance optimization",
+        "Infinite enemy spawning",
+        "Smooth shooting mechanics",
       ],
-
-      techStack: [
-        "Unity",
-        "C#",
-        "2D Physics",
-        "Game Mechanics",
-        "Real-Time Gameplay Logic",
-      ],
+      techStack: ["Unity", "C#"],
     },
 
     {
       title: "Turbo Drive — 3D Car Simulator",
+      image: turboDrive,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_unitydeveloper-gamedevelopment-indiegame-activity-7318571402771472391-Rlq0",
       description:
-        "A 3D car simulation game built in Unity where players drive through dynamic environments with realistic vehicle physics, speed boosts, and collision mechanics.",
-
+        "A 3D driving simulator with realistic physics.",
       highlights: [
-        "Realistic car physics and responsive driving controls",
-        "Speed boost pads and collision impact mechanics",
-        "Cinemachine-powered smooth third-person camera",
-        "Custom speedometer system with animated UI",
-        "Three playable levels with varied terrain and checkpoints",
-        "Particle effects for drifting, boosts, and collisions",
+        "Cinemachine camera",
+        "Custom speedometer",
       ],
-
-      techStack: [
-        "Unity",
-        "C#",
-        "Cinemachine",
-        "3D Physics",
-        "Particle Systems",
-      ],
+      techStack: ["Unity", "C#"],
     },
 
     {
-      title: "Soldierio — 2D Platformer Game",
+      title: "Soldierio — 2D Platformer",
+      image: soldierio,
+      link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_gamedevelopment-unity-csharp-activity-7318546455361699842-M6q0",
       description:
-        "A Mario-style 2D platformer game built from scratch using Unity and C#, focusing on tight controls, enemy AI, and classic platforming mechanics.",
-
+        "A Mario-style 2D platformer built from scratch.",
       highlights: [
-        "Knife shooting mechanics and enemy AI behavior",
-        "Coin collection system with three-life gameplay logic",
-        "Double jump, spring platforms, and environmental hazards",
-        "Death animation with blinking invincibility effect",
-        "Particle systems, background music, and sound effects",
-        "Cinemachine with state-driven camera transitions",
-        "Optimized performance using object pooling and modular scripts",
-      ],
-
-      techStack: [
-        "Unity",
-        "C#",
-        "2D Platforming",
         "Enemy AI",
-        "Object Pooling",
+        "Object pooling",
       ],
+      techStack: ["Unity", "C#"],
     },
-  ],
-
-  certifications: [
-    "Complete C# Unity Game Development Course",
   ],
 };

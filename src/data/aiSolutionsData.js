@@ -1,117 +1,83 @@
-export const aiSolutionsData = {
-  sectionTitle: "AI & LLM Engineering",
-  sectionSubtitle:
-    "Hands-on experience building production-oriented LLM systems, RAG pipelines, and agentic workflows with a focus on reliability, transparency, and real-world use cases.",
+import hospitalAI from "../assets/portfolio/ai/hospital-ai.webp";
+import agenticAI from "../assets/portfolio/ai/agentic-sidekick.webp";
+import crewAI from "../assets/portfolio/ai/crewai-workflow.webp";
+import alterEgo from "../assets/portfolio/ai/personal-alter-ego.webp";
+import ragBot from "../assets/portfolio/ai/rag-chatbot.webp";
 
-  certifications: [
-    "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents",
-    "AI Engineer Agentic Track: The Complete Agent & MCP Course",
-  ],
+export const aiSolutionsData = {
+  sectionTitle: "AI Solutions I Built",
+  sectionSubtitle:
+    "Production-oriented AI systems built using LLM engineering, RAG pipelines, and agentic workflows.",
 
   projects: [
-    {
-      title: "Hospital Intelligence Assistant (Explainable LLM System)",
-      description:
-        "An enterprise-style AI assistant built on hospital operational data, designed for transparency, safety, and explainability rather than black-box answers.",
-      highlights: [
-        "Explicit query routing between SQL data and LLM reasoning",
-        "Schema-aware, safe access to hospital databases",
-        "Full agent-level logging for auditability and debugging",
-        "Context-aware conversations with input correction",
-        "Explainable responses showing how results were derived",
-        "Production-ready design with monitoring and control",
-      ],
-      techStack: [
-        "LLM Engineering",
-        "SQL / Structured Data",
-        "Next.js",
-        "Hugging Face",
-        "Vercel",
-      ],
-    },
+  {
+    title: "End-to-End RAG Chatbot",
+    image: ragBot,
+    link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_llmengineering-rag-vectordb-activity-7400952983485767680-lzKv",
+    description:
+      "A complete RAG system with evaluation-driven improvements.",
+    highlights: [
+      "Vector search with ChromaDB",
+      "LLM-as-a-judge evaluation",
+    ],
+    techStack: ["LangChain", "ChromaDB"],
+  },
 
-    {
-      title: "Goal-Driven AI Sidekick (Self-Verifying Agent)",
-      description:
-        "A task-oriented AI agent that verifies its output against success criteria before delivering results, automatically retrying when requirements are not met.",
-      highlights: [
-        "Browser automation using Playwright (real Chromium)",
-        "Web search via Google Serper API",
-        "Knowledge lookup using Wikipedia",
-        "Python execution through a REPL",
-        "File read/write in a sandboxed environment",
-        "Push notifications via Pushover",
-        "Automatic retries on failed validations",
-      ],
-      techStack: [
-        "Agentic AI",
-        "Tool Calling",
-        "Playwright",
-        "Python",
-        "External APIs",
-      ],
-    },
+  {
+    title: "Personal AI Alter Ego",
+    image: alterEgo,
+    link: "https://huggingface.co/spaces/Ayush239/Ayush_Alter_Ego",
+    description:
+      "A personal AI assistant trained on my resume and LinkedIn data.",
+    highlights: [
+      "Tool calling with LLaMA 3",
+      "Gradio interface",
+      "Live deployment on Hugging Face",
+    ],
+    techStack: ["LLaMA 3", "Gradio", "Hugging Face"],
+  },
 
-    {
-      title: "Multi-Agent CrewAI Workflow",
-      description:
-        "A collaborative multi-agent system demonstrating automated research, analysis, debate, and decision-making within a single workflow.",
-      highlights: [
-        "Financial Researcher Agent for news and market insights",
-        "Analyst Agent generating structured reports",
-        "Debate Agent presenting arguments for and against a motion",
-        "Judge Agent delivering an evidence-based verdict",
-        "Modular, fast, and scalable CrewAI pipeline",
-      ],
-      techStack: [
-        "CrewAI",
-        "Multi-Agent Systems",
-        "LLMs",
-        "Automated Reasoning",
-      ],
-    },
+  {
+    title: "Hospital Intelligence Assistant",
+    image: hospitalAI,
+    link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_llmengineering-agenticai-nextjs-activity-7415577330841989120-h3RB",
+    description:
+      "An enterprise-grade AI assistant built on hospital operational data with explainability and safe data access.",
+    highlights: [
+      "Explicit query routing between SQL and LLM reasoning",
+      "Schema-aware database access",
+      "Agent-level logging and observability",
+      "Context-aware conversations",
+    ],
+    techStack: ["LLM Engineering", "SQL", "Next.js"],
+  },
 
-    {
-      title: "Personal AI Alter Ego (Tool-Driven Assistant)",
-      description:
-        "A personal AI assistant trained to represent my professional background, projects, and skills using my own résumé and LinkedIn data.",
-      highlights: [
-        "Tool-calling assistant powered by LLaMA 3 (NVIDIA NIM)",
-        "Reads and reasons over résumé and LinkedIn data",
-        "Logs unanswered questions for improvement",
-        "Interactive Gradio-based UI",
-        "Deployed live on Hugging Face Spaces",
-      ],
-      techStack: [
-        "meta/llama3-8b-instruct",
-        "NVIDIA NIM",
-        "Gradio",
-        "Hugging Face Spaces",
-      ],
-      liveLink: "https://lnkd.in/gdhzdmuu",
-    },
+  {
+    title: "Goal-Driven AI Sidekick",
+    image: agenticAI,
+    link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_ai-agenticai-llm-activity-7408846553303592960-ixps",
+    description:
+      "A self-verifying AI agent that validates results before delivery.",
+    highlights: [
+      "Browser automation with Playwright",
+      "Tool-based reasoning",
+      "Automatic retries on failure",
+    ],
+    techStack: ["Agentic AI", "Playwright", "Python"],
+  },
 
-    {
-      title: "End-to-End RAG Chatbot (LLM Engineering Project)",
-      description:
-        "A complete Retrieval-Augmented Generation system built as a personal chatbot, covering the full RAG lifecycle from ingestion to evaluation.",
-      highlights: [
-        "Intelligent chunking and preprocessing",
-        "Vector search using ChromaDB",
-        "Context construction and query rewriting",
-        "Re-ranking for higher-quality responses",
-        "LLM-as-a-judge evaluation",
-        "Metrics-driven evaluation (MRR, nDCG, Golden Data)",
-        "3D embedding and vector database visualizations",
-      ],
-      techStack: [
-        "LangChain",
-        "ChromaDB",
-        "OpenAI Embeddings",
-        "Python",
-        "Gradio",
-        "RAG Evaluation Metrics",
-      ],
-    },
-  ],
+  {
+    title: "Multi-Agent CrewAI Workflow",
+    image: crewAI,
+    link: "https://www.linkedin.com/posts/ayush-tyagi-0a3694267_crewai-agenticai-automation-activity-7404869716487495680-InLI",
+    description:
+      "A collaborative multi-agent system for research, analysis, and decision-making.",
+    highlights: [
+      "Research, analyst, debate, and judge agents",
+      "Modular CrewAI workflow",
+    ],
+    techStack: ["CrewAI", "Multi-Agent Systems"],
+  },
+]
+
 };

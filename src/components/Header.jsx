@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
-import rightLogo from "../assets/IntensityLogoMonowhite.webp";
+// import rightLogo from "../assets/IntensityLogoMonowhite.webp";
 import StaggeredMenu from "./StaggeredMenu";
 
 const Header = () => {
@@ -89,11 +89,15 @@ const Header = () => {
           →
         </button>
 
-        <img
-          src={rightLogo}
+          {/* <img
+            src={rightLogo}
+            alt="Portfolio Logo"
+            className="header-logo left-logo"
+          /><img */}
+          {/* src={rightLogo}
           alt="Portfolio Logo"
           className="header-logo left-logo"
-        />
+        /> */}
       </div>
 
       {/* CENTER - TITLE */}
