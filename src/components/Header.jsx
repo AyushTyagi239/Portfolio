@@ -13,7 +13,7 @@ const Header = () => {
   const menuItems = [
     {
       label: "About Me",
-      link: "/about",
+      link: "https://huggingface.co/spaces/Ayush239/Ayush_Alter_Ego",
     },
     {
       label: "Work",
@@ -26,9 +26,9 @@ const Header = () => {
     {
       label: "Live Projects",
       children: [
-        { label: "AI Chatbot", link: "/projects/chatbot" },
-        { label: "Expense App", link: "/projects/hisab" },
-        { label: "Games", link: "/projects/games" },
+        { label: "AI Chatbot", link: "https://huggingface.co/spaces/Ayush239/Ayush_Alter_Ego" },
+        { label: "Mall assistant", link: "https://huggingface.co/spaces/Ayush239/abc-mall-assistant?logs=container" },
+        { label: "Games", link: "https://share.google/ZOrE0aoWw4t4q01Af" },
       ],
     },
     {
@@ -37,7 +37,7 @@ const Header = () => {
     },
     {
       label: "Contact",
-      link: "/contact",
+      link: "https://www.linkedin.com/in/ayush-tyagi-0a3694267/",
     },
   ];
 

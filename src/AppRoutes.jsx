@@ -8,6 +8,9 @@ import HomePage from "./pages/HomePage";
 // Reusable Portfolio Page
 import PortfolioPage from "./components/PortfolioPage";
 
+// Resume Page (DEDICATED)
+import ResumePage from "./data/portfolio/ResumePage";
+
 // Portfolio Data
 import { aiSolutionsData } from "./data/aiSolutionsData";
 import { resumeData } from "./data/portfolio/resume.data";
@@ -29,32 +32,6 @@ const ScrollToTop = () => {
 };
 
 /* ---------------------------------------
-   Portfolio Routes Config
----------------------------------------- */
-const portfolioRoutes = [
-  {
-    path: "/portfolio/ai-solutions",
-    data: aiSolutionsData,
-  },
-  {
-    path: "/portfolio/resume",
-    data: resumeData,
-  },
-  {
-    path: "/portfolio/websites",
-    data: websitesData,
-  },
-  {
-    path: "/portfolio/game-dev",
-    data: gameDevData,
-  },
-  {
-    path: "/portfolio/articles",
-    data: articlesData,
-  },
-];
-
-/* ---------------------------------------
    App Routes
 ---------------------------------------- */
 const AppRoutes = () => {
@@ -73,18 +50,55 @@ const AppRoutes = () => {
           }
         />
 
-        {/* PORTFOLIO ROUTES */}
-        {portfolioRoutes.map(({ path, data }) => (
-          <Route
-            key={path}
-            path={path}
-            element={
-              <Layout>
-                <PortfolioPage data={data} />
-              </Layout>
-            }
-          />
-        ))}
+        {/* AI SOLUTIONS */}
+        <Route
+          path="/portfolio/ai-solutions"
+          element={
+            <Layout>
+              <PortfolioPage data={aiSolutionsData} />
+            </Layout>
+          }
+        />
+
+        {/* RESUME (SPECIAL PAGE) */}
+        <Route
+          path="/portfolio/resume"
+          element={
+            <Layout>
+              <ResumePage data={resumeData} />
+            </Layout>
+          }
+        />
+
+        {/* WEBSITES */}
+        <Route
+          path="/portfolio/websites"
+          element={
+            <Layout>
+              <PortfolioPage data={websitesData} />
+            </Layout>
+          }
+        />
+
+        {/* GAME DEV */}
+        <Route
+          path="/portfolio/game-dev"
+          element={
+            <Layout>
+              <PortfolioPage data={gameDevData} />
+            </Layout>
+          }
+        />
+
+        {/* ARTICLES */}
+        <Route
+          path="/portfolio/articles"
+          element={
+            <Layout>
+              <PortfolioPage data={articlesData} />
+            </Layout>
+          }
+        />
 
         {/* 404 */}
         <Route

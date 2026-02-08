@@ -9,6 +9,8 @@ export const resumeData = {
 
   heroImage: resumeHero,
 
+  resumeUrl: "/resume/Ayush_Tyagi_Resume.pdf",
+
   sections: [
     {
       title: "Who I Am",
